@@ -1,59 +1,64 @@
 class SoundManager {
-  private tickSound: HTMLAudioElement | null = null;
-  private winSound: HTMLAudioElement | null = null;
+  private audioContext: AudioContext | null = null;
   private enabled: boolean = true;
 
   constructor() {
-    // Create simple beep sounds using Web Audio API
-    this.createSounds();
-  }
-
-  private createSounds() {
-    // We'll use data URLs for simple beep sounds
-    // Tick sound - short beep
-    const tickDataUrl = this.createBeepDataUrl(800, 0.05, 0.1);
-    this.tickSound = new Audio(tickDataUrl);
-    this.tickSound.volume = 0.3;
-
-    // Win sound - ascending beeps
-    const winDataUrl = this.createBeepDataUrl(600, 0.15, 0.3);
-    this.winSound = new Audio(winDataUrl);
-    this.winSound.volume = 0.5;
-  }
-
-  private createBeepDataUrl(frequency: number, duration: number, volume: number): string {
-    // Create a simple beep using AudioContext
-    const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
-    const sampleRate = audioContext.sampleRate;
-    const numSamples = Math.floor(sampleRate * duration);
-    const buffer = audioContext.createBuffer(1, numSamples, sampleRate);
-    const data = buffer.getChannelData(0);
-
-    for (let i = 0; i < numSamples; i++) {
-      const t = i / sampleRate;
-      data[i] = Math.sin(2 * Math.PI * frequency * t) * volume * (1 - t / duration);
+    // Initialize AudioContext lazily on first user interaction
+    if (typeof window !== 'undefined') {
+      this.initAudioContext();
     }
+  }
 
-    // Convert to WAV data URL (simplified)
-    return "data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQAAAAA=";
+  private initAudioContext() {
+    if (!this.audioContext) {
+      this.audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
+    }
+  }
+
+  private playBeep(frequency: number, duration: number, volume: number = 0.3) {
+    if (!this.enabled) return;
+    
+    this.initAudioContext();
+    if (!this.audioContext) return;
+
+    try {
+      // Create oscillator for the beep sound
+      const oscillator = this.audioContext.createOscillator();
+      const gainNode = this.audioContext.createGain();
+
+      oscillator.connect(gainNode);
+      gainNode.connect(this.audioContext.destination);
+
+      // Configure the sound
+      oscillator.frequency.value = frequency;
+      oscillator.type = 'sine';
+
+      // Envelope for smooth sound
+      const now = this.audioContext.currentTime;
+      gainNode.gain.setValueAtTime(0, now);
+      gainNode.gain.linearRampToValueAtTime(volume, now + 0.01);
+      gainNode.gain.exponentialRampToValueAtTime(0.01, now + duration);
+
+      // Play the sound
+      oscillator.start(now);
+      oscillator.stop(now + duration);
+    } catch (error) {
+      console.error('Error playing sound:', error);
+    }
   }
 
   playTick() {
-    if (this.enabled && this.tickSound) {
-      this.tickSound.currentTime = 0;
-      this.tickSound.play().catch(() => {
-        // Ignore play errors
-      });
-    }
+    // Quick, high-pitched tick sound
+    this.playBeep(1200, 0.03, 0.15);
   }
 
   playWin() {
-    if (this.enabled && this.winSound) {
-      this.winSound.currentTime = 0;
-      this.winSound.play().catch(() => {
-        // Ignore play errors
-      });
-    }
+    if (!this.enabled) return;
+
+    // Play a celebratory ascending sequence
+    setTimeout(() => this.playBeep(523, 0.15, 0.3), 0);    // C5
+    setTimeout(() => this.playBeep(659, 0.15, 0.3), 100);  // E5
+    setTimeout(() => this.playBeep(784, 0.25, 0.35), 200); // G5
   }
 
   toggle() {
