@@ -19,19 +19,13 @@ export const Header = () => {
             to="/"
             className="text-sm font-medium text-muted-foreground hover:text-foreground transition-smooth"
           >
-            Wheel
+            Tools
           </Link>
           <Link
-            to="/"
+            to="/blog"
             className="text-sm font-medium text-muted-foreground hover:text-foreground transition-smooth"
           >
-            Number Draw
-          </Link>
-          <Link
-            to="/"
-            className="text-sm font-medium text-muted-foreground hover:text-foreground transition-smooth"
-          >
-            Name Draw
+            Blog
           </Link>
         </nav>
       </div>
