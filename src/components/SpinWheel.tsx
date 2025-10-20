@@ -4,6 +4,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Play, Volume2, VolumeX, Trash2 } from "lucide-react";
 import { getWheelColor } from "@/lib/wheel-colors";
 import { soundManager } from "@/lib/sound";
@@ -21,6 +22,7 @@ export const SpinWheel = () => {
   const [isSpinning, setIsSpinning] = useState(false);
   const [rotation, setRotation] = useState(0);
   const [winner, setWinner] = useState<string | null>(null);
+  const [showWinnerDialog, setShowWinnerDialog] = useState(false);
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [removeWinner, setRemoveWinner] = useState(false);
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -100,11 +102,11 @@ export const SpinWheel = () => {
 
     ctx.restore();
 
-    // Draw pointer
+    // Draw pointer (inverted - pointing left)
     ctx.beginPath();
-    ctx.moveTo(centerX + radius, centerY);
-    ctx.lineTo(centerX + radius - 20, centerY - 10);
-    ctx.lineTo(centerX + radius - 20, centerY + 10);
+    ctx.moveTo(centerX - radius, centerY);
+    ctx.lineTo(centerX - radius + 20, centerY - 10);
+    ctx.lineTo(centerX - radius + 20, centerY + 10);
     ctx.closePath();
     ctx.fillStyle = "#EF4444";
     ctx.fill();
@@ -153,6 +155,7 @@ export const SpinWheel = () => {
         const winnerItem = items[winnerIndex];
         setWinner(winnerItem.text);
         soundManager.playWin();
+        soundManager.playApplause();
         
         // Confetti!
         confetti({
@@ -161,9 +164,8 @@ export const SpinWheel = () => {
           origin: { y: 0.6 },
         });
 
-        toast.success(`Winner: ${winnerItem.text}! 🎉`, {
-          duration: 5000,
-        });
+        // Show winner dialog
+        setShowWinnerDialog(true);
 
         // Remove winner if enabled
         if (removeWinner) {
@@ -228,13 +230,6 @@ export const SpinWheel = () => {
                 </Button>
               </div>
 
-              {winner && (
-                <div className="w-full p-4 rounded-lg bg-success/10 border-2 border-success animate-bounce-in">
-                  <p className="text-center text-success font-bold text-xl">
-                    🎉 Winner: {winner} 🎉
-                  </p>
-                </div>
-              )}
             </div>
           </Card>
 
@@ -291,6 +286,20 @@ export const SpinWheel = () => {
             </div>
           </Card>
         </div>
+
+        {/* Winner Dialog */}
+        <Dialog open={showWinnerDialog} onOpenChange={setShowWinnerDialog}>
+          <DialogContent className="sm:max-w-md">
+            <DialogHeader>
+              <DialogTitle className="text-3xl text-center">🎉 Congratulations! 🎉</DialogTitle>
+            </DialogHeader>
+            <div className="flex flex-col items-center justify-center py-8 space-y-4">
+              <div className="text-6xl animate-bounce">🏆</div>
+              <p className="text-2xl font-bold text-center">{winner}</p>
+              <p className="text-lg text-muted-foreground text-center">is the winner!</p>
+            </div>
+          </DialogContent>
+        </Dialog>
       </div>
     </section>
   );

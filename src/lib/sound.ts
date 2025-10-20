@@ -61,6 +61,52 @@ class SoundManager {
     setTimeout(() => this.playBeep(784, 0.25, 0.35), 200); // G5
   }
 
+  playApplause() {
+    if (!this.enabled) return;
+    
+    this.initAudioContext();
+    if (!this.audioContext) return;
+
+    try {
+      const now = this.audioContext.currentTime;
+      const duration = 2;
+      
+      // Create applause sound using white noise bursts
+      for (let i = 0; i < 50; i++) {
+        const bufferSize = this.audioContext.sampleRate * 0.1;
+        const buffer = this.audioContext.createBuffer(1, bufferSize, this.audioContext.sampleRate);
+        const data = buffer.getChannelData(0);
+        
+        // Generate white noise
+        for (let j = 0; j < bufferSize; j++) {
+          data[j] = Math.random() * 2 - 1;
+        }
+        
+        const noise = this.audioContext.createBufferSource();
+        const filter = this.audioContext.createBiquadFilter();
+        const gain = this.audioContext.createGain();
+        
+        noise.buffer = buffer;
+        filter.type = 'bandpass';
+        filter.frequency.value = 1000 + Math.random() * 2000;
+        
+        noise.connect(filter);
+        filter.connect(gain);
+        gain.connect(this.audioContext.destination);
+        
+        const startTime = now + (Math.random() * duration);
+        gain.gain.setValueAtTime(0, startTime);
+        gain.gain.linearRampToValueAtTime(0.05, startTime + 0.01);
+        gain.gain.exponentialRampToValueAtTime(0.001, startTime + 0.1);
+        
+        noise.start(startTime);
+        noise.stop(startTime + 0.1);
+      }
+    } catch (error) {
+      console.error('Error playing applause:', error);
+    }
+  }
+
   toggle() {
     this.enabled = !this.enabled;
     return this.enabled;
