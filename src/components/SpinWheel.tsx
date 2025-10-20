@@ -102,14 +102,17 @@ export const SpinWheel = () => {
 
     ctx.restore();
 
-    // Draw pointer (inverted - pointing left)
+    // Draw pointer (right side, pointing inward like in the reference)
     ctx.beginPath();
-    ctx.moveTo(centerX - radius, centerY);
-    ctx.lineTo(centerX - radius + 20, centerY - 10);
-    ctx.lineTo(centerX - radius + 20, centerY + 10);
+    ctx.moveTo(centerX + radius + 20, centerY);
+    ctx.lineTo(centerX + radius - 5, centerY - 15);
+    ctx.lineTo(centerX + radius - 5, centerY + 15);
     ctx.closePath();
-    ctx.fillStyle = "#EF4444";
+    ctx.fillStyle = "#3B82F6";
     ctx.fill();
+    ctx.strokeStyle = "#1E40AF";
+    ctx.lineWidth = 2;
+    ctx.stroke();
   };
 
   const spinWheel = () => {
