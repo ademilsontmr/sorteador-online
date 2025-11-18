@@ -38,9 +38,14 @@ export const CTASection = () => {
                   size="lg"
                   variant="outline"
                   onClick={() => window.location.href = '/blog'}
-                  className="border-white text-white hover:bg-white/10 text-lg px-8 py-6"
+                  className="relative overflow-hidden border-white/70 bg-white/10 text-white text-lg px-8 py-6 font-semibold group shadow-[0_10px_30px_rgba(255,255,255,0.25)] backdrop-blur"
                 >
+                  <span className="absolute inset-0 bg-white/10 opacity-60 transition-opacity duration-300 group-hover:opacity-100" />
+                  <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/30 blur-lg" />
+                  <span className="relative z-10 flex items-center">
                   Learn More
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </span>
                 </Button>
               </div>
             </div>

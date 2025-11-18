@@ -2,7 +2,7 @@ import { useParams, Link, Navigate } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
-import { getPostBySlug } from "@/data/blog-posts";
+import { getPostBySlug, blogPosts } from "@/data/blog-posts";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Calendar, Clock, ArrowLeft } from "lucide-react";
@@ -34,6 +34,17 @@ const BlogPost = () => {
       "url": "https://allwheel.click"
     }
   };
+
+  const relatedPosts = blogPosts
+    .filter((p) => p.slug !== post.slug && (p.category === post.category || p.tags.some((tag) => post.tags.includes(tag))))
+    .slice(0, 3);
+
+  const fallbackPosts =
+    relatedPosts.length < 3
+      ? blogPosts.filter((p) => p.slug !== post.slug && !relatedPosts.includes(p)).slice(0, 3 - relatedPosts.length)
+      : [];
+
+  const recommendedPosts = [...relatedPosts, ...fallbackPosts];
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
@@ -120,6 +131,23 @@ const BlogPost = () => {
               {post.content}
             </ReactMarkdown>
           </div>
+
+          {recommendedPosts.length > 0 && (
+            <section className="mt-12 pt-10 border-t">
+              <h2 className="text-2xl font-bold mb-4">Keep Reading</h2>
+              <p className="text-muted-foreground mb-6">More hand-picked guides to level up your random selection workflow.</p>
+              <div className="grid gap-6 md:grid-cols-3">
+                {recommendedPosts.map((related) => (
+                  <Link key={related.slug} to={`/blog/${related.slug}`} className="block rounded-2xl border border-border/70 p-5 shadow-sm hover:shadow-md transition-shadow h-full">
+                    <p className="text-sm uppercase tracking-wide text-primary mb-2">{related.category}</p>
+                    <h3 className="text-lg font-semibold mb-2 line-clamp-2">{related.title}</h3>
+                    <p className="text-sm text-muted-foreground line-clamp-3 mb-4">{related.description}</p>
+                    <span className="text-primary font-semibold">Read article →</span>
+                  </Link>
+                ))}
+              </div>
+            </section>
+          )}
 
           <div className="mt-12 pt-8 border-t">
             <Link to="/blog">

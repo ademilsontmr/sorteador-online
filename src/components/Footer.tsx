@@ -22,17 +22,17 @@ export const Footer = () => {
           <div>
             <h3 className="font-semibold mb-4">Tools</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link to="/" className="hover:text-foreground transition-smooth">Wheel Spinner</Link></li>
-              <li><Link to="/" className="hover:text-foreground transition-smooth">Number Draw</Link></li>
-              <li><Link to="/" className="hover:text-foreground transition-smooth">Name Picker</Link></li>
+              <li><Link to="/spin-wheel" className="hover:text-foreground transition-smooth">Wheel Spinner</Link></li>
+              <li><Link to="/number-generator" className="hover:text-foreground transition-smooth">Number Draw</Link></li>
+              <li><Link to="/name-picker" className="hover:text-foreground transition-smooth">Name Picker</Link></li>
             </ul>
           </div>
 
           <div>
             <h3 className="font-semibold mb-4">Legal</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link to="/" className="hover:text-foreground transition-smooth">Privacy Policy</Link></li>
-              <li><Link to="/" className="hover:text-foreground transition-smooth">Terms of Service</Link></li>
+              <li><Link to="/privacy" className="hover:text-foreground transition-smooth">Privacy Policy</Link></li>
+              <li><Link to="/terms" className="hover:text-foreground transition-smooth">Terms of Service</Link></li>
             </ul>
           </div>
         </div>

@@ -1,36 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Sparkles, Hash, Users, ArrowRight } from "lucide-react";
-
-const tools = [
-  {
-    id: "wheel",
-    icon: Sparkles,
-    title: "Spin the Wheel",
-    description: "Visual and engaging way to make random selections. Perfect for giveaways and fun decisions.",
-    features: ["Unlimited items", "Sound effects", "Confetti animation", "Remove winner option"],
-    color: "primary",
-    gradient: "gradient-primary"
-  },
-  {
-    id: "numbers",
-    icon: Hash,
-    title: "Number Generator",
-    description: "Generate random numbers within any range. Ideal for lottery draws and raffles.",
-    features: ["Custom range", "Multiple numbers", "No duplicates", "Instant results"],
-    color: "accent",
-    gradient: "gradient-accent"
-  },
-  {
-    id: "names",
-    icon: Users,
-    title: "Name Picker",
-    description: "Randomly select names from your list. Great for classroom activities and team selection.",
-    features: ["Pick multiple", "Fair selection", "Quick setup", "Clear results"],
-    color: "success",
-    gradient: "bg-success"
-  }
-];
+import { ArrowRight } from "lucide-react";
+import { tools } from "@/data/tools";
 
 export const ToolsSection = () => {
   const scrollToTool = (toolId: string) => {
@@ -57,7 +28,7 @@ export const ToolsSection = () => {
               className="p-6 shadow-card hover:shadow-glow transition-all duration-300 hover:-translate-y-1 animate-fade-in-up group"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className={`w-14 h-14 rounded-xl ${tool.gradient} flex items-center justify-center mb-4 shadow-glow`}>
+              <div className={`w-14 h-14 rounded-xl ${tool.iconBgClass} flex items-center justify-center mb-4 shadow-glow`}>
                 <tool.icon className="h-7 w-7 text-white" />
               </div>
               
@@ -67,7 +38,7 @@ export const ToolsSection = () => {
               <ul className="space-y-2 mb-6">
                 {tool.features.map((feature, i) => (
                   <li key={i} className="flex items-center gap-2 text-sm">
-                    <div className={`w-1.5 h-1.5 rounded-full bg-${tool.color}`} />
+                    <div className={`w-1.5 h-1.5 rounded-full ${tool.bulletClass}`} />
                     <span>{feature}</span>
                   </li>
                 ))}

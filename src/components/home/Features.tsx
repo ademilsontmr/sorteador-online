@@ -39,10 +39,10 @@ export const Features = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-5xl font-bold mb-4">
-            Why Choose AllWheel?
+            Key Features That Power Every Fair Random Draw
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            The most trusted random selection tool with advanced features
+            AllWheel combines cryptographic randomness, accessibility best practices, and zero-cost usage to keep every decision transparent.
           </p>
         </div>
 

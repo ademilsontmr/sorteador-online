@@ -2,14 +2,10 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { Hero } from "@/components/home/Hero";
-import { ToolsSection } from "@/components/home/ToolsSection";
 import { HowItWorks } from "@/components/home/HowItWorks";
 import { Features } from "@/components/home/Features";
 import { UseCases } from "@/components/home/UseCases";
 import { CTASection } from "@/components/home/CTASection";
-import { SpinWheel } from "@/components/SpinWheel";
-import { NumberDraw } from "@/components/NumberDraw";
-import { NameDraw } from "@/components/NameDraw";
 
 const Index = () => {
   const structuredData = {
@@ -50,24 +46,10 @@ const Index = () => {
         
         <main className="flex-1">
           <Hero />
-          <ToolsSection />
           <HowItWorks />
           <Features />
           <UseCases />
           
-          {/* Interactive Tools */}
-          <div id="tool-wheel">
-            <SpinWheel />
-          </div>
-          
-          <div id="tool-numbers">
-            <NumberDraw />
-          </div>
-          
-          <div id="tool-names">
-            <NameDraw />
-          </div>
-
           <CTASection />
         </main>
 

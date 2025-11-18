@@ -5,7 +5,8 @@ import { Card } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { Play, Volume2, VolumeX, Trash2 } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { Play, Volume2, VolumeX, Trash2, Sparkles } from "lucide-react";
 import { getWheelColor } from "@/lib/wheel-colors";
 import { soundManager } from "@/lib/sound";
 import { toast } from "sonner";
@@ -25,6 +26,7 @@ export const SpinWheel = () => {
   const [showWinnerDialog, setShowWinnerDialog] = useState(false);
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [removeWinner, setRemoveWinner] = useState(false);
+  const [history, setHistory] = useState<string[]>([]);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animationRef = useRef<number>();
 
@@ -55,6 +57,12 @@ export const SpinWheel = () => {
 
     setItems(wheelItems);
   };
+
+  const heroStats = [
+    { label: "Entries loaded", value: items.length },
+    { label: "Sound FX", value: soundEnabled ? "On" : "Muted" },
+    { label: "Remove winners", value: removeWinner ? "Enabled" : "Off" },
+  ];
 
   const drawWheel = () => {
     const canvas = canvasRef.current;
@@ -126,14 +134,16 @@ export const SpinWheel = () => {
     setIsSpinning(true);
     setWinner(null);
 
+    const entriesSnapshot = [...items];
     const randomSpin = 1800 + Math.random() * 1800; // 5-10 full rotations
-    const winnerIndex = Math.floor(Math.random() * items.length);
-    const sliceAngle = 360 / items.length;
-    const targetRotation = randomSpin + (360 - winnerIndex * sliceAngle);
+    const sliceAngle = 360 / entriesSnapshot.length;
+    const randomOffset = Math.random() * 360;
+    const targetRotation = randomSpin + randomOffset;
 
     const duration = 4000;
     const startTime = Date.now();
     const startRotation = rotation;
+    const finalRotationValue = startRotation + targetRotation;
 
     const animate = () => {
       const now = Date.now();
@@ -155,22 +165,23 @@ export const SpinWheel = () => {
         animationRef.current = requestAnimationFrame(animate);
       } else {
         setIsSpinning(false);
-        const winnerItem = items[winnerIndex];
+        const normalizedRotation = ((finalRotationValue % 360) + 360) % 360;
+        const winningIndex =
+          Math.floor(((360 - normalizedRotation) % 360) / sliceAngle) % entriesSnapshot.length;
+        const winnerItem = entriesSnapshot[winningIndex];
         setWinner(winnerItem.text);
+        setHistory((prev) => [winnerItem.text, ...prev].slice(0, 10));
         soundManager.playWin();
         soundManager.playApplause();
-        
-        // Confetti!
+
         confetti({
           particleCount: 100,
           spread: 70,
           origin: { y: 0.6 },
         });
 
-        // Show winner dialog
         setShowWinnerDialog(true);
 
-        // Remove winner if enabled
         if (removeWinner) {
           const newText = inputText
             .split("\n")
@@ -186,16 +197,30 @@ export const SpinWheel = () => {
   };
 
   return (
-    <section className="py-12 md:py-20">
+    <section className="pt-16 pb-24 md:pt-24 md:pb-32">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12 animate-fade-in-up">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">
+        <div className="text-center mb-12 space-y-4">
+          <Badge className="px-4 py-1.5" variant="secondary">
+            <Sparkles className="h-4 w-4 mr-1 inline" />
+            Fair & visual random selection
+          </Badge>
+          <h1 className="text-4xl md:text-5xl font-bold">
             Spin the Wheel
           </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Enter your items and let fortune decide! Perfect for giveaways, 
-            classroom activities, and random selections.
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            Enter items, spin, and show verifiable winners for giveaways, classrooms, team rituals, and streams.
           </p>
+          <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
+            {heroStats.map((stat) => (
+              <div
+                key={stat.label}
+                className="rounded-full border border-border/70 px-4 py-2 bg-background/80"
+              >
+                <span className="font-semibold text-foreground mr-2">{stat.value}</span>
+                <span className="uppercase tracking-widest text-xs">{stat.label}</span>
+              </div>
+            ))}
+          </div>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
@@ -289,6 +314,40 @@ export const SpinWheel = () => {
             </div>
           </Card>
         </div>
+
+        <Card className="max-w-4xl mx-auto mt-10 p-6 shadow-card">
+          <div className="flex items-center justify-between mb-3">
+            <div>
+              <h2 className="text-lg font-semibold">History (last 10)</h2>
+              <p className="text-xs text-muted-foreground">Stored locally in this browser</p>
+            </div>
+            <Button
+              variant="ghost"
+              className="text-xs"
+              onClick={() => setHistory([])}
+              disabled={history.length === 0}
+            >
+              Clear
+            </Button>
+          </div>
+          {history.length === 0 ? (
+            <div className="text-sm text-muted-foreground text-center py-6">
+              Spin the wheel to log your winners.
+            </div>
+          ) : (
+            <ul className="space-y-2 text-sm text-muted-foreground max-h-56 overflow-auto pr-2">
+              {history.map((entry, index) => (
+                <li
+                  key={`${entry}-${index}`}
+                  className="flex items-center justify-between border border-border/60 rounded-2xl px-4 py-2 bg-background/70"
+                >
+                  <span className="font-semibold text-foreground">Spin #{history.length - index}</span>
+                  <span className="text-foreground">{entry}</span>
+                </li>
+              ))}
+            </ul>
+          )}
+        </Card>
 
         {/* Winner Dialog */}
         <Dialog open={showWinnerDialog} onOpenChange={setShowWinnerDialog}>
