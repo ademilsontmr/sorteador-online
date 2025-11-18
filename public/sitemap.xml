@@ -1,240 +1,201 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
-  <!-- Homepage -->
-  <url>
-    <loc>https://allwheel.click/</loc>
-    <lastmod>2025-11-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  
-  <!-- Tools Pages -->
-  <url>
-    <loc>https://allwheel.click/spin-wheel</loc>
-    <lastmod>2025-11-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <url>
-    <loc>https://allwheel.click/number-generator</loc>
-    <lastmod>2025-11-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <url>
-    <loc>https://allwheel.click/name-picker</loc>
-    <lastmod>2025-11-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <!-- Blog Pages -->
-  <url>
-    <loc>https://allwheel.click/blog</loc>
-    <lastmod>2025-11-18</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://allwheel.click/blog/page/1</loc>
-    <lastmod>2025-11-18</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://allwheel.click/blog/page/2</loc>
-    <lastmod>2025-11-18</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://allwheel.click/blog/page/3</loc>
-    <lastmod>2025-11-18</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <!-- Legal Pages -->
-  <url>
-    <loc>https://allwheel.click/privacy</loc>
-    <lastmod>2025-11-18</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  
-  <url>
-    <loc>https://allwheel.click/terms</loc>
-    <lastmod>2025-11-18</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  
-  <!-- Blog Articles -->
-  <url>
-    <loc>https://allwheel.click/blog/enterprise-randomizer-governance-2026</loc>
-    <lastmod>2025-11-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://allwheel.click/blog/live-event-wheel-engagement-guide-2026</loc>
-    <lastmod>2025-11-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://allwheel.click/blog/ai-assisted-wheel-prompts-2026</loc>
-    <lastmod>2025-11-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://allwheel.click/blog/secure-classroom-number-draw-checklist-2026</loc>
-    <lastmod>2025-11-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://allwheel.click/blog/cryptographically-secure-random-number-generator-2026</loc>
-    <lastmod>2025-11-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://allwheel.click/blog/random-number-generator-practical-use-cases-2026</loc>
-    <lastmod>2025-11-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://allwheel.click/blog/random-number-generator-comparison-best-practices-2026</loc>
-    <lastmod>2025-11-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://allwheel.click/blog/multilingual-name-picker-strategy-2026</loc>
-    <lastmod>2025-11-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://allwheel.click/blog/how-to-use-spin-the-wheel-for-decision-making</loc>
-    <lastmod>2025-11-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://allwheel.click/blog/random-decision-trends-2026</loc>
-    <lastmod>2025-11-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://allwheel.click/blog/hybrid-team-randomizer-playbook-2026</loc>
-    <lastmod>2025-11-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://allwheel.click/blog/giveaway-compliance-checklist-2026</loc>
-    <lastmod>2025-11-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://allwheel.click/blog/classroom-randomizer-roadmap-2026</loc>
-    <lastmod>2025-11-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://allwheel.click/blog/interactive-stream-monetization-2026</loc>
-    <lastmod>2025-11-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://allwheel.click/blog/10-creative-ways-to-use-random-wheel-spinner</loc>
-    <lastmod>2025-11-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://allwheel.click/blog/wheel-of-names-vs-spin-the-wheel-comparison</loc>
-    <lastmod>2025-11-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://allwheel.click/blog/random-number-generator-guide</loc>
-    <lastmod>2025-11-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://allwheel.click/blog/wheel-of-names-vs-allwheel-random-fairness</loc>
-    <lastmod>2025-11-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://allwheel.click/blog/creative-wheel-spinner-use-cases-2025</loc>
-    <lastmod>2025-11-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://allwheel.click/blog/obs-random-wheel-streaming-guide</loc>
-    <lastmod>2025-11-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://allwheel.click/blog/spin-wheel-for-classroom-teachers</loc>
-    <lastmod>2025-11-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://allwheel.click/blog/host-online-giveaways-with-wheel-spinner</loc>
-    <lastmod>2025-11-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://allwheel.click/blog/psychology-of-random-selection</loc>
-    <lastmod>2025-11-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
+<url>
+<loc>https://allwheel.click/</loc>
+<lastmod>2025-11-18</lastmod>
+<changefreq>weekly</changefreq>
+<priority>1.0</priority>
+</url>
+<url>
+<loc>https://allwheel.click/spin-wheel</loc>
+<lastmod>2025-11-18</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.9</priority>
+</url>
+<url>
+<loc>https://allwheel.click/number-generator</loc>
+<lastmod>2025-11-18</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.9</priority>
+</url>
+<url>
+<loc>https://allwheel.click/name-picker</loc>
+<lastmod>2025-11-18</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.9</priority>
+</url>
+<url>
+<loc>https://allwheel.click/blog</loc>
+<lastmod>2025-11-18</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://allwheel.click/blog/page/1</loc>
+<lastmod>2025-11-18</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://allwheel.click/blog/page/2</loc>
+<lastmod>2025-11-18</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://allwheel.click/blog/page/3</loc>
+<lastmod>2025-11-18</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://allwheel.click/privacy</loc>
+<lastmod>2025-11-18</lastmod>
+<changefreq>yearly</changefreq>
+<priority>0.3</priority>
+</url>
+<url>
+<loc>https://allwheel.click/terms</loc>
+<lastmod>2025-11-18</lastmod>
+<changefreq>yearly</changefreq>
+<priority>0.3</priority>
+</url>
+<url>
+<loc>https://allwheel.click/blog/enterprise-randomizer-governance-2026</loc>
+<lastmod>2025-11-18</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://allwheel.click/blog/live-event-wheel-engagement-guide-2026</loc>
+<lastmod>2025-11-18</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://allwheel.click/blog/ai-assisted-wheel-prompts-2026</loc>
+<lastmod>2025-11-18</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://allwheel.click/blog/secure-classroom-number-draw-checklist-2026</loc>
+<lastmod>2025-11-18</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://allwheel.click/blog/cryptographically-secure-random-number-generator-2026</loc>
+<lastmod>2025-11-18</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://allwheel.click/blog/random-number-generator-practical-use-cases-2026</loc>
+<lastmod>2025-11-18</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://allwheel.click/blog/random-number-generator-comparison-best-practices-2026</loc>
+<lastmod>2025-11-18</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://allwheel.click/blog/multilingual-name-picker-strategy-2026</loc>
+<lastmod>2025-11-18</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://allwheel.click/blog/how-to-use-spin-the-wheel-for-decision-making</loc>
+<lastmod>2025-11-18</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://allwheel.click/blog/random-decision-trends-2026</loc>
+<lastmod>2025-11-18</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://allwheel.click/blog/hybrid-team-randomizer-playbook-2026</loc>
+<lastmod>2025-11-18</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://allwheel.click/blog/giveaway-compliance-checklist-2026</loc>
+<lastmod>2025-11-18</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://allwheel.click/blog/classroom-randomizer-roadmap-2026</loc>
+<lastmod>2025-11-18</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://allwheel.click/blog/interactive-stream-monetization-2026</loc>
+<lastmod>2025-11-18</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://allwheel.click/blog/10-creative-ways-to-use-random-wheel-spinner</loc>
+<lastmod>2025-11-18</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://allwheel.click/blog/wheel-of-names-vs-spin-the-wheel-comparison</loc>
+<lastmod>2025-11-18</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://allwheel.click/blog/random-number-generator-guide</loc>
+<lastmod>2025-11-18</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://allwheel.click/blog/wheel-of-names-vs-allwheel-random-fairness</loc>
+<lastmod>2025-11-18</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://allwheel.click/blog/creative-wheel-spinner-use-cases-2025</loc>
+<lastmod>2025-11-18</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://allwheel.click/blog/obs-random-wheel-streaming-guide</loc>
+<lastmod>2025-11-18</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://allwheel.click/blog/spin-wheel-for-classroom-teachers</loc>
+<lastmod>2025-11-18</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://allwheel.click/blog/host-online-giveaways-with-wheel-spinner</loc>
+<lastmod>2025-11-18</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://allwheel.click/blog/psychology-of-random-selection</loc>
+<lastmod>2025-11-18</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
 </urlset>
