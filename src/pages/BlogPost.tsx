@@ -2,6 +2,7 @@ import { useParams, Link, Navigate } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
+import { AdSense } from "@/components/AdSense";
 import { getPostBySlug, blogPosts } from "@/data/blog-posts";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -140,6 +141,16 @@ const BlogPost = () => {
             >
               {post.content}
             </ReactMarkdown>
+          </div>
+
+          {/* AdSense - After article content */}
+          <div className="my-8 flex justify-center">
+            <AdSense
+              adSlot="YOUR_AD_SLOT_ID"
+              adFormat="auto"
+              fullWidthResponsive={true}
+              className="min-h-[250px]"
+            />
           </div>
 
           {recommendedPosts.length > 0 && (
