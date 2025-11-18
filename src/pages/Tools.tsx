@@ -218,11 +218,11 @@ const Tools = () => {
                     className="border border-border/70 rounded-2xl px-4"
                   >
                     <AccordionTrigger className="text-left hover:no-underline py-4">
-                      <div className="flex items-start gap-3 w-full pr-4">
-                        <span className="inline-flex items-center px-2 py-0.5 rounded text-xs uppercase tracking-wide text-primary bg-primary/10 font-semibold flex-shrink-0 mt-0.5">
+                      <div className="flex items-start gap-4 w-full pr-4">
+                        <span className="inline-flex items-center px-2.5 py-1 rounded-md text-xs uppercase tracking-wide text-primary bg-primary/10 font-semibold flex-shrink-0 mt-0.5 whitespace-nowrap">
                           {faq.category}
                         </span>
-                        <span className="text-base font-semibold text-foreground flex-1 text-left">
+                        <span className="text-base font-semibold text-foreground flex-1 text-left leading-tight">
                           {faq.question}
                         </span>
                       </div>
