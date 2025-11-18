@@ -1,12 +1,14 @@
-import { ChangeEvent, useMemo, useState } from "react";
+import { ChangeEvent, useMemo, useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import { Badge } from "@/components/ui/badge";
-import { Dices } from "lucide-react";
+import { Dices, Volume2, VolumeX } from "lucide-react";
 import { toast } from "sonner";
+import { soundManager } from "@/lib/sound";
+import confetti from "canvas-confetti";
 
 export const NumberDraw = () => {
   const [minInput, setMinInput] = useState("1");
@@ -16,10 +18,15 @@ export const NumberDraw = () => {
   const [results, setResults] = useState<number[]>([]);
   const [history, setHistory] = useState<{ numbers: number[]; timestamp: string }[]>([]);
   const [isDrawing, setIsDrawing] = useState(false);
+  const [soundEnabled, setSoundEnabled] = useState(true);
 
   const min = minInput === "" ? 1 : Number(minInput);
   const max = maxInput === "" ? 100 : Number(maxInput);
   const quantity = quantityInput === "" ? 1 : Number(quantityInput);
+
+  useEffect(() => {
+    soundManager.setEnabled(soundEnabled);
+  }, [soundEnabled]);
 
   const drawNumbers = () => {
     if (min >= max) {
@@ -54,6 +61,18 @@ export const NumberDraw = () => {
         ...prev,
       ].slice(0, 10));
       setIsDrawing(false);
+      
+      // Play sound effects
+      soundManager.playWin();
+      soundManager.playApplause();
+      
+      // Launch confetti
+      confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 },
+      });
+      
       toast.success(`Drew ${drawn.length} number${drawn.length > 1 ? "s" : ""}!`);
     }, 700);
   };
@@ -146,6 +165,26 @@ export const NumberDraw = () => {
               <Switch
                 checked={allowRepetition}
                 onCheckedChange={setAllowRepetition}
+              />
+            </div>
+
+            <div className="flex items-center justify-between rounded-2xl bg-muted px-4 py-3">
+              <div className="flex items-center gap-2">
+                {soundEnabled ? (
+                  <Volume2 className="h-4 w-4 text-primary" />
+                ) : (
+                  <VolumeX className="h-4 w-4 text-muted-foreground" />
+                )}
+                <div>
+                  <p className="font-semibold text-sm">Sound effects</p>
+                  <p className="text-xs text-muted-foreground">
+                    Play sounds when numbers are drawn.
+                  </p>
+                </div>
+              </div>
+              <Switch
+                checked={soundEnabled}
+                onCheckedChange={setSoundEnabled}
               />
             </div>
 

@@ -1,12 +1,15 @@
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
-import { Users, Shuffle } from "lucide-react";
+import { Switch } from "@/components/ui/switch";
+import { Users, Shuffle, Volume2, VolumeX } from "lucide-react";
 import { toast } from "sonner";
 import { Badge } from "@/components/ui/badge";
+import { soundManager } from "@/lib/sound";
+import confetti from "canvas-confetti";
 
 export const NameDraw = () => {
   const [inputText, setInputText] = useState("Alice\nBob\nCharlie\nDiana\nEthan\nFiona");
@@ -15,6 +18,7 @@ export const NameDraw = () => {
   const [isDrawing, setIsDrawing] = useState(false);
   const [history, setHistory] = useState<string[][]>([]);
   const [expandedHistoryIndex, setExpandedHistoryIndex] = useState<number | null>(null);
+  const [soundEnabled, setSoundEnabled] = useState(true);
   const uniqueNames = useMemo(
     () =>
       Array.from(
@@ -27,6 +31,10 @@ export const NameDraw = () => {
       ),
     [inputText],
   );
+
+  useEffect(() => {
+    soundManager.setEnabled(soundEnabled);
+  }, [soundEnabled]);
 
   const drawNames = () => {
     const lines = inputText
@@ -62,6 +70,18 @@ export const NameDraw = () => {
       setResults(drawn);
       setHistory((prev) => [drawn, ...prev].slice(0, 10));
       setIsDrawing(false);
+      
+      // Play sound effects
+      soundManager.playWin();
+      soundManager.playApplause();
+      
+      // Launch confetti
+      confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 },
+      });
+      
       toast.success(`Selected ${drawn.length} name${drawn.length > 1 ? "s" : ""}!`);
     }, 1000);
   };
@@ -113,6 +133,26 @@ export const NameDraw = () => {
                 value={quantity}
                 onChange={(e) => setQuantity(parseInt(e.target.value) || 1)}
                 className="mt-1"
+              />
+            </div>
+
+            <div className="flex items-center justify-between rounded-2xl bg-muted px-4 py-3">
+              <div className="flex items-center gap-2">
+                {soundEnabled ? (
+                  <Volume2 className="h-4 w-4 text-primary" />
+                ) : (
+                  <VolumeX className="h-4 w-4 text-muted-foreground" />
+                )}
+                <div>
+                  <p className="font-semibold text-sm">Sound effects</p>
+                  <p className="text-xs text-muted-foreground">
+                    Play sounds when names are selected.
+                  </p>
+                </div>
+              </div>
+              <Switch
+                checked={soundEnabled}
+                onCheckedChange={setSoundEnabled}
               />
             </div>
 
