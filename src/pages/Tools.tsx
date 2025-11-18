@@ -217,16 +217,18 @@ const Tools = () => {
                     value={`faq-${index}`}
                     className="border border-border/70 rounded-2xl px-4"
                   >
-                    <AccordionTrigger className="text-left">
-                      <div className="flex flex-col items-start">
-                        <span className="text-xs uppercase tracking-wide text-primary mb-1">
+                    <AccordionTrigger className="text-left hover:no-underline py-4">
+                      <div className="flex items-start gap-3 w-full pr-4">
+                        <span className="inline-flex items-center px-2 py-0.5 rounded text-xs uppercase tracking-wide text-primary bg-primary/10 font-semibold flex-shrink-0 mt-0.5">
                           {faq.category}
                         </span>
-                        <h3 className="text-lg font-semibold">{faq.question}</h3>
+                        <span className="text-base font-semibold text-foreground flex-1 text-left">
+                          {faq.question}
+                        </span>
                       </div>
                     </AccordionTrigger>
                     <AccordionContent className="pb-4 text-sm text-muted-foreground leading-relaxed">
-                      {faq.answer}
+                      <p>{faq.answer}</p>
                     </AccordionContent>
                   </AccordionItem>
                 ))}
