@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Sparkles, Menu, X } from "lucide-react";
 
 const navLinks = [
-  { label: "Tools", href: "/" },
+  { label: "Tools", href: "/tools" },
   { label: "Blog", href: "/blog" },
 ];
 
