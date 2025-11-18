@@ -7,6 +7,7 @@ import { HelmetProvider } from "react-helmet-async";
 import Index from "./pages/Index";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
+import Tools from "./pages/Tools";
 import SpinWheelPage from "./pages/SpinWheelPage";
 import NumberGeneratorPage from "./pages/NumberGeneratorPage";
 import NamePickerPage from "./pages/NamePickerPage";
@@ -25,6 +26,7 @@ const App = () => (
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/tools" element={<Tools />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/page/:page" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
