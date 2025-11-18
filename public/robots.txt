@@ -34,4 +34,3 @@ Allow: /
 
 # Sitemap location
 Sitemap: https://allwheel.click/sitemap.xml
-Sitemap: https://allwheel.click/sitemap-new.xml
