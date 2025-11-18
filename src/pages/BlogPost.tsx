@@ -115,6 +115,16 @@ const BlogPost = () => {
                     {children}
                   </a>
                 ),
+                img: ({ src, alt, ...props }) => (
+                  <img
+                    src={src}
+                    alt={alt || ""}
+                    loading="lazy"
+                    decoding="async"
+                    className="rounded-lg my-4 w-full h-auto"
+                    {...props}
+                  />
+                ),
                 strong: ({ children }) => <strong className="font-bold text-foreground">{children}</strong>,
                 code: ({ children }) => (
                   <code className="bg-muted px-1.5 py-0.5 rounded text-sm font-mono">
