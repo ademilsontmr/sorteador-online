@@ -212,7 +212,7 @@ const BlogPost = () => {
             <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
               <div className="space-y-3">
                 <p className="text-xs uppercase tracking-[0.3em] text-primary/80">{cta.eyebrow}</p>
-                <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">{cta.title}</h2>
+                <p className="text-2xl md:text-3xl font-semibold tracking-tight">{cta.title}</p>
                 <p className="text-muted-foreground">{cta.description}</p>
               </div>
               <Button size="lg" className="w-full md:w-auto font-semibold" asChild>
