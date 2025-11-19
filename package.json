@@ -8,6 +8,7 @@
     "build": "vite build",
     "postbuild": "node scripts/compress-assets.mjs",
     "build:dev": "vite build --mode development",
+    "generate:sitemap": "node scripts/generate-sitemap.mjs",
     "lint": "eslint .",
     "preview": "vite preview"
   },
