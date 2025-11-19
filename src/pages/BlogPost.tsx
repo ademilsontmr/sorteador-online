@@ -93,6 +93,7 @@ const BlogPost = () => {
 
   const recommendedPosts = [...relatedPosts, ...fallbackPosts];
   const cta = getCtaForPost(post);
+  let paragraphCount = 0;
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
@@ -154,7 +155,24 @@ const BlogPost = () => {
                 h1: ({ children }) => <h1 className="text-3xl font-bold mt-8 mb-4">{children}</h1>,
                 h2: ({ children }) => <h2 className="text-2xl font-bold mt-6 mb-3">{children}</h2>,
                 h3: ({ children }) => <h3 className="text-xl font-bold mt-4 mb-2">{children}</h3>,
-                p: ({ children }) => <p className="mb-4 leading-relaxed">{children}</p>,
+                p: ({ children }) => {
+                  paragraphCount += 1;
+                  return (
+                    <>
+                      <p className="mb-4 leading-relaxed">{children}</p>
+                      {paragraphCount === 1 && (
+                        <div className="mb-6 rounded-2xl border border-border/60 bg-muted/30 px-4 py-3 text-sm text-muted-foreground">
+                          <span className="font-semibold text-foreground">{cta.eyebrow}:</span>{" "}
+                          {cta.description}{" "}
+                          <Link to={cta.href} className="font-semibold text-primary underline-offset-4 hover:underline">
+                            {cta.ctaLabel}
+                          </Link>
+                          .
+                        </div>
+                      )}
+                    </>
+                  );
+                },
                 ul: ({ children }) => <ul className="list-disc pl-6 mb-4 space-y-2">{children}</ul>,
                 ol: ({ children }) => <ol className="list-decimal pl-6 mb-4 space-y-2">{children}</ol>,
                 li: ({ children }) => <li className="leading-relaxed">{children}</li>,
