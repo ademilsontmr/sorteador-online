@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url>
-<loc>https://allwheel.click/</loc>
+  <url>
+    <loc>https://allwheel.click/</loc>
 <lastmod>2025-11-18</lastmod>
-<changefreq>weekly</changefreq>
-<priority>1.0</priority>
-</url>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
 <url>
 <loc>https://allwheel.click/spin-wheel</loc>
 <lastmod>2025-11-18</lastmod>
@@ -24,8 +24,8 @@
 <changefreq>monthly</changefreq>
 <priority>0.9</priority>
 </url>
-<url>
-<loc>https://allwheel.click/blog</loc>
+  <url>
+    <loc>https://allwheel.click/blog</loc>
 <lastmod>2025-11-18</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.8</priority>
@@ -34,8 +34,8 @@
 <loc>https://allwheel.click/blog/page/1</loc>
 <lastmod>2025-11-18</lastmod>
 <changefreq>daily</changefreq>
-<priority>0.8</priority>
-</url>
+    <priority>0.8</priority>
+  </url>
 <url>
 <loc>https://allwheel.click/blog/page/2</loc>
 <lastmod>2025-11-18</lastmod>
@@ -126,8 +126,8 @@
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
 </url>
-<url>
-<loc>https://allwheel.click/blog/how-to-use-spin-the-wheel-for-decision-making</loc>
+  <url>
+    <loc>https://allwheel.click/blog/how-to-use-spin-the-wheel-for-decision-making</loc>
 <lastmod>2025-11-18</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
@@ -159,23 +159,23 @@
 <url>
 <loc>https://allwheel.click/blog/interactive-stream-monetization-2026</loc>
 <lastmod>2025-11-18</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.7</priority>
-</url>
-<url>
-<loc>https://allwheel.click/blog/10-creative-ways-to-use-random-wheel-spinner</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://allwheel.click/blog/10-creative-ways-to-use-random-wheel-spinner</loc>
 <lastmod>2025-11-18</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.7</priority>
-</url>
-<url>
-<loc>https://allwheel.click/blog/wheel-of-names-vs-spin-the-wheel-comparison</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://allwheel.click/blog/wheel-of-names-vs-spin-the-wheel-comparison</loc>
 <lastmod>2025-11-18</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.7</priority>
-</url>
-<url>
-<loc>https://allwheel.click/blog/random-number-generator-guide</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://allwheel.click/blog/random-number-generator-guide</loc>
 <lastmod>2025-11-18</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
@@ -195,23 +195,23 @@
 <url>
 <loc>https://allwheel.click/blog/obs-random-wheel-streaming-guide</loc>
 <lastmod>2025-11-18</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.7</priority>
-</url>
-<url>
-<loc>https://allwheel.click/blog/spin-wheel-for-classroom-teachers</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://allwheel.click/blog/spin-wheel-for-classroom-teachers</loc>
 <lastmod>2025-11-18</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.7</priority>
-</url>
-<url>
-<loc>https://allwheel.click/blog/host-online-giveaways-with-wheel-spinner</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://allwheel.click/blog/host-online-giveaways-with-wheel-spinner</loc>
 <lastmod>2025-11-18</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.7</priority>
-</url>
-<url>
-<loc>https://allwheel.click/blog/psychology-of-random-selection</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://allwheel.click/blog/psychology-of-random-selection</loc>
 <lastmod>2025-11-18</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
@@ -524,6 +524,30 @@
 </url>
 <url>
 <loc>https://allwheel.click/blog/spin-the-wheel-costume-free-online-tool-2026</loc>
+<lastmod>2025-11-18</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://allwheel.click/blog/spin-the-wheel-color-free-online-tool-2026</loc>
+<lastmod>2025-11-18</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://allwheel.click/blog/spin-the-wheel-color-picker-free-online-tool-2026</loc>
+<lastmod>2025-11-18</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://allwheel.click/blog/spin-the-wheel-which-color-free-online-tool-2026</loc>
+<lastmod>2025-11-18</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://allwheel.click/blog/spin-the-wheel-is-free-online-tool-2026</loc>
 <lastmod>2025-11-18</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
