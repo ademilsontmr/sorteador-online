@@ -30,11 +30,11 @@ export const NumberDraw = () => {
 
   const drawNumbers = () => {
     if (min >= max) {
-      toast.error("Minimum must be less than maximum!");
+      toast.error("O mínimo precisa ser menor que o máximo!");
       return;
     }
     if (!allowRepetition && quantity > max - min + 1) {
-      toast.error("Quantity exceeds available unique numbers!");
+      toast.error("A quantidade excede os números únicos disponíveis!");
       return;
     }
 
@@ -73,14 +73,14 @@ export const NumberDraw = () => {
         origin: { y: 0.6 },
       });
       
-      toast.success(`Drew ${drawn.length} number${drawn.length > 1 ? "s" : ""}!`);
+      toast.success(`Sorteado${drawn.length > 1 ? "s" : ""} ${drawn.length} número${drawn.length > 1 ? "s" : ""}!`);
     }, 700);
   };
 
   const heroStats = useMemo(
     () => [
-      { label: "Quantity", value: quantity },
-      { label: "Duplicates", value: allowRepetition ? "Allowed" : "Unique" },
+      { label: "Quantidade", value: quantity },
+      { label: "Duplicados", value: allowRepetition ? "Permitidos" : "Únicos" },
     ],
     [quantity, allowRepetition],
   );
@@ -98,13 +98,13 @@ export const NumberDraw = () => {
         <div className="max-w-4xl mx-auto text-center mb-12 space-y-4">
           <Badge variant="secondary" className="px-3 py-1 text-primary">
             <Dices className="h-4 w-4 mr-1 inline" />
-            Cryptographically secure random numbers
+            Números aleatórios com criptografia
           </Badge>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
-            Random Number Generator
+            Gerador Aleatório de Números
           </h1>
           <p className="text-lg text-muted-foreground">
-            Generate verifiable numbers for raffles, lottery simulators, queue ordering, or classroom exercises.
+            Gere números verificáveis para rifas, simuladores de loteria, ordem de filas ou exercícios em sala.
           </p>
           <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
             {heroStats.map((stat) => (
@@ -122,7 +122,7 @@ export const NumberDraw = () => {
         <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-8 mb-16 max-w-5xl mx-auto">
           <Card className="p-6 shadow-card space-y-6">
             <div>
-              <Label className="text-sm font-semibold">Minimum value</Label>
+              <Label className="text-sm font-semibold">Valor mínimo</Label>
               <Input
                 type="text"
                 inputMode="numeric"
@@ -133,19 +133,19 @@ export const NumberDraw = () => {
             </div>
 
             <div>
-              <Label className="text-sm font-semibold">Maximum value</Label>
+              <Label className="text-sm font-semibold">Valor máximo</Label>
               <Input
                 type="text"
                 inputMode="numeric"
                 value={maxInput}
                 onChange={handleNumericChange(setMaxInput)}
-                placeholder="e.g. 99999"
+                placeholder="ex.: 99999"
                 className="mt-2"
               />
             </div>
 
             <div>
-              <Label className="text-sm font-semibold">How many numbers?</Label>
+              <Label className="text-sm font-semibold">Quantos números?</Label>
               <Input
                 type="text"
                 inputMode="numeric"
@@ -157,9 +157,9 @@ export const NumberDraw = () => {
 
             <div className="flex items-center justify-between rounded-2xl bg-muted px-4 py-3">
               <div>
-                <p className="font-semibold text-sm">Allow duplicates</p>
+                <p className="font-semibold text-sm">Permitir repetição</p>
                 <p className="text-xs text-muted-foreground">
-                  Enable if you need numbers to repeat between draws.
+                  Ative se precisar que os números se repitam nos sorteios.
                 </p>
               </div>
               <Switch
@@ -176,9 +176,9 @@ export const NumberDraw = () => {
                   <VolumeX className="h-4 w-4 text-muted-foreground" />
                 )}
                 <div>
-                  <p className="font-semibold text-sm">Sound effects</p>
+                  <p className="font-semibold text-sm">Efeitos sonoros</p>
                   <p className="text-xs text-muted-foreground">
-                    Play sounds when numbers are drawn.
+                    Toque sons quando os números forem sorteados.
                   </p>
                 </div>
               </div>
@@ -195,15 +195,15 @@ export const NumberDraw = () => {
               disabled={isDrawing}
             >
               <Dices className="h-5 w-5 mr-2" />
-              {isDrawing ? "Drawing..." : "Draw Numbers"}
+              {isDrawing ? "Sorteando..." : "Sortear números"}
             </Button>
           </Card>
 
           <Card className="p-6 shadow-card h-full">
-            <h2 className="text-xl font-semibold mb-4">Results</h2>
+            <h2 className="text-xl font-semibold mb-4">Resultados</h2>
             {results.length === 0 ? (
               <p className="text-muted-foreground text-sm">
-                Configure your range and quantity, then tap “Draw Numbers”.
+                Configure intervalo e quantidade e toque em “Sortear números”.
               </p>
             ) : (
               <div className="flex flex-wrap gap-3">
@@ -224,8 +224,8 @@ export const NumberDraw = () => {
         <Card className="p-6 shadow-card max-w-5xl mx-auto">
             <div className="flex items-center justify-between mb-3">
               <div>
-                <h2 className="text-lg font-semibold">History (last 10)</h2>
-                <p className="text-xs text-muted-foreground">Stored locally on this device</p>
+                <h2 className="text-lg font-semibold">Histórico (últimos 10)</h2>
+                <p className="text-xs text-muted-foreground">Armazenado localmente neste dispositivo</p>
               </div>
                 <Button
                   variant="ghost"
@@ -233,12 +233,12 @@ export const NumberDraw = () => {
                   onClick={() => setHistory([])}
                   disabled={history.length === 0}
                 >
-                  Clear
+                  Limpar
                 </Button>
             </div>
             {history.length === 0 ? (
               <div className="text-sm text-muted-foreground text-center py-8">
-                Run your first draw to start the log.
+                Faça o primeiro sorteio para iniciar o registro.
               </div>
             ) : (
               <div className="space-y-2 text-sm text-muted-foreground max-h-56 overflow-auto pr-2">
@@ -254,7 +254,7 @@ export const NumberDraw = () => {
                       className="border border-border/60 rounded-2xl bg-background/70 px-4 py-3"
                     >
                       <div className="flex items-center justify-between text-xs uppercase tracking-widest text-muted-foreground mb-1">
-                        <span className="text-foreground text-sm font-semibold">Draw #{drawNumber}</span>
+                        <span className="text-foreground text-sm font-semibold">Sorteio nº {drawNumber}</span>
                         <span>{timestampLabel}</span>
                       </div>
                       <p className="text-foreground">

@@ -11,28 +11,29 @@ import {
 import { blogPosts } from "@/data/blog-posts";
 import { Link } from "react-router-dom";
 import { Card } from "@/components/ui/card";
+import { getCategoryLabel } from "@/lib/category-translations";
 
 const SpinWheelPage = () => {
   const faqs = [
     {
-      question: "Can I remove winners automatically?",
+      question: "Posso remover vencedores automaticamente?",
       answer:
-        "Yes. Use the \"Remove winner after spin\" toggle inside the wheel controls to ensure each name is drawn only once.",
+        "Sim. Ative o interruptor “Remover vencedor após girar” nos controles para garantir que cada nome saia apenas uma vez.",
     },
     {
-      question: "What randomness engine does the wheel use?",
+      question: "Que motor de aleatoriedade a roleta usa?",
       answer:
-        "The wheel animation is backed by Web Crypto randomness. Each spin is seeded from crypto.getRandomValues for verifiable fairness.",
+        "A animação usa a aleatoriedade da Web Crypto. Cada giro recebe uma semente gerada por crypto.getRandomValues para garantir justiça verificável.",
     },
     {
-      question: "How do I share a wheel with my class or team?",
+      question: "Como compartilhar a roleta com a turma ou equipe?",
       answer:
-        "Create the wheel, save the configuration, and share the generated URL. Everyone with the link can spin with the same entries.",
+        "Crie a roleta, salve a configuração e compartilhe o link gerado. Quem receber poderá girar com os mesmos itens.",
     },
     {
-      question: "Can I add sounds or confetti?",
+      question: "Posso adicionar sons ou confete?",
       answer:
-        "Absolutely. Enable sound effects and confetti in the controls panel. They run locally so streams and classrooms stay in sync.",
+        "Sim! Ative os efeitos sonoros e confetes no painel de controles. Tudo roda localmente para manter transmissões e aulas sincronizadas.",
     },
   ];
 
@@ -49,9 +50,9 @@ const SpinWheelPage = () => {
   return (
     <>
       <SEO
-        title="Spin the Wheel - Free Online Random Wheel Spinner | AllWheel"
-        description="Create fair random selections with our free spin the wheel tool. Unlimited items, remove winner option, confetti animation, and instant results."
-        canonical="https://allwheel.click/spin-wheel"
+        title="Roleta Aleatória Personalizada Online | Gire a Roleta Grátis"
+        description="Crie sua Roleta Personalizada e gire agora! Ferramenta 100% grátis para sorteios, jogos e decisões. Adicione nomes, cores e gire a roleta online."
+        canonical="https://sorteador.click/roleta"
       />
       <div className="min-h-screen flex flex-col">
         <Header />
@@ -62,9 +63,9 @@ const SpinWheelPage = () => {
             <div className="container mx-auto px-4 max-w-4xl space-y-6">
               <header>
                 <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground">FAQ</p>
-                <h2 className="text-3xl font-bold mt-2 mb-3">Wheel Spinner — Questions & Answers</h2>
+                <h2 className="text-3xl font-bold mt-2 mb-3">Roleta — perguntas e respostas</h2>
                 <p className="text-muted-foreground">
-                  Tips for teachers, streamers, and giveaway hosts using our wheel.
+                  Dicas para professores, streamers e anfitriões de sorteios que usam a ferramenta.
                 </p>
               </header>
 
@@ -92,9 +93,9 @@ const SpinWheelPage = () => {
               <div className="container mx-auto px-4 max-w-4xl space-y-6">
                 <header>
                   <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground">Blog</p>
-                  <h2 className="text-3xl font-bold mt-2 mb-3">Related Articles</h2>
+                  <h2 className="text-3xl font-bold mt-2 mb-3">Artigos relacionados</h2>
                   <p className="text-muted-foreground">
-                    Explore more guides and tips about wheel spinners and random selection tools.
+                    Explore mais guias e dicas sobre roletas e ferramentas de seleção aleatória.
                   </p>
                 </header>
 
@@ -107,7 +108,7 @@ const SpinWheelPage = () => {
                     >
                       <Card className="p-5 shadow-card hover:shadow-glow transition-all duration-300 hover:-translate-y-1 h-full">
                         <p className="text-sm uppercase tracking-wide text-primary mb-2">
-                          {article.category}
+                          {getCategoryLabel(article.category)}
                         </p>
                         <h3 className="text-lg font-semibold mb-2 line-clamp-2">
                           {article.title}
@@ -116,7 +117,7 @@ const SpinWheelPage = () => {
                           {article.description}
                         </p>
                         <span className="text-primary font-semibold text-sm">
-                          Read article →
+                          Ler artigo →
                         </span>
                       </Card>
                     </Link>

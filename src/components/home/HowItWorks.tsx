@@ -4,23 +4,23 @@ import { ListPlus, Settings, Play, Trophy } from "lucide-react";
 const steps = [
   {
     icon: ListPlus,
-    title: "Add Your Options",
-    description: "Enter your items, names, or set number ranges"
+    title: "Adicione suas opções",
+    description: "Informe itens, nomes ou defina intervalos numéricos"
   },
   {
     icon: Settings,
-    title: "Customize Settings",
-    description: "Adjust quantity, range, or special options"
+    title: "Personalize as configurações",
+    description: "Ajuste quantidade, intervalo ou opções especiais"
   },
   {
     icon: Play,
-    title: "Run Selection",
-    description: "Click spin or draw to start the random process"
+    title: "Execute o sorteio",
+    description: "Clique em girar ou sortear para iniciar o processo"
   },
   {
     icon: Trophy,
-    title: "Get Results",
-    description: "Instant, fair, and verifiable random winner"
+    title: "Veja os resultados",
+    description: "Vencedor aleatório, justo e verificável na hora"
   }
 ];
 
@@ -30,10 +30,10 @@ export const HowItWorks = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-5xl font-bold mb-4">
-            How AllWheel Delivers Fair Results
+            Como fazer um sorteio online justo
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Follow these four steps to collect inputs, configure your draw, and publish verifiable random outcomes.
+            Siga estes quatro passos para reunir entradas, configurar o sorteio e divulgar resultados aleatórios verificáveis.
           </p>
         </div>
 
@@ -50,11 +50,11 @@ export const HowItWorks = () => {
                 <h3 className="font-bold text-lg mb-2">{step.title}</h3>
                 <p className="text-sm text-muted-foreground">{step.description}</p>
               </Card>
-              
+
               {index < steps.length - 1 && (
                 <div className="hidden md:block absolute top-14 -right-3 text-primary/30">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                    <path d="M5 12h14M12 5l7 7-7 7" />
                   </svg>
                 </div>
               )}

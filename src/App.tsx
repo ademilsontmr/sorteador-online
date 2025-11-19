@@ -26,15 +26,15 @@ const App = () => (
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
-            <Route path="/tools" element={<Tools />} />
+            <Route path="/ferramentas" element={<Tools />} />
             <Route path="/blog" element={<Blog />} />
-            <Route path="/blog/page/:page" element={<Blog />} />
+            <Route path="/blog/pagina/:page" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
-            <Route path="/spin-wheel" element={<SpinWheelPage />} />
-            <Route path="/number-generator" element={<NumberGeneratorPage />} />
-            <Route path="/name-picker" element={<NamePickerPage />} />
-            <Route path="/privacy" element={<Privacy />} />
-            <Route path="/terms" element={<Terms />} />
+            <Route path="/roleta" element={<SpinWheelPage />} />
+            <Route path="/gerador-de-numeros" element={<NumberGeneratorPage />} />
+            <Route path="/selecionador-de-nomes" element={<NamePickerPage />} />
+            <Route path="/privacidade" element={<Privacy />} />
+            <Route path="/termos" element={<Terms />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

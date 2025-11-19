@@ -11,45 +11,45 @@ const Index = () => {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    name: "AllWheel - Free Random Wheel, Number & Name Picker",
-    url: "https://allwheel.click",
-    description: "Free online random selection tools. Spin the wheel, generate random numbers, or pick names. Perfect for giveaways, classrooms, and fair decision making. No registration required.",
+    name: "Sorteador Online - Roleta, Números e Nomes",
+    url: "https://sorteador.click",
+    description: "Faça sorteios online com o Sorteador. Ferramentas gratuitas: Gire a Roleta, Sorteador de Números e Sorteador de Nomes. Rápido, justo e sem cadastro.",
     applicationCategory: "UtilityApplication",
     operatingSystem: "Any",
     browserRequirements: "Requires JavaScript",
     offers: {
       "@type": "Offer",
       price: "0",
-      priceCurrency: "USD"
+      priceCurrency: "BRL"
     },
     featureList: [
-      "Random wheel spinner",
-      "Number generator",
-      "Name picker",
-      "Cryptographically secure",
-      "No registration required",
-      "Mobile friendly"
+      "Roleta aleatória",
+      "Sorteador de números",
+      "Sorteador de nomes",
+      "Segurança criptográfica",
+      "Sem necessidade de cadastro",
+      "Experiência mobile"
     ]
   };
 
   return (
     <>
-      <SEO 
-        title="Free Random Wheel Spinner, Number & Name Picker - AllWheel" 
-        description="Free online random selection tools for giveaways, classrooms, and decisions. Spin the wheel, generate numbers, pick names. Fair, instant, and secure. No registration needed."
-        canonical="https://allwheel.click/" 
-        structuredData={structuredData} 
+      <SEO
+        title="Sorteador Online: Roleta, Sorteio de Números e Nomes Grátis"
+        description="Sorteador Online 100% Grátis! Faça sorteios de números, nomes e gire a roleta. Ferramenta rápida, segura e sem cadastro. Ideal para Instagram e rifas."
+        canonical="https://sorteador.click/"
+        structuredData={structuredData}
       />
-      
+
       <div className="min-h-screen flex flex-col">
         <Header />
-        
+
         <main className="flex-1">
           <Hero />
           <HowItWorks />
           <Features />
           <UseCases />
-          
+
           <CTASection />
         </main>
 

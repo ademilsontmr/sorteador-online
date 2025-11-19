@@ -16,133 +16,133 @@ import { ArrowRight } from "lucide-react";
 const Tools = () => {
   const faqs = [
     {
-      category: "General",
-      question: "Are AllWheel tools free to use?",
+      category: "Geral",
+      question: "As ferramentas do Sorteador são gratuitas?",
       answer:
-        "Yes, all AllWheel tools are completely free to use with no limitations. There are no signups required, no subscriptions, no hidden fees, and no premium tiers. All tools run entirely client-side in your browser, which means you can use them as much as you want without any restrictions. Whether you're running a single giveaway or conducting hundreds of random selections, everything is free and accessible to everyone.",
+        "Sim. Todas as ferramentas são 100% gratuitas, sem cadastro, assinaturas ou limitações ocultas. Tudo roda localmente no seu navegador, então você pode realizar desde um único sorteio até centenas de seleções aleatórias sem pagar nada.",
     },
     {
-      category: "General",
-      question: "Do I need to create an account?",
+      category: "Geral",
+      question: "Preciso criar uma conta?",
       answer:
-        "No account is required whatsoever. All tools work immediately without any registration, email verification, or login process. Simply visit the tool page and start using it right away. This makes AllWheel perfect for quick decisions, impromptu activities, or situations where you need instant access without any setup time. Your privacy is protected because we don't need any personal information to provide our services.",
+        "Não. Basta acessar a página da ferramenta desejada e começar a usar. Nada de formulários, confirmações por e-mail ou logins. Isso torna o Sorteador perfeito para decisões rápidas e atividades improvisadas, protegendo sua privacidade, já que não solicitamos dados pessoais.",
     },
     {
-      category: "General",
-      question: "Is my data stored or shared?",
+      category: "Geral",
+      question: "Meus dados são armazenados ou compartilhados?",
       answer:
-        "No, your data is never stored or shared. All data processing happens entirely in your browser using client-side JavaScript. We don't collect, store, or transmit any of your input data to our servers. This means your names, numbers, options, and selections remain completely private on your device. The only storage that occurs is in your browser's local storage for features like history, which you can clear at any time. Your privacy is our priority, and we've designed AllWheel to respect it completely.",
+        "Nunca. Todo o processamento acontece no seu navegador usando JavaScript client-side. Não enviamos nomes, números ou resultados para servidores externos. Apenas o histórico fica salvo no armazenamento local do navegador e pode ser limpo a qualquer momento.",
     },
     {
-      category: "General",
-      question: "How does AllWheel ensure fair randomness?",
+      category: "Geral",
+      question: "Como o Sorteador garante aleatoriedade justa?",
       answer:
-        "AllWheel uses the browser's Web Crypto API (crypto.getRandomValues) combined with rejection sampling to avoid modulo bias. This provides cryptographically secure randomness that draws entropy from your operating system's hardware sources like mouse movements, keyboard timings, and thermal noise. The randomness runs entirely client-side, ensuring that each selection is truly unpredictable and fair. This method is the same standard used by security professionals and is suitable for official giveaways, contests, and any scenario requiring verifiable fairness.",
+        "Utilizamos a Web Crypto API do navegador (crypto.getRandomValues) com rejection sampling para evitar viés. O método é o mesmo adotado por profissionais de segurança, roda totalmente no dispositivo e é adequado para sorteios oficiais, concursos e qualquer cenário que exija transparência.",
     },
     {
-      category: "Wheel Spinner",
-      question: "How many items can I add to the wheel?",
+      category: "Roleta",
+      question: "Quantos itens posso adicionar à roleta?",
       answer:
-        "You can add unlimited items to the wheel spinner. There's no limit on the number of options you can include in your wheel, whether you need 5 items or 500. The wheel automatically adjusts to accommodate any number of segments, and each item gets equal probability of being selected. This makes it perfect for everything from simple 2-option decisions to complex giveaways with hundreds of participants. The visual design scales beautifully regardless of how many items you add.",
+        "Não há limite. A roleta se adapta automaticamente para exibir de 2 a 500+ itens, mantendo a probabilidade igual para cada segmento. Ideal para decisões simples ou sorteios com centenas de participantes.",
     },
     {
-      category: "Wheel Spinner",
-      question: "Can I remove a winner after spinning?",
+      category: "Roleta",
+      question: "Consigo remover o vencedor após cada giro?",
       answer:
-        "Yes, absolutely. Enable the \"Remove winner after spin\" option in the wheel controls to automatically remove the selected item from the wheel after each spin. This ensures each item can only be selected once, which is perfect for giveaways, contests, or any scenario where you need to ensure fair distribution. Once an item is removed, it won't appear in subsequent spins until you manually add it back. This feature helps maintain fairness and prevents the same option from being selected multiple times.",
+        "Sim. Ative a opção \"Remover vencedor após girar\" e o item sorteado sai automaticamente da lista, garantindo que não apareça novamente até você adicioná-lo de volta. Perfeito para distribuir prêmios sem repetição.",
     },
     {
-      category: "Wheel Spinner",
-      question: "Does the wheel support sound effects and animations?",
+      category: "Roleta",
+      question: "Existem sons e animações?",
       answer:
-        "Yes, the wheel spinner includes optional sound effects and confetti animations to make the selection process more engaging and exciting. You can toggle these features on or off based on your preferences. The sound effects add audio feedback when the wheel spins and stops, while the confetti animation creates a celebratory visual effect when a winner is selected. These features are perfect for live streams, classroom activities, or any situation where you want to add extra excitement to the selection process. All effects run locally in your browser.",
+        "Sim. Há efeitos sonoros opcionais e confetes para deixar a experiência mais emocionante em transmissões, aulas ou eventos ao vivo. Você pode ligar ou desligar tudo com um clique e os efeitos são executados localmente.",
     },
     {
-      category: "Wheel Spinner",
-      question: "Can I customize the wheel colors?",
+      category: "Roleta",
+      question: "Posso escolher as cores da roleta?",
       answer:
-        "The wheel automatically assigns distinct colors to each segment to ensure visual clarity and differentiation. While you can't manually choose specific colors for each segment, the system intelligently selects colors that provide good contrast and visibility. You can add custom labels to each segment, and the wheel will display them clearly with the automatically assigned colors. This design ensures that every segment is easily distinguishable, making it perfect for presentations, live streams, or any scenario where visual clarity is important.",
+        "As cores são atribuídas automaticamente para garantir contraste e legibilidade. Você personaliza os rótulos e o sistema cuida do visual, mantendo cada fatia fácil de distinguir em apresentações e lives.",
     },
     {
-      category: "Number Generator",
-      question: "What randomness method does the number generator use?",
+      category: "Gerador de números",
+      question: "Que método de aleatoriedade vocês usam?",
       answer:
-        "The number generator uses the browser's Web Crypto API (crypto.getRandomValues) combined with rejection sampling to avoid modulo bias. This provides cryptographically secure randomness that draws entropy from your operating system's hardware sources. Everything runs client-side for maximum security and privacy, meaning your number ranges and selections never leave your device. This method ensures true uniform distribution across your specified range, making it suitable for lottery simulations, raffles, statistical sampling, and any application requiring verifiable fair randomness.",
+        "O gerador usa Web Crypto API com rejection sampling, garantindo distribuição uniforme e segurança criptográfica. Tudo ocorre no seu navegador, então intervalos e resultados nunca deixam o dispositivo.",
     },
     {
-      category: "Number Generator",
-      question: "Can I prevent duplicate numbers?",
+      category: "Gerador de números",
+      question: "Dá para impedir números repetidos?",
       answer:
-        "Yes, you can easily prevent duplicate numbers. Simply disable the \"Allow duplicates\" switch in the number generator settings. When this option is disabled, the tool will generate unique numbers without any repetition. The tool will automatically warn you if the quantity you request exceeds the available range size (for example, trying to generate 100 unique numbers from a range of 1-50). This feature is essential for scenarios like lottery number generation, unique ticket assignment, or any situation where each number must appear only once.",
+        "Sim. Desative o interruptor “Permitir repetição” para receber apenas números únicos. Se a quantidade solicitar mais valores do que o intervalo comporta, o sistema avisa automaticamente.",
     },
     {
-      category: "Number Generator",
-      question: "What's the maximum range I can use?",
+      category: "Gerador de números",
+      question: "Qual é o intervalo máximo recomendado?",
       answer:
-        "We recommend staying under 100,000 numbers for optimal performance and responsiveness. However, the tool can technically handle much larger ranges. For ranges above 100,000, you may experience slightly slower generation times, but the tool will still function correctly. If you need to work with very large ranges, you can run multiple batches or contact us for assistance with specific use cases. The tool is designed to be efficient and fast for typical use cases while remaining flexible enough to handle larger requirements when needed.",
+        "Para melhor desempenho sugerimos intervalos abaixo de 100 mil, mas valores maiores também funcionam, apenas com geração um pouco mais lenta. Para intervalos gigantes, execute lotes menores ou entre em contato conosco.",
     },
     {
-      category: "Number Generator",
-      question: "Can I generate multiple numbers at once?",
+      category: "Gerador de números",
+      question: "Posso gerar vários números de uma vez?",
       answer:
-        "Yes, you can generate multiple numbers in a single draw. Simply set the quantity field to the number of numbers you need, and the tool will generate them all at once. You can choose whether to allow duplicates or ensure all numbers are unique. This feature is perfect for lottery simulations where you need multiple numbers per ticket, raffle draws with multiple winners, or any scenario where you need several random numbers simultaneously. The results are displayed clearly, and you can see all generated numbers at once.",
+        "Pode sim. Informe quantos números deseja e o Sorteador entrega tudo em um único sorteio, com ou sem repetição. Ótimo para simular jogos, rifas com vários ganhadores ou listas de amostragem.",
     },
     {
-      category: "Name Picker",
-      question: "How do I add names to the picker?",
+      category: "Selecionador de nomes",
+      question: "Como adiciono nomes ao sorteio?",
       answer:
-        "Adding names is simple and flexible. You can paste your list of names directly into the text area, with one name per line. The tool automatically processes and prepares them for selection. You can import names from spreadsheets by copying and pasting, or type them directly. The tool handles various formats and automatically removes empty lines and trims whitespace. This makes it easy to work with class lists, participant rosters, team member names, or any collection of names you need to select from. There's no limit on how many names you can add.",
+        "Cole ou digite um nome por linha. Aceitamos dados vindos de planilhas, removemos linhas vazias automaticamente e tratamos espaços extras, facilitando trabalhar com listas grandes de alunos ou participantes.",
     },
     {
-      category: "Name Picker",
-      question: "Can I pick multiple names at once?",
+      category: "Selecionador de nomes",
+      question: "Consigo sortear vários nomes de uma vez?",
       answer:
-        "Yes, you can select multiple names in a single draw. Set the quantity field to the number of names you want to pick, and the tool will randomly select that many names from your list. Each name will be selected fairly and randomly, and when duplicates are disabled, each name can only be selected once per draw. This feature is perfect for selecting multiple winners from a giveaway, choosing several team members, picking multiple students for an activity, or any scenario where you need to select more than one person at a time.",
+        "Sim. Defina a quantidade desejada e o sistema escolhe todos de forma justa. Com duplicados desativados, ninguém é selecionado duas vezes no mesmo sorteio.",
     },
     {
-      category: "Name Picker",
-      question: "Does the name picker work offline?",
+      category: "Selecionador de nomes",
+      question: "Funciona offline?",
       answer:
-        "Yes, the name picker works completely offline once the page is loaded. Since all processing happens client-side in your browser, you don't need an active internet connection to use the tool after the initial page load. This makes it perfect for classrooms with patchy Wi-Fi, remote locations with limited connectivity, or any situation where internet reliability is a concern. Simply load the page when you have internet, and you can continue using the name picker even if your connection drops. All functionality remains available offline.",
+        "Depois que a página carrega, tudo continua funcionando sem internet, pois o processamento é local. Ideal para salas de aula com Wi-Fi instável ou eventos em locais remotos.",
     },
     {
-      category: "Name Picker",
-      question: "Can I see a history of previous picks?",
+      category: "Selecionador de nomes",
+      question: "Existe histórico dos sorteios?",
       answer:
-        "Yes, the name picker maintains a comprehensive history of the last 10 draws. Each history entry shows which names were selected, when the draw occurred, and you can expand each entry to see full details including all selected names. The history is stored locally in your browser, so it persists across page refreshes but remains private on your device. You can clear the history at any time with a single click. This feature is perfect for tracking multiple selections, reviewing past draws, or maintaining a record of selections for transparency and verification purposes.",
+        "Sim. Guardamos os 10 últimos sorteios com a lista completa de nomes. As entradas ficam no seu navegador, podem ser expandidas e você pode limpar tudo quando quiser.",
     },
     {
-      category: "All Tools",
-      question: "Do the tools work on mobile devices?",
+      category: "Todas as ferramentas",
+      question: "Funciona bem no celular?",
       answer:
-        "Yes, all AllWheel tools are fully responsive and work seamlessly on desktop computers, tablets, and mobile devices. The interface automatically adapts to your screen size, ensuring optimal usability regardless of device. Touch interactions are fully supported, making it easy to use the tools on smartphones and tablets. Whether you're running a giveaway on your phone, using the name picker on a tablet in the classroom, or accessing the number generator on a desktop, you'll have the same full functionality and user experience across all devices.",
+        "Totalmente. A interface é responsiva e aceita toques, funcionando igual em desktops, tablets e smartphones — perfeito para usar na sala, no escritório ou em eventos itinerantes.",
     },
     {
-      category: "All Tools",
-      question: "Can I export or save my results?",
+      category: "Todas as ferramentas",
+      question: "Posso salvar ou exportar resultados?",
       answer:
-        "Results are automatically stored locally in your browser's history feature, which persists across page refreshes. You can view past selections in the history section of each tool, expand entries to see full details, and manually copy results if needed. The history shows timestamps and complete selection information for verification purposes. While advanced export functionality (like CSV or PDF export) is coming soon, the current history feature provides reliable access to past results. You can also take screenshots or manually copy results for external documentation if needed.",
+        "Você consegue copiar dados diretamente do histórico, que permanece após recarregar a página. Exportações avançadas (CSV/PDF) estão no roteiro, mas hoje já é possível copiar ou fazer capturas para documentação.",
     },
     {
-      category: "All Tools",
-      question: "Are the tools suitable for official giveaways and contests?",
+      category: "Todas as ferramentas",
+      question: "Serve para sorteios oficiais?",
       answer:
-        "Yes, AllWheel tools are suitable for official giveaways, contests, and fair selection processes. They use cryptographically secure randomness that provides transparent, verifiable results. The client-side processing ensures that selections cannot be manipulated, and the randomness method meets professional standards. Many users rely on AllWheel for official giveaways, social media contests, classroom activities, team selections, and other scenarios requiring verifiable fairness. The tools provide the transparency and security needed for official use while remaining free and accessible to everyone.",
+        "Sim. A aleatoriedade criptográfica e o processamento local evitam manipulação, entregando transparência para concursos, promoções e seleções auditáveis.",
     },
     {
-      category: "All Tools",
-      question: "What browsers are supported?",
+      category: "Todas as ferramentas",
+      question: "Quais navegadores são suportados?",
       answer:
-        "AllWheel tools work on all modern browsers including Google Chrome, Mozilla Firefox, Apple Safari, Microsoft Edge, and other Chromium-based browsers. The tools require JavaScript to be enabled, which is standard for all modern web applications. We recommend using the latest version of your preferred browser for the best experience and security. The tools are tested regularly across different browsers and devices to ensure consistent functionality. If you encounter any issues with a specific browser, please let us know so we can address it.",
+        "Chrome, Firefox, Safari, Edge e demais navegadores modernos com JavaScript habilitado. Recomendamos manter a versão atualizada para melhor desempenho e segurança.",
     },
   ];
 
   return (
     <>
       <SEO
-        title="Free Random Selection Tools - Wheel Spinner, Number Generator, Name Picker | AllWheel"
-        description="Access all free random selection tools: wheel spinner, number generator, and name picker. Fair, secure, and transparent random selection for giveaways, games, and activities."
-        canonical="https://allwheel.click/tools"
+        title="Ferramentas de seleção aleatória grátis | Sorteador"
+        description="Use a roleta, o gerador de números e o selecionador de nomes totalmente em português. Sorteios justos, seguros e transparentes para eventos, jogos e decisões rápidas."
+        canonical="https://sorteador.click/ferramentas"
       />
       <div className="min-h-screen flex flex-col bg-background">
         <Header />
@@ -152,10 +152,10 @@ const Tools = () => {
             <div className="container mx-auto px-4">
               <div className="max-w-4xl mx-auto text-center space-y-4">
                 <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
-                  Free Random Selection Tools
+                  Ferramentas gratuitas de seleção aleatória
                 </h1>
                 <p className="text-lg text-muted-foreground">
-                  Fair, secure, and transparent random selection tools for giveaways, games, decisions, and activities.
+                  Conjunto completo para sorteios, jogos, decisões em equipe e atividades educacionais.
                 </p>
               </div>
             </div>
@@ -187,7 +187,7 @@ const Tools = () => {
                     </ul>
                     <Button variant="outline" className="mt-auto font-semibold" asChild>
                       <Link to={tool.path}>
-                        Try Now
+                        Testar agora
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </Link>
                     </Button>
@@ -203,10 +203,10 @@ const Tools = () => {
               <header>
                 <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground">FAQ</p>
                 <h2 className="text-3xl font-bold mt-2 mb-3">
-                  Frequently Asked Questions
+                  Perguntas frequentes
                 </h2>
                 <p className="text-muted-foreground">
-                  Find answers to common questions about AllWheel tools and how to use them effectively.
+                  Veja respostas rápidas sobre funcionamento, privacidade e melhores práticas das ferramentas Sorteador.
                 </p>
               </header>
 

@@ -9,6 +9,7 @@ import { Badge } from "@/components/ui/badge";
 import { Calendar, Clock, Filter, Search, Sparkles, ChevronLeft, ChevronRight } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { getCategoryLabel } from "@/lib/category-translations";
 
 const categories = Array.from(new Set(blogPosts.map((post) => post.category)));
 const POSTS_PER_PAGE = 10;
@@ -20,10 +21,10 @@ const Blog = () => {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
   
-  // Redirect /blog to /blog/page/1 if no page param
+  // Redirect /blog to /blog/pagina/1 if no page param
   useEffect(() => {
     if (location.pathname === '/blog' && !page) {
-      navigate('/blog/page/1', { replace: true });
+      navigate('/blog/pagina/1', { replace: true });
     }
   }, [location.pathname, page, navigate]);
   
@@ -32,13 +33,13 @@ const Blog = () => {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Blog",
-    "name": "AllWheel Blog",
-    "description": "Tips, guides, and insights about random selection, wheel spinners, and decision-making tools.",
-    "url": "https://allwheel.click/blog",
+    "name": "Sorteador Blog",
+    "description": "Dicas, guias e insights sobre seleção aleatória, roletas e ferramentas de decisão.",
+    "url": "https://sorteador.click/blog",
     "publisher": {
       "@type": "Organization",
-      "name": "AllWheel",
-      "url": "https://allwheel.click"
+      "name": "Sorteador",
+      "url": "https://sorteador.click"
     }
   };
 
@@ -67,7 +68,7 @@ const Blog = () => {
       prevFiltersRef.current.search !== searchTerm;
     
     if (filtersChanged && currentPage > 1) {
-      navigate('/blog/page/1', { replace: false });
+      navigate('/blog/pagina/1', { replace: false });
     }
     
     prevFiltersRef.current = { category: selectedCategory, search: searchTerm };
@@ -76,27 +77,27 @@ const Blog = () => {
   // Redirect to page 1 if current page exceeds total pages
   useEffect(() => {
     if (currentPage > 1 && totalPages > 0 && currentPage > totalPages) {
-      navigate('/blog/page/1', { replace: true });
+      navigate('/blog/pagina/1', { replace: true });
     }
   }, [currentPage, totalPages, navigate]);
 
   // Redirect to page 1 if invalid page number
   if (currentPage < 1 || (currentPage > 1 && totalPages > 0 && currentPage > totalPages)) {
-    return <Navigate to="/blog/page/1" replace />;
+    return <Navigate to="/blog/pagina/1" replace />;
   }
 
   const resetFilters = () => {
     setSelectedCategory(null);
     setSearchTerm("");
-    navigate('/blog/page/1', { replace: true });
+    navigate('/blog/pagina/1', { replace: true });
   };
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <SEO
-        title={currentPage > 1 ? `Blog — Page ${currentPage} | Random Selection Tips & Guides` : "Blog — Random Selection Tips & Guides"}
-        description="Discover tips, guides, and best practices for using random wheel spinners, number generators, and fair selection tools."
-        canonical={currentPage > 1 ? `https://allwheel.click/blog/page/${currentPage}` : "https://allwheel.click/blog"}
+        title={currentPage > 1 ? `Blog — Página ${currentPage} | Dicas de sorteios` : "Blog — Dicas sobre sorteios e decisões justas"}
+        description="Aprenda boas práticas para usar roletas, geradores de números e seletores de nomes em sorteios transparentes."
+        canonical={currentPage > 1 ? `https://sorteador.click/blog/pagina/${currentPage}` : "https://sorteador.click/blog"}
         structuredData={structuredData}
       />
       <Header />
@@ -109,16 +110,16 @@ const Blog = () => {
               <div className="relative z-10 text-center max-w-4xl mx-auto space-y-4">
                 <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/20 text-sm font-semibold">
                   <Sparkles className="w-4 h-4" />
-                  Fairness, randomness & decision science
+                  Justiça, aleatoriedade e ciência das decisões
                 </div>
                 <h1 className="text-4xl md:text-5xl font-bold leading-tight">
-                  Random Selection Tips & Insights
+                  Conteúdos sobre seleções aleatórias
                 </h1>
                 <p className="text-lg text-white/90">
-                  Deep dives, use cases, and trend reports about wheel spinners, number generators, and decision-making workflows—curated by the AllWheel team.
+                  Estudos, casos reais e tendências sobre roletas, geradores de números e rotinas de decisão — tudo produzido pela equipe Sorteador.
                 </p>
                 <div className="pt-4 text-sm uppercase tracking-[0.3em] text-white/70">
-                  Curated insights for teachers, ops teams, and creators
+                  Conteúdo para educadores, equipes operacionais e criadores
                 </div>
               </div>
             </div>
@@ -129,7 +130,7 @@ const Blog = () => {
               <div className="relative w-full md:w-1/2 group">
                 <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground group-focus-within:text-primary" />
                 <Input
-                  placeholder="Search articles by keyword"
+                  placeholder="Busque artigos por palavra-chave"
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   className="pl-11 h-12 rounded-2xl border-border/70 transition focus:border-primary focus:ring-2 focus:ring-primary/20"
@@ -140,16 +141,16 @@ const Blog = () => {
                   className="text-primary font-semibold hover:underline text-sm"
                   onClick={resetFilters}
                 >
-                  Clear filters
+                  Limpar filtros
                 </button>
               </div>
             </div>
 
             <div>
               <div className="flex items-center justify-between mb-3">
-                <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">Topics</p>
+                <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">Temas</p>
                 <span className="text-xs text-muted-foreground">
-                  Tap a chip to filter — tap again to clear
+                  Toque para filtrar — toque de novo para limpar
                 </span>
               </div>
               <div className="flex flex-wrap gap-3">
@@ -165,7 +166,7 @@ const Blog = () => {
                           : "border-border hover:border-primary/60"
                       }`}
                     >
-                      {category}
+                      {getCategoryLabel(category)}
                     </button>
                   );
                 })}
@@ -175,9 +176,9 @@ const Blog = () => {
 
           {paginatedPosts.length === 0 ? (
             <div className="text-center py-16">
-              <p className="text-lg text-muted-foreground mb-4">No articles found</p>
+              <p className="text-lg text-muted-foreground mb-4">Nenhum artigo encontrado</p>
               <Button onClick={resetFilters} variant="outline">
-                Clear filters
+                Limpar filtros
               </Button>
             </div>
           ) : (
@@ -187,7 +188,7 @@ const Blog = () => {
                   <Card key={post.slug} className="overflow-hidden hover:shadow-elegant transition-smooth">
                     <CardHeader>
                       <div className="flex flex-wrap gap-2 mb-3">
-                        <Badge variant="secondary">{post.category}</Badge>
+                        <Badge variant="secondary">{getCategoryLabel(post.category)}</Badge>
                         {post.tags.slice(0, 2).map((tag) => (
                           <Badge key={tag} variant="outline">{tag}</Badge>
                         ))}
@@ -209,7 +210,7 @@ const Blog = () => {
                         <div className="flex items-center gap-1">
                           <Calendar className="h-4 w-4" />
                           <time dateTime={post.date}>
-                            {new Date(post.date).toLocaleDateString('en-US', {
+                            {new Date(post.date).toLocaleDateString('pt-BR', {
                               year: 'numeric',
                               month: 'long',
                               day: 'numeric'
@@ -218,14 +219,14 @@ const Blog = () => {
                         </div>
                         <div className="flex items-center gap-1">
                           <Clock className="h-4 w-4" />
-                          <span>{post.readingTime} min read</span>
+                          <span>{post.readingTime} min de leitura</span>
                         </div>
                       </div>
                       <Link
                         to={`/blog/${post.slug}`}
                         className="inline-block mt-4 text-primary font-medium hover:underline"
                       >
-                        Read more →
+                        Ler artigo →
                       </Link>
                     </CardContent>
                   </Card>
@@ -241,7 +242,7 @@ const Blog = () => {
                       asChild
                       disabled={currentPage === 1}
                     >
-                      <Link to={currentPage > 1 ? `/blog/page/${currentPage - 1}` : `/blog/page/1`}>
+                      <Link to={currentPage > 1 ? `/blog/pagina/${currentPage - 1}` : `/blog/pagina/1`}>
                         <ChevronLeft className="h-4 w-4" />
                       </Link>
                     </Button>
@@ -273,7 +274,7 @@ const Blog = () => {
                             size="sm"
                             asChild
                           >
-                            <Link to={`/blog/page/${pageNum}`}>
+                            <Link to={`/blog/pagina/${pageNum}`}>
                               {pageNum}
                             </Link>
                           </Button>
@@ -290,8 +291,8 @@ const Blog = () => {
                       <Link
                         to={
                           currentPage < totalPages
-                            ? `/blog/page/${currentPage + 1}`
-                            : `/blog/page/${totalPages}`
+                            ? `/blog/pagina/${currentPage + 1}`
+                            : `/blog/pagina/${totalPages}`
                         }
                       >
                         <ChevronRight className="h-4 w-4" />
@@ -300,7 +301,7 @@ const Blog = () => {
                   </div>
 
                   <p className="text-sm text-muted-foreground">
-                    Page {currentPage} of {totalPages} • Showing {startIndex + 1}–{Math.min(endIndex, filteredPosts.length)} of {filteredPosts.length} articles
+                    Página {currentPage} de {totalPages} • Exibindo {startIndex + 1}–{Math.min(endIndex, filteredPosts.length)} de {filteredPosts.length} artigos
                   </p>
                 </div>
               )}

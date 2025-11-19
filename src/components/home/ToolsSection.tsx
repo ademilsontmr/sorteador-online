@@ -14,10 +14,10 @@ export const ToolsSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 animate-fade-in-up">
           <h2 className="text-3xl md:text-5xl font-bold mb-4">
-            Three Powerful Tools
+            Três ferramentas poderosas
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Choose the perfect random selection tool for your needs
+            Escolha a ferramenta aleatória perfeita para o que você precisa
           </p>
         </div>
 
@@ -49,7 +49,7 @@ export const ToolsSection = () => {
                 variant="outline"
                 className="w-full group-hover:border-primary group-hover:text-primary transition-colors"
               >
-                Try Now
+                Testar agora
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Card>

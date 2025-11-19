@@ -2,7 +2,7 @@ import { readFile, writeFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import { join } from "node:path";
 
-const ROOT_URL = "https://allwheel.click";
+const ROOT_URL = "https://sorteador.click";
 const BLOG_PAGE_SIZE = 10;
 
 const __dirname = fileURLToPath(new URL(".", import.meta.url));
@@ -11,12 +11,12 @@ const OUTPUT_PATH = join(__dirname, "../public/sitemap.xml");
 
 const STATIC_URLS = [
   { loc: "/", changefreq: "weekly", priority: "1.0" },
-  { loc: "/spin-wheel", changefreq: "monthly", priority: "0.9" },
-  { loc: "/number-generator", changefreq: "monthly", priority: "0.9" },
-  { loc: "/name-picker", changefreq: "monthly", priority: "0.9" },
-  { loc: "/tools", changefreq: "monthly", priority: "0.8" },
-  { loc: "/privacy", changefreq: "yearly", priority: "0.3" },
-  { loc: "/terms", changefreq: "yearly", priority: "0.3" },
+  { loc: "/roleta", changefreq: "monthly", priority: "0.9" },
+  { loc: "/gerador-de-numeros", changefreq: "monthly", priority: "0.9" },
+  { loc: "/selecionador-de-nomes", changefreq: "monthly", priority: "0.9" },
+  { loc: "/ferramentas", changefreq: "monthly", priority: "0.8" },
+  { loc: "/privacidade", changefreq: "yearly", priority: "0.3" },
+  { loc: "/termos", changefreq: "yearly", priority: "0.3" },
 ];
 
 const BLOG_INDEX_URL = { loc: "/blog", changefreq: "daily", priority: "0.8" };
@@ -55,7 +55,7 @@ async function generate() {
   for (let page = 1; page <= blogPages; page += 1) {
     entries.push(
       buildUrlEntry({
-        loc: `/blog/page/${page}`,
+        loc: `/blog/pagina/${page}`,
         changefreq: "daily",
         priority: page === 1 ? "0.8" : "0.7",
       }),

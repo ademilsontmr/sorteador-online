@@ -9,13 +9,13 @@ interface SEOProps {
 }
 
 export const SEO = ({
-  title = "Random Wheel & Number/Name Picker — AllWheel",
-  description = "Spin the wheel or draw numbers and names online. Fast, fair, and verifiable random selection tool.",
-  canonical = "https://allwheel.click/",
-  ogImage = "https://allwheel.click/og-image.png",
+  title = "Sorteador — roleta, números e nomes online",
+  description = "Sorteador Online 100% Grátis! Faça sorteios de números, nomes e gire a roleta. Ferramenta rápida, segura e sem cadastro. Ideal para Instagram e rifas.",
+  canonical = "https://sorteador.click/",
+  ogImage = "https://sorteador.click/og-image.png",
   structuredData,
 }: SEOProps) => {
-  const fullTitle = title.includes("AllWheel") ? title : `${title} — AllWheel`;
+  const fullTitle = title.includes("Sorteador") ? title : `${title} — Sorteador`;
 
   return (
     <Helmet>

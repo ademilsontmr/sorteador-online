@@ -11,28 +11,29 @@ import {
 } from "@/components/ui/accordion";
 import { blogPosts } from "@/data/blog-posts";
 import { Link } from "react-router-dom";
+import { getCategoryLabel } from "@/lib/category-translations";
 
 const NumberGeneratorPage = () => {
   const faqs = [
     {
-      question: "Which randomness method do you use?",
+      question: "Qual método de aleatoriedade é utilizado?",
       answer:
-        "AllWheel relies on the browser's Web Crypto API (crypto.getRandomValues) with rejection sampling to avoid modulo bias. Everything runs client-side.",
+        "O Sorteador usa a Web Crypto API do navegador (crypto.getRandomValues) com rejection sampling para evitar viés de módulo. Todo o processamento é local.",
     },
     {
-      question: "Can I prevent duplicate numbers?",
+      question: "Consigo impedir números duplicados?",
       answer:
-        "Yes. Disable the \"Allow duplicates\" switch to pull unique values without repetition. The quantity field will warn you if you exceed the range size.",
+        "Sim. Desative o interruptor “Permitir repetição” para receber apenas valores únicos. Informamos se a quantidade exceder o intervalo.",
     },
     {
-      question: "How do I export proof of a draw?",
+      question: "Como exportar a prova de um sorteio?",
       answer:
-        "After running the generator, use the export button in the history card (coming soon) or copy the results and timestamp manually for your audit log.",
+        "Após gerar os números, use o botão de exportação no histórico (em breve) ou copie resultados e horários manualmente para seu relatório.",
     },
     {
-      question: "Is there a limit on range size?",
+      question: "Existe limite para o tamanho do intervalo?",
       answer:
-        "We recommend staying under 100,000 numbers for performance. For bigger ranges, run multiple batches or contact us about the Randomness API.",
+        "Recomendamos ficar abaixo de 100 mil números para manter o desempenho. Para intervalos maiores, execute lotes ou fale conosco sobre a Randomness API.",
     },
   ];
 
@@ -49,9 +50,9 @@ const NumberGeneratorPage = () => {
   return (
     <>
       <SEO
-        title="Random Number Generator - Secure Number Draw Tool | AllWheel"
-        description="Generate random numbers within any range. Support for multiple numbers, no duplicates, instant results, and Web Crypto security."
-        canonical="https://allwheel.click/number-generator"
+        title="Sorteador de Números Aleatórios Online | Grátis e Sem Repetição"
+        description="O melhor Sorteador de Números da internet. Defina o intervalo, quantidade e sorteie números aleatórios para rifas, loterias e jogos. Rápido e seguro."
+        canonical="https://sorteador.click/gerador-de-numeros"
       />
       <div className="min-h-screen flex flex-col">
         <Header />
@@ -63,10 +64,10 @@ const NumberGeneratorPage = () => {
               <header>
                 <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground">FAQ</p>
                 <h2 className="text-3xl font-bold mt-2 mb-3">
-                  Random Number Generator — Questions & Answers
+                  Gerador de números — perguntas e respostas
                 </h2>
                 <p className="text-muted-foreground">
-                  Click a question to expand the answer and learn how to get the most from the RNG tool.
+                  Clique nas perguntas para ver dicas e extrair o máximo do RNG.
                 </p>
               </header>
 
@@ -94,9 +95,9 @@ const NumberGeneratorPage = () => {
               <div className="container mx-auto px-4 max-w-4xl space-y-6">
                 <header>
                   <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground">Blog</p>
-                  <h2 className="text-3xl font-bold mt-2 mb-3">Related Articles</h2>
+                  <h2 className="text-3xl font-bold mt-2 mb-3">Artigos relacionados</h2>
                   <p className="text-muted-foreground">
-                    Learn more about random number generation, cryptography, and fair selection methods.
+                    Saiba mais sobre geração de números aleatórios, criptografia e métodos de seleção justa.
                   </p>
                 </header>
 
@@ -109,7 +110,7 @@ const NumberGeneratorPage = () => {
                     >
                       <Card className="p-5 shadow-card hover:shadow-glow transition-all duration-300 hover:-translate-y-1 h-full">
                         <p className="text-sm uppercase tracking-wide text-primary mb-2">
-                          {article.category}
+                          {getCategoryLabel(article.category)}
                         </p>
                         <h3 className="text-lg font-semibold mb-2 line-clamp-2">
                           {article.title}
@@ -118,7 +119,7 @@ const NumberGeneratorPage = () => {
                           {article.description}
                         </p>
                         <span className="text-primary font-semibold text-sm">
-                          Read article →
+                          Ler artigo →
                         </span>
                       </Card>
                     </Link>

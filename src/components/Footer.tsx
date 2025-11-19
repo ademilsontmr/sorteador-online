@@ -11,34 +11,34 @@ export const Footer = () => {
               <div className="rounded-lg gradient-primary p-2">
                 <Sparkles className="h-5 w-5 text-primary-foreground" />
               </div>
-              <span className="text-xl font-bold">AllWheel</span>
+              <span className="text-xl font-bold">Sorteador</span>
             </Link>
             <p className="text-sm text-muted-foreground max-w-md">
-              The ultimate random selection tool. Spin the wheel, draw numbers, or pick names 
-              with our fast, fair, and easy-to-use platform.
+              A melhor suíte para seleções aleatórias. Gire a roleta, sorteie números ou escolha nomes
+              com nossa plataforma rápida, justa e fácil de usar.
             </p>
           </div>
 
           <div>
-            <h3 className="font-semibold mb-4">Tools</h3>
+            <h3 className="font-semibold mb-4">Ferramentas</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link to="/spin-wheel" className="hover:text-foreground transition-smooth">Wheel Spinner</Link></li>
-              <li><Link to="/number-generator" className="hover:text-foreground transition-smooth">Number Draw</Link></li>
-              <li><Link to="/name-picker" className="hover:text-foreground transition-smooth">Name Picker</Link></li>
+              <li><Link to="/roleta" className="hover:text-foreground transition-smooth">Roleta Aleatória</Link></li>
+              <li><Link to="/gerador-de-numeros" className="hover:text-foreground transition-smooth">Sorteio de Números</Link></li>
+              <li><Link to="/selecionador-de-nomes" className="hover:text-foreground transition-smooth">Selecionador de Nomes</Link></li>
             </ul>
           </div>
 
           <div>
             <h3 className="font-semibold mb-4">Legal</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link to="/privacy" className="hover:text-foreground transition-smooth">Privacy Policy</Link></li>
-              <li><Link to="/terms" className="hover:text-foreground transition-smooth">Terms of Service</Link></li>
+              <li><Link to="/privacidade" className="hover:text-foreground transition-smooth">Política de Privacidade</Link></li>
+              <li><Link to="/termos" className="hover:text-foreground transition-smooth">Termos de Uso</Link></li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-border pt-8 text-center text-sm text-muted-foreground">
-          <p>© {new Date().getFullYear()} AllWheel. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Sorteador. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>

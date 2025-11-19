@@ -8,33 +8,35 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Calendar, Clock, ArrowLeft } from "lucide-react";
 import ReactMarkdown from "react-markdown";
+import { getCategoryLabel } from "@/lib/category-translations";
 
 const CTA_VARIANTS = {
   wheel: {
-    eyebrow: "Spin the wheel",
-    title: "Need a fair wheel for your next decision?",
+    eyebrow: "Gire a roleta",
+    title: "Precisa de uma roleta justa para a próxima decisão?",
     description:
-      "Launch the AllWheel spinner to run giveaways, pick winners, or make quick team choices with transparent randomness.",
-    href: "/spin-wheel",
-    ctaLabel: "Open Wheel Spinner",
+      "Abra a roleta Sorteador para conduzir sorteios, definir vencedores ou decidir rapidamente com transparência.",
+    href: "/roleta",
+    ctaLabel: "Abrir roleta",
   },
   numbers: {
-    eyebrow: "Generate secure numbers",
-    title: "Want verifiable random numbers in seconds?",
+    eyebrow: "Gere números seguros",
+    title: "Quer números aleatórios verificáveis em segundos?",
     description:
-      "Use the Random Number Generator to create cryptographically secure results for lotteries, raffles, or research.",
-    href: "/number-generator",
-    ctaLabel: "Use Number Generator",
+      "Use o Gerador de Números para criar resultados criptograficamente seguros em loterias, rifas ou pesquisas.",
+    href: "/gerador-de-numeros",
+    ctaLabel: "Abrir gerador",
   },
   names: {
-    eyebrow: "Pick names & teams",
-    title: "Ready to select names or form balanced teams?",
+    eyebrow: "Sorteie nomes e equipes",
+    title: "Pronto para selecionar nomes ou montar times equilibrados?",
     description:
-      "Try the Name Picker to draw students, assign duties, and organize teams with audit-ready fairness.",
-    href: "/name-picker",
-    ctaLabel: "Launch Name Picker",
+      "Use o Selecionador de Nomes para sortear alunos, distribuir tarefas e organizar times com total transparência.",
+    href: "/selecionador-de-nomes",
+    ctaLabel: "Abrir selecionador",
   },
 };
+
 
 const getCtaForPost = (post: { slug: string; category: string; tags: string[] }) => {
   const haystack = `${post.slug} ${post.category} ${post.tags.join(" ")}`.toLowerCase();
@@ -73,12 +75,12 @@ const BlogPost = () => {
     "dateModified": post.updated || post.date,
     "author": {
       "@type": "Organization",
-      "name": "AllWheel"
+      "name": "Sorteador"
     },
     "publisher": {
       "@type": "Organization",
-      "name": "AllWheel",
-      "url": "https://allwheel.click"
+      "name": "Sorteador",
+      "url": "https://sorteador.click"
     }
   };
 
@@ -100,7 +102,7 @@ const BlogPost = () => {
       <SEO
         title={post.title}
         description={post.description}
-        canonical={`https://allwheel.click/blog/${post.slug}`}
+        canonical={`https://sorteador.click/blog/${post.slug}`}
         ogImage={post.image}
         structuredData={structuredData}
       />
@@ -111,13 +113,13 @@ const BlogPost = () => {
           <Link to="/blog">
             <Button variant="ghost" className="mb-6">
               <ArrowLeft className="mr-2 h-4 w-4" />
-              Back to Blog
+              Voltar para o blog
             </Button>
           </Link>
 
           <header className="mb-8">
             <div className="flex flex-wrap gap-2 mb-4">
-              <Badge variant="secondary">{post.category}</Badge>
+              <Badge variant="secondary">{getCategoryLabel(post.category)}</Badge>
               {post.tags.map((tag) => (
                 <Badge key={tag} variant="outline">{tag}</Badge>
               ))}
@@ -135,7 +137,7 @@ const BlogPost = () => {
               <div className="flex items-center gap-1">
                 <Calendar className="h-4 w-4" />
                 <time dateTime={post.date}>
-                  {new Date(post.date).toLocaleDateString('en-US', {
+                  {new Date(post.date).toLocaleDateString('pt-BR', {
                     year: 'numeric',
                     month: 'long',
                     day: 'numeric'
@@ -144,7 +146,7 @@ const BlogPost = () => {
               </div>
               <div className="flex items-center gap-1">
                 <Clock className="h-4 w-4" />
-                <span>{post.readingTime} min read</span>
+                <span>{post.readingTime} min de leitura</span>
               </div>
             </div>
           </header>
@@ -233,15 +235,15 @@ const BlogPost = () => {
 
           {recommendedPosts.length > 0 && (
             <section className="mt-12 pt-10 border-t">
-              <h2 className="text-2xl font-bold mb-4">Keep Reading</h2>
-              <p className="text-muted-foreground mb-6">More hand-picked guides to level up your random selection workflow.</p>
+              <h2 className="text-2xl font-bold mb-4">Continue lendo</h2>
+              <p className="text-muted-foreground mb-6">Guias selecionados para aprimorar seus processos de sorteio e tomada de decisão.</p>
               <div className="grid gap-6 md:grid-cols-3">
                 {recommendedPosts.map((related) => (
                   <Link key={related.slug} to={`/blog/${related.slug}`} className="block rounded-2xl border border-border/70 p-5 shadow-sm hover:shadow-md transition-shadow h-full">
-                    <p className="text-sm uppercase tracking-wide text-primary mb-2">{related.category}</p>
+                    <p className="text-sm uppercase tracking-wide text-primary mb-2">{getCategoryLabel(related.category)}</p>
                     <h3 className="text-lg font-semibold mb-2 line-clamp-2">{related.title}</h3>
                     <p className="text-sm text-muted-foreground line-clamp-3 mb-4">{related.description}</p>
-                    <span className="text-primary font-semibold">Read article →</span>
+                    <span className="text-primary font-semibold">Ler artigo →</span>
                   </Link>
                 ))}
               </div>
@@ -252,7 +254,7 @@ const BlogPost = () => {
             <Link to="/blog">
               <Button variant="outline">
                 <ArrowLeft className="mr-2 h-4 w-4" />
-                Back to All Posts
+                Voltar para todos os artigos
               </Button>
             </Link>
           </div>

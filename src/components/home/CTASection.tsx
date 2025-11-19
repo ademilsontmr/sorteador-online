@@ -17,12 +17,12 @@ export const CTASection = () => {
               <Sparkles className="h-16 w-16 text-white mx-auto mb-6 animate-bounce" />
               
               <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
-                Ready to Make Your Next Decision?
+                Pronto para tomar a próxima decisão?
               </h2>
               
               <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-                Join thousands of users making fair, random selections every day. 
-                No registration, no cost, no hassle.
+                Junte-se a milhares de pessoas fazendo seleções justas todos os dias.
+                Sem cadastro, sem custo, sem complicação.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -31,7 +31,7 @@ export const CTASection = () => {
                   onClick={scrollToTop}
                   className="bg-white text-primary hover:bg-white/90 text-lg px-8 py-6 shadow-lg"
                 >
-                  Start Using Now
+                  Comece agora
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
                 <Button 
@@ -43,7 +43,7 @@ export const CTASection = () => {
                   <span className="absolute inset-0 bg-white/10 opacity-60 transition-opacity duration-300 group-hover:opacity-100" />
                   <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/30 blur-lg" />
                   <span className="relative z-10 flex items-center">
-                  Learn More
+                  Saiba mais
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </span>
                 </Button>

@@ -1,213 +1,95 @@
-# AllWheel - Random Wheel & Number/Name Picker
+# Sorteador – Ferramentas brasileiras para sorteios
 
-A production-ready web application for random selections: spin the wheel, draw numbers, or pick names. Built with React, TypeScript, and Tailwind CSS.
+Aplicação web pronta para produção e totalmente em português. Com ela você:
 
-## 🎯 Features
+- Gira uma roleta animada para decidir tarefas, prêmios ou atividades.
+- Sorteia números em qualquer intervalo, com ou sem repetição.
+- Escolhe nomes ou itens de uma lista, mantendo histórico e provas do sorteio.
 
-### 1. **Animated Wheel Spinner**
-- Canvas-based smooth 60fps animation
-- Textarea input (one item per line)
-- Auto-assigned distinct colors per slice
-- Realistic spin with easing and deceleration (3-6s duration)
-- Clear winner highlight with confetti celebration
-- Optional sound effects (spin ticks + winning chime)
-- Remove winner from list after spin (optional)
+Tudo roda no navegador usando Web Crypto API, ou seja, resultados justos, verificáveis e sem enviar dados para servidores externos.
 
-### 2. **Number Draw**
-- Specify range [min, max]
-- Choose quantity of numbers to draw
-- With/without repetition toggle
-- Animated result display
+## 🎯 Recursos principais
 
-### 3. **Name/List Draw**
-- Clean input normalization (trim, dedupe, remove empty lines)
-- Pick k items without repetition
-- Clear results list display
+### Roleta animada
+- Renderização em canvas a 60 fps.
+- Entrada simples: um item por linha (cola da planilha ou WhatsApp).
+- Cores distintas automáticas e gradientes brasileiros.
+- Giro realista com easing, sons e confete ao revelar o vencedor.
+- Opção de remover ganhadores para não repetir.
 
-## 🛠️ Tech Stack
+### Sorteio de números
+- Intervalo mínimo/máximo configurável.
+- Quantidade de números por rodada.
+- Alterna entre sorteio com e sem reposição.
+- Exibe resultados com destaque e salva histórico local.
+
+### Selecionador de nomes
+- Normaliza entradas (trim, dedupe, remove linhas vazias).
+- Suporta múltiplos vencedores em um único clique.
+- Histórico de até 10 sorteios para auditoria rápida.
+
+## 🛠️ Stack
 
 - **Frontend**: React 18 + TypeScript
-- **Build Tool**: Vite
-- **Styling**: Tailwind CSS with custom design system
-- **Routing**: React Router v6
-- **UI Components**: Shadcn/ui
-- **Animations**: Canvas API, CSS animations, canvas-confetti
-- **SEO**: react-helmet-async for metadata management
-- **RNG**: Web Crypto API (crypto.getRandomValues)
+- **Build**: Vite
+- **UI**: Tailwind CSS + shadcn/ui
+- **Roteamento**: React Router 6
+- **Estado assíncrono**: TanStack Query
+- **SEO**: react-helmet-async
+- **Aleatoriedade**: Web Crypto API (`crypto.getRandomValues`)
 
-## 🎨 Design System
+## 🎨 Design system
+- Tokens definidos em `src/index.css` e `tailwind.config.ts`.
+- Gradientes primários inspirados nas cores do Brasil.
+- Componentes usam somente variáveis sem cores fixas.
 
-All styles are defined in `src/index.css` and `tailwind.config.ts`:
-
-- **Primary Colors**: Purple-to-blue gradient (`--primary`)
-- **Accent Colors**: Orange gradient (`--accent`)
-- **Success Colors**: Green (`--success`)
-- **Gradients**: `--gradient-primary`, `--gradient-accent`
-- **Shadows**: `--shadow-glow`, `--shadow-card`
-- **Animations**: Smooth transitions, bounce-in, fade-in-up, confetti
-
-All components use semantic tokens from the design system - no hardcoded colors!
-
-## 📁 Project Structure
+## 📁 Estrutura
 
 ```
 src/
-├── components/
-│   ├── ui/              # Shadcn UI components
-│   ├── Header.tsx       # App header with logo & nav
-│   ├── Footer.tsx       # App footer
-│   ├── SEO.tsx          # SEO metadata component
-│   ├── SpinWheel.tsx    # Animated wheel component
-│   ├── NumberDraw.tsx   # Number draw tool
-│   └── NameDraw.tsx     # Name/list picker tool
-├── lib/
-│   ├── wheel-colors.ts  # Vibrant color palette for wheel
-│   ├── sound.ts         # Sound effects manager
-│   └── utils.ts         # Utility functions
-├── pages/
-│   ├── Index.tsx        # Home page
-│   └── NotFound.tsx     # 404 page
-├── App.tsx              # App root with providers
-├── main.tsx             # Entry point
-└── index.css            # Global styles & design system
+├── components/          # Header, Footer, SEO, roleta, sorteios
+├── data/                # Conteúdo dos cards e blog
+├── pages/               # Rotas (home, blog, ferramentas, legal)
+├── lib/                 # Sons, utilidades e traduções
+└── main.tsx             # Bootstrap da aplicação
 
 public/
-├── sitemap.xml          # SEO sitemap
-└── robots.txt           # Robots configuration
+├── sitemap.xml          # Gerado via script
+└── robots.txt
 ```
 
-## 🚀 Getting Started
+## 🚀 Como rodar
 
-### Prerequisites
-
-- Node.js 18+ and npm
-
-### Installation
+Pré-requisito: Node.js 18+
 
 ```bash
-# Clone the repository
-git clone <YOUR_GIT_URL>
-cd <YOUR_PROJECT_NAME>
-
-# Install dependencies
+git clone <seu-repo>
+cd <seu-repo>
 npm install
-
-# Start development server
 npm run dev
 ```
 
-The app will be available at `http://localhost:8080`
+Servidor disponível em `http://localhost:8080`.
 
-### Build for Production
+### Build
 
 ```bash
 npm run build
 ```
 
-This creates an optimized production build in the `dist/` folder.
+O resultado otimizado fica em `dist/` e pode ser enviado para Cloudflare Pages, Vercel, Netlify ou qualquer host estático.
 
-## 🌐 Deployment
+## 🔍 SEO
+- Títulos e descrições localizados, com canonical `https://sorteador.click`.
+- Open Graph + Twitter Card.
+- Dados estruturados (Schema WebApplication).
+- Sitemap e robots prontos para o domínio brasileiro.
 
-### Cloudflare Pages (Recommended)
+## ⚙️ Personalização
+- Ajuste cores em `src/index.css`.
+- Edite a paleta da roleta em `src/lib/wheel-colors.ts`.
+- Conteúdo do blog fica em `src/data/blog-posts.ts` (Markdown).
 
-1. Build the project:
-```bash
-npm run build
-```
+## 📄 Licença & contribuição
 
-2. Deploy the `dist` folder to Cloudflare Pages:
-   - Connect your Git repository to Cloudflare Pages
-   - Set build command: `npm run build`
-   - Set output directory: `dist`
-   - Deploy!
-
-### Other Static Hosts
-
-The build output (`dist/`) can be deployed to any static hosting service:
-- Vercel
-- Netlify
-- GitHub Pages
-- AWS S3 + CloudFront
-
-## 🔍 SEO Features
-
-### Implemented:
-- ✅ Semantic HTML5 structure
-- ✅ Meta tags (title, description, canonical)
-- ✅ Open Graph tags for social sharing
-- ✅ Twitter Card metadata
-- ✅ Structured data (Schema.org WebApplication)
-- ✅ Sitemap.xml
-- ✅ Robots.txt
-- ✅ Mobile-responsive design
-- ✅ Fast performance (optimized bundle)
-
-### Performance Targets:
-- Lighthouse Performance: ≥90
-- Lighthouse SEO: ≥90
-- Lighthouse Accessibility: ≥90
-- Lighthouse Best Practices: ≥90
-
-## 🎵 Sound Effects
-
-Sound effects are generated using the Web Audio API:
-- **Tick sound**: Short beep during wheel spin
-- **Win sound**: Celebration chime on winner selection
-- Toggle sound on/off with the speaker button
-
-## 🎲 Random Number Generation
-
-The app uses `crypto.getRandomValues()` for cryptographically secure random number generation, ensuring fair and unpredictable results.
-
-## 🎨 Customization
-
-### Colors
-
-Edit `src/index.css` to change the color scheme:
-
-```css
-:root {
-  --primary: 262 83% 58%;        /* Purple */
-  --accent: 32 100% 58%;         /* Orange */
-  --success: 142 76% 36%;        /* Green */
-  /* ... more colors */
-}
-```
-
-### Wheel Colors
-
-Edit `src/lib/wheel-colors.ts` to customize slice colors:
-
-```typescript
-export const WHEEL_COLORS = [
-  "#8B5CF6", // Purple
-  "#F59E0B", // Amber
-  // Add more colors...
-];
-```
-
-## 📝 Future Enhancements
-
-Potential features for v2:
-- [ ] Blog system with MDX posts
-- [ ] Verifiable results with crypto signatures
-- [ ] Export results as PNG/CSV
-- [ ] LocalStorage history of recent draws
-- [ ] Result permalink sharing `/r/[token]`
-- [ ] Multiple language support
-- [ ] Custom wheel themes
-
-## 📄 License
-
-This project is built with Lovable. See repository for license details.
-
-## 🤝 Contributing
-
-This project is managed through Lovable. To make changes:
-1. Visit the [Lovable Project](https://lovable.dev/projects/eb3e3eda-a336-48a6-898b-181c121c636e)
-2. Use prompts to request changes
-3. Changes are automatically committed to the repository
-
-## 📞 Support
-
-For questions or issues, please refer to the [Lovable documentation](https://docs.lovable.dev/).
+Projeto originalmente criado via Lovable. Consulte o repositório para detalhes de licença e contribuições. Se quiser propor melhorias, abra uma issue ou PR descrevendo o ajuste desejado.

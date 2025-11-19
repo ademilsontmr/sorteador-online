@@ -6,11 +6,13 @@ import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";
-import { Play, Volume2, VolumeX, Trash2, Sparkles } from "lucide-react";
+import { Play, Volume2, VolumeX, Trash2, Sparkles, Upload } from "lucide-react";
 import { getWheelColor } from "@/lib/wheel-colors";
 import { soundManager } from "@/lib/sound";
 import { toast } from "sonner";
 import confetti from "canvas-confetti";
+import mammoth from "mammoth";
+import readXlsxFile from "read-excel-file";
 
 interface WheelItem {
   text: string;
@@ -18,7 +20,7 @@ interface WheelItem {
 }
 
 export const SpinWheel = () => {
-  const [inputText, setInputText] = useState("Alice\nBob\nCharlie\nDiana\nEthan\nFiona");
+  const [inputText, setInputText] = useState("Ana\nBruno\nCarla\nDiana\nEduardo\nFernanda");
   const [items, setItems] = useState<WheelItem[]>([]);
   const [isSpinning, setIsSpinning] = useState(false);
   const [rotation, setRotation] = useState(0);
@@ -29,6 +31,7 @@ export const SpinWheel = () => {
   const [history, setHistory] = useState<string[]>([]);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animationRef = useRef<number>();
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     parseItems(inputText);
@@ -49,7 +52,7 @@ export const SpinWheel = () => {
       .filter((line) => line.length > 0);
 
     const uniqueLines = Array.from(new Set(lines));
-    
+
     const wheelItems = uniqueLines.map((line, index) => ({
       text: line,
       color: getWheelColor(index),
@@ -58,10 +61,69 @@ export const SpinWheel = () => {
     setItems(wheelItems);
   };
 
+  const handleFileUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (!file) return;
+
+    const fileType = file.name.split(".").pop()?.toLowerCase();
+
+    try {
+      let content = "";
+
+      if (fileType === "txt" || fileType === "csv") {
+        content = await file.text();
+      } else if (fileType === "docx") {
+        const arrayBuffer = await file.arrayBuffer();
+        const result = await mammoth.extractRawText({ arrayBuffer });
+        content = result.value;
+      } else if (fileType === "xlsx" || fileType === "xls") {
+        const rows = await readXlsxFile(file);
+        content = rows.flat().filter(Boolean).join("\n");
+      } else if (fileType === "pages") {
+        toast.error("O formato .pages (Apple) é fechado e não funciona em navegadores.", {
+          description: "Por favor, abra o arquivo no Pages e vá em Arquivo > Exportar Para > Word ou Texto.",
+          duration: 6000,
+        });
+        return;
+      } else {
+        toast.error("Formato não suportado.", {
+          description: "Use .txt, .csv, .docx ou .xlsx.",
+        });
+        return;
+      }
+
+      // Clean up content: ensure one item per line
+      const cleanContent = content
+        .replace(/,/g, "\n") // Replace commas with newlines (for CSV)
+        .split("\n")
+        .map((line) => line.trim())
+        .filter((line) => line.length > 0)
+        .join("\n");
+
+      if (cleanContent) {
+        const newText = inputText ? `${inputText}\n${cleanContent}` : cleanContent;
+        setInputText(newText);
+        parseItems(newText);
+        toast.success("Lista importada com sucesso!");
+      } else {
+        toast.warning("Não foi possível encontrar texto no arquivo.");
+      }
+    } catch (error) {
+      console.error("Erro ao ler arquivo:", error);
+      toast.error("Erro ao processar o arquivo.", {
+        description: "Verifique se o arquivo não está corrompido ou protegido por senha."
+      });
+    } finally {
+      if (fileInputRef.current) {
+        fileInputRef.current.value = ""; // Reset input
+      }
+    }
+  };
+
   const heroStats = [
-    { label: "Entries loaded", value: items.length },
-    { label: "Sound FX", value: soundEnabled ? "On" : "Muted" },
-    { label: "Remove winners", value: removeWinner ? "Enabled" : "Off" },
+    { label: "Itens carregados", value: items.length },
+    { label: "Sons", value: soundEnabled ? "Ativos" : "Silenciados" },
+    { label: "Remover vencedores", value: removeWinner ? "Ativado" : "Desligado" },
   ];
 
   const drawWheel = () => {
@@ -125,7 +187,7 @@ export const SpinWheel = () => {
 
   const spinWheel = () => {
     if (items.length < 2) {
-      toast.error("Please add at least 2 items to spin!");
+      toast.error("Adicione pelo menos 2 itens para girar!");
       return;
     }
 
@@ -202,13 +264,13 @@ export const SpinWheel = () => {
         <div className="text-center mb-12 space-y-4">
           <Badge className="px-4 py-1.5" variant="secondary">
             <Sparkles className="h-4 w-4 mr-1 inline" />
-            Fair & visual random selection
+            Seleção aleatória justa e visual
           </Badge>
           <h1 className="text-4xl md:text-5xl font-bold">
-            Spin the Wheel
+            Gire a Roleta
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Enter items, spin, and show verifiable winners for giveaways, classrooms, team rituals, and streams.
+            Cadastre itens, gire e apresente vencedores verificáveis para sorteios, aulas, dinâmicas e transmissões.
           </p>
           <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
             {heroStats.map((stat) => (
@@ -233,7 +295,7 @@ export const SpinWheel = () => {
                 height={400}
                 className="max-w-full"
               />
-              
+
               <div className="flex gap-3 w-full">
                 <Button
                   onClick={spinWheel}
@@ -242,9 +304,9 @@ export const SpinWheel = () => {
                   className="flex-1 gradient-primary shadow-glow hover:opacity-90"
                 >
                   <Play className="mr-2 h-5 w-5" />
-                  {isSpinning ? "Spinning..." : "Spin!"}
+                  {isSpinning ? "Girando..." : "Girar!"}
                 </Button>
-                
+
                 <Button
                   onClick={() => setSoundEnabled(!soundEnabled)}
                   size="lg"
@@ -265,9 +327,32 @@ export const SpinWheel = () => {
           <Card className="p-6 shadow-card">
             <div className="space-y-4">
               <div>
-                <Label htmlFor="items-input" className="text-lg font-semibold">
-                  Enter Items (one per line)
-                </Label>
+                <div className="flex items-center justify-between mb-2">
+                  <Label htmlFor="items-input" className="text-lg font-semibold">
+                    Digite os itens (um por linha)
+                  </Label>
+                  <div className="flex items-center gap-2">
+                    <span className="text-[10px] text-muted-foreground hidden sm:inline-block">
+                      (.txt, .csv, .docx, .xlsx)
+                    </span>
+                    <input
+                      type="file"
+                      ref={fileInputRef}
+                      onChange={handleFileUpload}
+                      className="hidden"
+                      accept=".txt,.csv,.docx,.xlsx,.xls"
+                    />
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="h-8 text-xs"
+                      onClick={() => fileInputRef.current?.click()}
+                    >
+                      <Upload className="mr-2 h-3 w-3" />
+                      Importar
+                    </Button>
+                  </div>
+                </div>
                 <Textarea
                   id="items-input"
                   value={inputText}
@@ -275,14 +360,17 @@ export const SpinWheel = () => {
                     setInputText(e.target.value);
                     parseItems(e.target.value);
                   }}
-                  placeholder="Alice&#10;Bob&#10;Charlie&#10;Diana"
+                  placeholder="Ana&#10;Bruno&#10;Carla&#10;Diana"
                   className="mt-2 min-h-[300px] font-mono"
                 />
+                <p className="text-xs text-muted-foreground mt-2">
+                  Para arquivos .pages (Apple), exporte como Word ou Texto antes de importar.
+                </p>
               </div>
 
               <div className="flex items-center justify-between p-3 rounded-lg bg-muted">
                 <Label htmlFor="remove-winner" className="cursor-pointer">
-                  Remove winner after spin
+                  Remover vencedor após girar
                 </Label>
                 <Switch
                   id="remove-winner"
@@ -302,13 +390,13 @@ export const SpinWheel = () => {
                   className="flex-1"
                 >
                   <Trash2 className="mr-2 h-4 w-4" />
-                  Clear All
+                  Limpar tudo
                 </Button>
               </div>
 
               <div className="pt-4 border-t border-border">
                 <p className="text-sm text-muted-foreground">
-                  <strong>{items.length}</strong> items loaded
+                  <strong>{items.length}</strong> itens carregados
                 </p>
               </div>
             </div>
@@ -318,8 +406,8 @@ export const SpinWheel = () => {
         <Card className="max-w-4xl mx-auto mt-10 p-6 shadow-card">
           <div className="flex items-center justify-between mb-3">
             <div>
-              <h2 className="text-lg font-semibold">History (last 10)</h2>
-              <p className="text-xs text-muted-foreground">Stored locally in this browser</p>
+              <h2 className="text-lg font-semibold">Histórico (últimos 10)</h2>
+              <p className="text-xs text-muted-foreground">Guardado localmente neste navegador</p>
             </div>
             <Button
               variant="ghost"
@@ -327,12 +415,12 @@ export const SpinWheel = () => {
               onClick={() => setHistory([])}
               disabled={history.length === 0}
             >
-              Clear
+              Limpar
             </Button>
           </div>
           {history.length === 0 ? (
             <div className="text-sm text-muted-foreground text-center py-6">
-              Spin the wheel to log your winners.
+              Gire a roleta para registrar os vencedores.
             </div>
           ) : (
             <ul className="space-y-2 text-sm text-muted-foreground max-h-56 overflow-auto pr-2">
@@ -341,7 +429,7 @@ export const SpinWheel = () => {
                   key={`${entry}-${index}`}
                   className="flex items-center justify-between border border-border/60 rounded-2xl px-4 py-2 bg-background/70"
                 >
-                  <span className="font-semibold text-foreground">Spin #{history.length - index}</span>
+                  <span className="font-semibold text-foreground">Giro nº {history.length - index}</span>
                   <span className="text-foreground">{entry}</span>
                 </li>
               ))}
@@ -353,12 +441,12 @@ export const SpinWheel = () => {
         <Dialog open={showWinnerDialog} onOpenChange={setShowWinnerDialog}>
           <DialogContent className="sm:max-w-md">
             <DialogHeader>
-              <DialogTitle className="text-3xl text-center">🎉 Congratulations! 🎉</DialogTitle>
+              <DialogTitle className="text-3xl text-center">🎉 Parabéns! 🎉</DialogTitle>
             </DialogHeader>
             <div className="flex flex-col items-center justify-center py-8 space-y-4">
               <div className="text-6xl animate-bounce">🏆</div>
               <p className="text-2xl font-bold text-center">{winner}</p>
-              <p className="text-lg text-muted-foreground text-center">is the winner!</p>
+              <p className="text-lg text-muted-foreground text-center">é o vencedor!</p>
             </div>
           </DialogContent>
         </Dialog>

@@ -6,111 +6,110 @@ const Terms = () => {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <SEO
-        title="Terms of Service - AllWheel"
-        description="Understand the usage guidelines for AllWheel’s random selection tools."
-        canonical="https://allwheel.click/terms"
+        title="Termos de Uso - Sorteador"
+        description="Conheça as regras de utilização das ferramentas de seleção aleatória do Sorteador."
+        canonical="https://sorteador.click/termos"
       />
       <Header />
       <main className="flex-1 container mx-auto px-4 py-12 max-w-4xl">
-        <h1 className="text-4xl font-bold mb-6">Terms of Service</h1>
+        <h1 className="text-4xl font-bold mb-6">Termos de Uso</h1>
         <p className="text-muted-foreground mb-8">
-          Effective Date: January 18, 2026
+          Vigentes a partir de: 18 de janeiro de 2026
         </p>
         <section className="space-y-6 text-muted-foreground leading-relaxed">
           <div>
-            <h2 className="text-2xl font-semibold text-foreground mb-3">1. Acceptance of Terms</h2>
+            <h2 className="text-2xl font-semibold text-foreground mb-3">1. Aceitação</h2>
             <p>
-              By accessing or using AllWheel, you agree to these Terms of Service. If you use AllWheel on behalf of an
-              organization, you confirm that you have authority to bind that entity.
+              Ao acessar ou usar o Sorteador, você concorda com estes termos. Se utilizá-lo em nome de uma organização, declara
+              ter autoridade para vinculá-la ao acordo.
             </p>
           </div>
 
           <div>
-            <h2 className="text-2xl font-semibold text-foreground mb-3">2. Eligibility</h2>
+            <h2 className="text-2xl font-semibold text-foreground mb-3">2. Elegibilidade</h2>
             <p>
-              AllWheel is intended for users 13+ years old. If you operate giveaways or regulated drawings, ensure you comply with
-              all applicable laws in your jurisdiction. We are not responsible for illegal use.
+              O Sorteador destina-se a pessoas com 13 anos ou mais. Caso realize promoções reguladas, cumpra as leis da sua jurisdição.
+              Não nos responsabilizamos por uso ilegal.
             </p>
           </div>
 
           <div>
-            <h2 className="text-2xl font-semibold text-foreground mb-3">3. License & Usage</h2>
+            <h2 className="text-2xl font-semibold text-foreground mb-3">3. Licença e uso</h2>
             <ul className="list-disc pl-6 space-y-2">
-              <li>We grant you a limited, revocable license to use AllWheel for personal or business needs.</li>
-              <li>You may create wheels, generate random numbers, export logs, and embed our tools following attribution guidelines.</li>
-              <li>Do not reverse engineer, resell, or rent access to the platform.</li>
+              <li>Concedemos uma licença limitada e revogável para uso pessoal ou profissional.</li>
+              <li>Você pode criar roletas, gerar números, exportar logs e incorporar as ferramentas seguindo as diretrizes de atribuição.</li>
+              <li>É proibido realizar engenharia reversa, revender ou alugar acesso à plataforma.</li>
             </ul>
           </div>
 
           <div>
-            <h2 className="text-2xl font-semibold text-foreground mb-3">4. User Content & Responsibility</h2>
+            <h2 className="text-2xl font-semibold text-foreground mb-3">4. Conteúdo e responsabilidade</h2>
             <p>
-              You’re responsible for the accuracy of entries you add to AllWheel. Do not upload unlawful, discriminatory, or
-              copyrighted material without permission. If you share exported logs or screenshots, ensure you have consent from participants.
+              Você é responsável pela precisão das entradas adicionadas. Não envie materiais ilegais, discriminatórios ou protegidos por direitos
+              autorais sem autorização. Ao compartilhar logs ou capturas, garanta o consentimento dos participantes.
             </p>
           </div>
 
           <div>
-            <h2 className="text-2xl font-semibold text-foreground mb-3">5. Fairness & Verification</h2>
+            <h2 className="text-2xl font-semibold text-foreground mb-3">5. Justiça e verificação</h2>
             <p>
-              We provide verifiable randomness features, but ultimate responsibility for running a compliant drawing lies with you. Record spins,
-              publish rules, and keep audit logs for the period required by local law.
+              Oferecemos recursos de aleatoriedade verificável, mas a responsabilidade pela conformidade do sorteio é sua. Registre giros, publique regras
+              e mantenha logs conforme a legislação local.
             </p>
           </div>
 
           <div>
-            <h2 className="text-2xl font-semibold text-foreground mb-3">6. Payment & Upgrades</h2>
+            <h2 className="text-2xl font-semibold text-foreground mb-3">6. Pagamentos e upgrades</h2>
             <p>
-              Many features are free. If we introduce paid plans, we’ll present pricing before you upgrade. All fees, once paid, are non-refundable
-              unless required by law. Taxes and payment processing charges are your responsibility.
+              A maioria dos recursos é gratuita. Caso ofereçamos planos pagos, exibiremos preços antes da contratação. Taxas pagas não são reembolsáveis,
+              salvo exigência legal. Tributos e encargos de processamento são de sua responsabilidade.
             </p>
           </div>
 
           <div>
-            <h2 className="text-2xl font-semibold text-foreground mb-3">7. Service Availability</h2>
+            <h2 className="text-2xl font-semibold text-foreground mb-3">7. Disponibilidade</h2>
             <p>
-              We aim for high uptime but may suspend the service for maintenance, security updates, or force majeure events. We are not liable for
-              losses due to outages. Always keep local backups of critical wheels and logs.
+              Buscamos alta disponibilidade, mas o serviço pode ser suspenso para manutenção, segurança ou força maior. Não somos responsáveis por perdas
+              decorrentes de indisponibilidade. Guarde cópias locais de roletas e logs críticos.
             </p>
           </div>
 
           <div>
-            <h2 className="text-2xl font-semibold text-foreground mb-3">8. Prohibited Uses</h2>
+            <h2 className="text-2xl font-semibold text-foreground mb-3">8. Usos proibidos</h2>
             <ul className="list-disc pl-6 space-y-2">
-              <li>Using AllWheel for gambling in jurisdictions where it’s not permitted.</li>
-              <li>Automating spam entries or attempting to game randomness proofs.</li>
-              <li>Distributing malware, scraping excessive data, or attacking our infrastructure.</li>
+              <li>Usar o Sorteador para jogos de azar em localidades onde isso não é permitido.</li>
+              <li>Automatizar spam ou tentar manipular provas de aleatoriedade.</li>
+              <li>Distribuir malware, realizar scraping excessivo ou atacar nossa infraestrutura.</li>
             </ul>
           </div>
 
           <div>
-            <h2 className="text-2xl font-semibold text-foreground mb-3">9. Disclaimers</h2>
+            <h2 className="text-2xl font-semibold text-foreground mb-3">9. Isenções</h2>
             <p>
-              AllWheel is provided “as is.” We disclaim warranties of merchantability, fitness for a particular purpose, and non-infringement. We
-              are not responsible for indirect or consequential damages.
+              O Sorteador é fornecido “no estado em que se encontra”. Não garantimos comerciabilidade, adequação a um propósito específico ou ausência de violações.
+              Não nos responsabilizamos por danos indiretos ou consequenciais.
             </p>
           </div>
 
           <div>
-            <h2 className="text-2xl font-semibold text-foreground mb-3">10. Termination</h2>
+            <h2 className="text-2xl font-semibold text-foreground mb-3">10. Rescisão</h2>
             <p>
-              We may suspend or terminate access if you violate these terms. You may stop using AllWheel at any time. Sections dealing with
-              disclaimers, liability, and governing law survive termination.
+              Podemos suspender ou encerrar o acesso em caso de violação. Você pode deixar de usar o Sorteador a qualquer momento. As seções sobre isenções,
+              responsabilidade e legislação aplicável permanecem válidas após o término.
             </p>
           </div>
 
           <div>
-            <h2 className="text-2xl font-semibold text-foreground mb-3">11. Governing Law</h2>
+            <h2 className="text-2xl font-semibold text-foreground mb-3">11. Legislação aplicável</h2>
             <p>
-              These terms are governed by the laws of the United States and the state of Delaware, unless overridden by mandatory consumer
-              protections in your region.
+              Estes termos são regidos pelas leis dos Estados Unidos e do estado de Delaware, salvo proteções obrigatórias do consumidor na sua região.
             </p>
           </div>
 
           <div>
-            <h2 className="text-2xl font-semibold text-foreground mb-3">12. Contact</h2>
+            <h2 className="text-2xl font-semibold text-foreground mb-3">12. Contato</h2>
             <p>
-              For any questions, email <a href="mailto:terms@allwheel.click" className="text-primary hover:underline">terms@allwheel.click</a>.
+              Em caso de dúvidas, escreva para <a href="mailto:terms@allwheel.click" className="text-primary hover:underline">terms@allwheel.click</a>.
             </p>
           </div>
         </section>

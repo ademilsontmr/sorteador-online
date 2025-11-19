@@ -3,33 +3,33 @@ import { Shield, Zap, Smartphone, Globe, Lock, Sparkles } from "lucide-react";
 const features = [
   {
     icon: Shield,
-    title: "Provably Fair",
-    description: "Cryptographically secure random number generation"
+    title: "Comprovadamente justo",
+    description: "Geração de números aleatórios com segurança criptográfica"
   },
   {
     icon: Zap,
-    title: "Instant Results",
-    description: "No waiting, no delays - immediate selection"
+    title: "Resultados instantâneos",
+    description: "Sem espera, sem atrasos — seleção imediata"
   },
   {
     icon: Smartphone,
-    title: "Mobile Friendly",
-    description: "Works perfectly on any device, anywhere"
+    title: "Pronto para mobile",
+    description: "Funciona em qualquer dispositivo, de qualquer lugar"
   },
   {
     icon: Globe,
-    title: "No Registration",
-    description: "Start using immediately, no account needed"
+    title: "Sem cadastro",
+    description: "Use imediatamente, sem necessidade de conta"
   },
   {
     icon: Lock,
-    title: "Privacy First",
-    description: "Your data never leaves your browser"
+    title: "Privacidade em primeiro lugar",
+    description: "Seus dados nunca saem do navegador"
   },
   {
     icon: Sparkles,
-    title: "100% Free",
-    description: "All features available at no cost, forever"
+    title: "100% gratuito",
+    description: "Todos os recursos liberados para sempre"
   }
 ];
 
@@ -39,16 +39,16 @@ export const Features = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-5xl font-bold mb-4">
-            Key Features That Power Every Fair Random Draw
+            Por que usar nosso Sorteador Online?
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            AllWheel combines cryptographic randomness, accessibility best practices, and zero-cost usage to keep every decision transparent.
+            O Sorteador combina aleatoriedade criptográfica, boas práticas de acessibilidade e uso gratuito para manter cada decisão transparente.
           </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {features.map((feature, index) => (
-            <div 
+            <div
               key={index}
               className="flex gap-4 animate-fade-in-up"
               style={{ animationDelay: `${index * 50}ms` }}

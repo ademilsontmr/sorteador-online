@@ -13,22 +13,22 @@ export const Hero = () => {
         <div className="mx-auto max-w-3xl text-center space-y-4 animate-fade-in-up">
           <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
             <Sparkles className="h-4 w-4" />
-            Random Selection Suite
+            Suíte de Seleção Aleatória
           </div>
           <div className="space-y-3">
             <h1 className="text-4xl font-bold leading-tight sm:text-5xl md:text-6xl">
-              AllWheel: Free Random Wheel Spinner, Number & Name Picker
+              Sorteador Online: Roleta, Números e Nomes
             </h1>
             <p className="text-xl text-muted-foreground">
-              Make verifiably fair decisions with our secure wheel spinner, random number generator, and smart name picker—optimized for giveaways, classrooms, and remote teams.
+              Tome decisões comprovadamente justas com nossa roleta segura, sorteador de números e sorteador de nomes — ideal para sorteios, aulas e times remotos.
             </p>
           </div>
           <div className="text-sm text-muted-foreground">
-            Everything is free, secure, and ready to use in your classroom, giveaway, or team ritual.
+            Tudo é gratuito, seguro e pronto para usar em aulas, sorteios ou rituais de equipe.
           </div>
 
           <h2 className="text-2xl font-semibold text-foreground">
-            Choose the perfect random selection tool for your workflow
+            Suas ferramentas de sorteio gratuitas, justas e sem cadastro
           </h2>
         </div>
 
@@ -57,7 +57,7 @@ export const Hero = () => {
 
               <Button variant="outline" className="mt-auto font-semibold" asChild>
                 <Link to={tool.path}>
-                  Try Now
+                  Testar agora
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
@@ -68,15 +68,12 @@ export const Hero = () => {
         <div className="mt-12 flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground">
           <span className="flex items-center gap-2">
             <span className="h-2 w-2 rounded-full bg-success" />
-            No account required
+            Sem necessidade de conta
           </span>
+
           <span className="flex items-center gap-2">
             <span className="h-2 w-2 rounded-full bg-success" />
-            Web Crypto randomness
-          </span>
-          <span className="flex items-center gap-2">
-            <span className="h-2 w-2 rounded-full bg-success" />
-            Instant results
+            Resultados imediatos
           </span>
         </div>
       </div>

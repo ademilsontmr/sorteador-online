@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Sparkles, Menu, X } from "lucide-react";
 
 const navLinks = [
-  { label: "Tools", href: "/tools" },
+  { label: "Ferramentas", href: "/ferramentas" },
   { label: "Blog", href: "/blog" },
 ];
 
@@ -22,7 +22,7 @@ export const Header = () => {
               <Sparkles className="h-4 w-4 text-white" />
             </div>
             <span className="text-xl font-semibold tracking-tight text-foreground">
-              AllWheel
+              Sorteador
             </span>
           </div>
         </Link>
@@ -42,7 +42,7 @@ export const Header = () => {
         <button
           className="md:hidden rounded-full border border-border p-2 text-muted-foreground hover:text-foreground hover:border-foreground transition-smooth"
           onClick={toggleMobileMenu}
-          aria-label="Toggle menu"
+          aria-label="Alternar menu"
         >
           {isMobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
