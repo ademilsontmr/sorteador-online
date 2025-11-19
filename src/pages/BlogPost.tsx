@@ -9,6 +9,52 @@ import { Button } from "@/components/ui/button";
 import { Calendar, Clock, ArrowLeft } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 
+const CTA_VARIANTS = {
+  wheel: {
+    eyebrow: "Spin the wheel",
+    title: "Need a fair wheel for your next decision?",
+    description:
+      "Launch the AllWheel spinner to run giveaways, pick winners, or make quick team choices with transparent randomness.",
+    href: "/spin-wheel",
+    ctaLabel: "Open Wheel Spinner",
+  },
+  numbers: {
+    eyebrow: "Generate secure numbers",
+    title: "Want verifiable random numbers in seconds?",
+    description:
+      "Use the Random Number Generator to create cryptographically secure results for lotteries, raffles, or research.",
+    href: "/number-generator",
+    ctaLabel: "Use Number Generator",
+  },
+  names: {
+    eyebrow: "Pick names & teams",
+    title: "Ready to select names or form balanced teams?",
+    description:
+      "Try the Name Picker to draw students, assign duties, and organize teams with audit-ready fairness.",
+    href: "/name-picker",
+    ctaLabel: "Launch Name Picker",
+  },
+};
+
+const getCtaForPost = (post: { slug: string; category: string; tags: string[] }) => {
+  const haystack = `${post.slug} ${post.category} ${post.tags.join(" ")}`.toLowerCase();
+
+  if (haystack.includes("number") || haystack.includes("rng") || haystack.includes("lottery")) {
+    return CTA_VARIANTS.numbers;
+  }
+
+  if (
+    haystack.includes("name") ||
+    haystack.includes("team") ||
+    haystack.includes("classroom") ||
+    haystack.includes("picker")
+  ) {
+    return CTA_VARIANTS.names;
+  }
+
+  return CTA_VARIANTS.wheel;
+};
+
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
   const post = slug ? getPostBySlug(slug) : undefined;
@@ -46,6 +92,7 @@ const BlogPost = () => {
       : [];
 
   const recommendedPosts = [...relatedPosts, ...fallbackPosts];
+  const cta = getCtaForPost(post);
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
@@ -142,6 +189,19 @@ const BlogPost = () => {
               {post.content}
             </ReactMarkdown>
           </div>
+
+          <section className="mt-10 rounded-3xl border border-border/70 bg-card shadow-card p-6 md:p-8">
+            <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+              <div className="space-y-3">
+                <p className="text-xs uppercase tracking-[0.3em] text-primary/80">{cta.eyebrow}</p>
+                <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">{cta.title}</h2>
+                <p className="text-muted-foreground">{cta.description}</p>
+              </div>
+              <Button size="lg" className="w-full md:w-auto font-semibold" asChild>
+                <Link to={cta.href}>{cta.ctaLabel}</Link>
+              </Button>
+            </div>
+          </section>
 
           {/* AdSense - After article content */}
           <div className="my-8 flex justify-center">
