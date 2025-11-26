@@ -21,35 +21,40 @@ const STATIC_URLS = [
 
 const BLOG_INDEX_URL = { loc: "/blog", changefreq: "daily", priority: "0.8" };
 
-const today = new Date().toISOString().split("T")[0];
+const today = "2025-11-25";
 
-async function extractSlugs() {
+async function extractPosts() {
   const file = await readFile(BLOG_DATA_PATH, "utf8");
-  const slugRegex = /slug:\s*"([^"]+)"/g;
-  const slugs = [];
+  // Regex to capture slug and date. Assumes slug comes before date in the object.
+  const postRegex = /slug:\s*"([^"]+)"[\s\S]*?date:\s*"([^"]+)"/g;
+  const posts = [];
   let match;
-  while ((match = slugRegex.exec(file)) !== null) {
-    slugs.push(match[1]);
+  while ((match = postRegex.exec(file)) !== null) {
+    posts.push({
+      slug: match[1],
+      date: match[2]
+    });
   }
-  return slugs;
+  return posts;
 }
 
-function buildUrlEntry({ loc, changefreq, priority }) {
+function buildUrlEntry({ loc, changefreq, priority, lastmod }) {
+  const date = lastmod || today;
   return `  <url>
     <loc>${ROOT_URL}${loc}</loc>
-    <lastmod>${today}</lastmod>
+    <lastmod>${date}</lastmod>
     <changefreq>${changefreq}</changefreq>
     <priority>${priority}</priority>
   </url>`;
 }
 
 async function generate() {
-  const slugs = await extractSlugs();
-  const blogPages = Math.ceil(slugs.length / BLOG_PAGE_SIZE);
+  const posts = await extractPosts();
+  const blogPages = Math.ceil(posts.length / BLOG_PAGE_SIZE);
 
   const entries = [
-    ...STATIC_URLS.map(buildUrlEntry),
-    buildUrlEntry(BLOG_INDEX_URL),
+    ...STATIC_URLS.map(url => buildUrlEntry({ ...url })),
+    buildUrlEntry({ ...BLOG_INDEX_URL }),
   ];
 
   for (let page = 1; page <= blogPages; page += 1) {
@@ -63,13 +68,20 @@ async function generate() {
   }
 
   entries.push(
-    ...slugs.map((slug) =>
-      buildUrlEntry({
-        loc: `/blog/${slug}`,
+    ...posts.map((post) => {
+      let postDate = post.date;
+      // Check if date is in the future
+      if (new Date(postDate) > new Date(today)) {
+        postDate = today;
+      }
+
+      return buildUrlEntry({
+        loc: `/blog/${post.slug}`,
         changefreq: "monthly",
         priority: "0.7",
-      }),
-    ),
+        lastmod: postDate
+      });
+    }),
   );
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
@@ -86,4 +98,3 @@ generate().catch((error) => {
   console.error("[sitemap] Generation failed:", error);
   process.exit(1);
 });
-
