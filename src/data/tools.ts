@@ -10,6 +10,7 @@ export interface ToolConfig {
   path: string;
   iconBgClass: string;
   bulletClass: string;
+  actionLabel: string;
 }
 
 export const tools: ToolConfig[] = [
@@ -28,6 +29,7 @@ export const tools: ToolConfig[] = [
     path: "/roleta",
     iconBgClass: "gradient-primary",
     bulletClass: "bg-primary",
+    actionLabel: "Girar agora",
   },
   {
     id: "numbers",
@@ -39,6 +41,7 @@ export const tools: ToolConfig[] = [
     path: "/gerador-de-numeros",
     iconBgClass: "gradient-accent",
     bulletClass: "bg-accent",
+    actionLabel: "Sortear agora",
   },
   {
     id: "names",
@@ -50,6 +53,7 @@ export const tools: ToolConfig[] = [
     path: "/selecionador-de-nomes",
     iconBgClass: "bg-success",
     bulletClass: "bg-success",
+    actionLabel: "Sortear agora",
   },
 ];
 

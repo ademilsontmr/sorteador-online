@@ -23,7 +23,7 @@ export const ToolsSection = () => {
 
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
           {tools.map((tool, index) => (
-            <Card 
+            <Card
               key={tool.id}
               className="p-6 shadow-card hover:shadow-glow transition-all duration-300 hover:-translate-y-1 animate-fade-in-up group"
               style={{ animationDelay: `${index * 100}ms` }}
@@ -31,10 +31,10 @@ export const ToolsSection = () => {
               <div className={`w-14 h-14 rounded-xl ${tool.iconBgClass} flex items-center justify-center mb-4 shadow-glow`}>
                 <tool.icon className="h-7 w-7 text-white" />
               </div>
-              
+
               <h3 className="text-2xl font-bold mb-3">{tool.title}</h3>
               <p className="text-muted-foreground mb-4">{tool.description}</p>
-              
+
               <ul className="space-y-2 mb-6">
                 {tool.features.map((feature, i) => (
                   <li key={i} className="flex items-center gap-2 text-sm">
@@ -49,7 +49,7 @@ export const ToolsSection = () => {
                 variant="outline"
                 className="w-full group-hover:border-primary group-hover:text-primary transition-colors"
               >
-                Testar agora
+                {tool.actionLabel}
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Card>

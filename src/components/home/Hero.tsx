@@ -57,7 +57,7 @@ export const Hero = () => {
 
               <Button variant="outline" className="mt-auto font-semibold" asChild>
                 <Link to={tool.path}>
-                  Testar agora
+                  {tool.actionLabel}
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
