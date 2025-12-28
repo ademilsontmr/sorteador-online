@@ -2,6 +2,7 @@
   Content-Type: text/xml; charset=utf-8
   Cache-Control: no-cache, no-store, must-revalidate, max-age=0
   X-Content-Type-Options: nosniff
+  X-Robots-Tag: all
 
 /assets/*.js
   Content-Type: application/javascript; charset=utf-8
