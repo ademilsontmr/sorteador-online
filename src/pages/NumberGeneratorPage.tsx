@@ -50,9 +50,10 @@ const NumberGeneratorPage = () => {
   return (
     <>
       <SEO
-        title="Sorteador de Números Aleatórios Online | Grátis e Sem Repetição"
-        description="O melhor Sorteador de Números da internet. Defina o intervalo, quantidade e sorteie números aleatórios para rifas, loterias e jogos. Rápido e seguro."
+        title="Sorteador de Números Aleatórios | Gerador Online Grátis"
+        description="Gere números aleatórios instantaneamente. Defina intervalos, quantidade e sorteie sem repetições. Ideal para rifas, jogos e sorteios rápidos."
         canonical="https://sorteador.click/gerador-de-numeros"
+        keywords="gerador de números, números aleatórios, sortear números, random number generator, sorteio de números, sorteador de números"
       />
       <div className="min-h-screen flex flex-col">
         <Header />

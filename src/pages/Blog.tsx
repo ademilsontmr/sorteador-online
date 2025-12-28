@@ -20,14 +20,14 @@ const Blog = () => {
   const navigate = useNavigate();
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
-  
+
   // Redirect /blog to /blog/pagina/1 if no page param
   useEffect(() => {
     if (location.pathname === '/blog' && !page) {
       navigate('/blog/pagina/1', { replace: true });
     }
   }, [location.pathname, page, navigate]);
-  
+
   const currentPage = page ? parseInt(page, 10) : 1;
 
   const structuredData = {
@@ -48,7 +48,7 @@ const Blog = () => {
       const matchesCategory = selectedCategory ? post.category === selectedCategory : true;
       const matchesSearch = searchTerm
         ? post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          post.description.toLowerCase().includes(searchTerm.toLowerCase())
+        post.description.toLowerCase().includes(searchTerm.toLowerCase())
         : true;
       return matchesCategory && matchesSearch;
     });
@@ -60,20 +60,20 @@ const Blog = () => {
   const paginatedPosts = filteredPosts.slice(startIndex, endIndex);
 
   const prevFiltersRef = useRef({ category: selectedCategory, search: searchTerm });
-  
+
   // Reset to page 1 when filters change
   useEffect(() => {
-    const filtersChanged = 
-      prevFiltersRef.current.category !== selectedCategory || 
+    const filtersChanged =
+      prevFiltersRef.current.category !== selectedCategory ||
       prevFiltersRef.current.search !== searchTerm;
-    
+
     if (filtersChanged && currentPage > 1) {
       navigate('/blog/pagina/1', { replace: false });
     }
-    
+
     prevFiltersRef.current = { category: selectedCategory, search: searchTerm };
   }, [selectedCategory, searchTerm, currentPage, navigate]);
-  
+
   // Redirect to page 1 if current page exceeds total pages
   useEffect(() => {
     if (currentPage > 1 && totalPages > 0 && currentPage > totalPages) {
@@ -95,13 +95,14 @@ const Blog = () => {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <SEO
-        title={currentPage > 1 ? `Blog — Página ${currentPage} | Dicas de sorteios` : "Blog — Dicas sobre sorteios e decisões justas"}
-        description="Aprenda boas práticas para usar roletas, geradores de números e seletores de nomes em sorteios transparentes."
-        canonical={currentPage > 1 ? `https://sorteador.click/blog/pagina/${currentPage}` : "https://sorteador.click/blog"}
+        title="Blog Sorteador | Dicas, Tutoriais e Ideias de Sorteio"
+        description="Confira artigos sobre como fazer sorteios justos, ideias para roletas, dicas de engajamento e tutoriais para usar nossas ferramentas."
+        canonical="https://sorteador.click/blog"
+        keywords="blog sorteador, dicas de sorteio, artigos sorteio, tutoriais roleta"
         structuredData={structuredData}
       />
       <Header />
-      
+
       <main className="flex-1 container mx-auto px-4 py-12">
         <div className="max-w-5xl mx-auto">
           <section className="mb-10">
@@ -160,11 +161,10 @@ const Blog = () => {
                     <button
                       key={category}
                       onClick={() => setSelectedCategory(isActive ? null : category)}
-                      className={`px-4 py-2 rounded-full border transition-all text-sm font-medium ${
-                        isActive
+                      className={`px-4 py-2 rounded-full border transition-all text-sm font-medium ${isActive
                           ? "bg-primary text-white border-primary shadow-[0_10px_25px_rgba(99,102,241,0.25)]"
                           : "border-border hover:border-primary/60"
-                      }`}
+                        }`}
                     >
                       {getCategoryLabel(category)}
                     </button>
@@ -194,7 +194,7 @@ const Blog = () => {
                         ))}
                       </div>
                       <CardTitle className="text-2xl mb-2">
-                        <Link 
+                        <Link
                           to={`/blog/${post.slug}`}
                           className="hover:text-primary transition-smooth"
                         >

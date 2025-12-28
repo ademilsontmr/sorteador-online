@@ -21,7 +21,7 @@ const STATIC_URLS = [
 
 const BLOG_INDEX_URL = { loc: "/blog", changefreq: "daily", priority: "0.8" };
 
-const today = "2025-11-25";
+const today = new Date().toISOString().split('T')[0];
 
 async function extractPosts() {
   const file = await readFile(BLOG_DATA_PATH, "utf8");

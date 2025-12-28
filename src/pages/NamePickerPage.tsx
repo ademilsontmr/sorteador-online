@@ -50,9 +50,10 @@ const NamePickerPage = () => {
   return (
     <>
       <SEO
-        title="Sorteador de Nomes e Lista | Sorteio Online Grátis"
-        description="Precisa sortear um ganhador? Use nosso Sorteador de Nomes gratuito. Cole sua lista, embaralhe e sorteie nomes para Instagram, sala de aula e empresas."
+        title="Sorteador de Nomes e Lista | Sorteio Aleatório Online"
+        description="Sorteie nomes de uma lista facilmente. Cole seus nomes, gire e descubra o vencedor. Perfeito para sorteios de Instagram, amigos secretos e grupos."
         canonical="https://sorteador.click/selecionador-de-nomes"
+        keywords="sorteador de nomes, lista de nomes, sortear nomes, random name picker, sorteio de nomes, sorteador lista"
       />
       <div className="min-h-screen flex flex-col">
         <Header />

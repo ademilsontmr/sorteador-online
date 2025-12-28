@@ -140,9 +140,10 @@ const Tools = () => {
   return (
     <>
       <SEO
-        title="Ferramentas de seleção aleatória grátis | Sorteador"
-        description="Use a roleta, o gerador de números e o selecionador de nomes totalmente em português. Sorteios justos, seguros e transparentes para eventos, jogos e decisões rápidas."
+        title="Ferramentas de Sorteio e Utilitários Online | Sorteador"
+        description="Explore nossa coleção de ferramentas gratuitas: dados, cara ou coroa, sorteadores e muito mais. Tudo o que você precisa para decisões aleatórias."
         canonical="https://sorteador.click/ferramentas"
+        keywords="ferramentas de sorteio, utilitários, sorteio, randomizadores, dados, cara ou coroa"
       />
       <div className="min-h-screen flex flex-col bg-background">
         <Header />

@@ -5,6 +5,7 @@ interface SEOProps {
   description?: string;
   canonical?: string;
   ogImage?: string;
+  keywords?: string | string[];
   structuredData?: object;
 }
 
@@ -13,14 +14,17 @@ export const SEO = ({
   description = "Sorteador Online 100% Grátis! Faça sorteios de números, nomes e gire a roleta. Ferramenta rápida, segura e sem cadastro. Ideal para Instagram e rifas.",
   canonical = "https://sorteador.click/",
   ogImage = "https://sorteador.click/og-image.png",
+  keywords,
   structuredData,
 }: SEOProps) => {
   const fullTitle = title.includes("Sorteador") ? title : `${title} — Sorteador`;
+  const keywordsContent = Array.isArray(keywords) ? keywords.join(", ") : keywords;
 
   return (
     <Helmet>
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
+      {keywordsContent && <meta name="keywords" content={keywordsContent} />}
       <link rel="canonical" href={canonical} />
 
       {/* Open Graph */}

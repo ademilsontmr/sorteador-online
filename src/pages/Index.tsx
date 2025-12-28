@@ -38,6 +38,7 @@ const Index = () => {
         title="Sorteador Online: Roleta, Sorteio de Números e Nomes Grátis"
         description="Sorteador Online 100% Grátis! Faça sorteios de números, nomes e gire a roleta. Ferramenta rápida, segura e sem cadastro. Ideal para Instagram e rifas."
         canonical="https://sorteador.click/"
+        keywords="sorteador, sorteio, roleta, números aleatórios, nomes aleatórios, sorteio online, sorteador online"
         structuredData={structuredData}
       />
 

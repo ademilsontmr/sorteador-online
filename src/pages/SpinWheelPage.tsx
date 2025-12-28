@@ -53,6 +53,7 @@ const SpinWheelPage = () => {
         title="Roleta Aleatória Personalizada Online | Gire a Roleta Grátis"
         description="Crie sua Roleta Personalizada e gire agora! Ferramenta 100% grátis para sorteios, jogos e decisões. Adicione nomes, cores e gire a roleta online."
         canonical="https://sorteador.click/roleta"
+        keywords="roleta, roleta aleatória, girar roleta, roleta personalizada, wheel spinner, sorteio roleta, roleta online"
       />
       <div className="min-h-screen flex flex-col">
         <Header />

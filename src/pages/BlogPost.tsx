@@ -104,10 +104,11 @@ const BlogPost = () => {
         description={post.description}
         canonical={`https://sorteador.click/blog/${post.slug}`}
         ogImage={post.image}
+        keywords={post.tags}
         structuredData={structuredData}
       />
       <Header />
-      
+
       <main className="flex-1 container mx-auto px-4 py-12">
         <article className="max-w-3xl mx-auto">
           <Link to="/blog">
@@ -124,15 +125,15 @@ const BlogPost = () => {
                 <Badge key={tag} variant="outline">{tag}</Badge>
               ))}
             </div>
-            
+
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
               {post.title}
             </h1>
-            
+
             <p className="text-xl text-muted-foreground mb-6">
               {post.description}
             </p>
-            
+
             <div className="flex items-center gap-4 text-sm text-muted-foreground">
               <div className="flex items-center gap-1">
                 <Calendar className="h-4 w-4" />
