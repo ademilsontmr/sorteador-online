@@ -21,7 +21,10 @@ const STATIC_URLS = [
   { loc: "/termos", changefreq: "yearly", priority: "0.3" },
 ];
 
-const today = new Date().toISOString().split('T')[0];
+// Use local Brazil time (UTC-3) to avoid future dates
+const today = new Date().toLocaleDateString('en-CA', {
+  timeZone: 'America/Sao_Paulo'
+}); // Format: YYYY-MM-DD
 
 async function extractPosts() {
   const file = await readFile(BLOG_DATA_PATH, "utf8");
