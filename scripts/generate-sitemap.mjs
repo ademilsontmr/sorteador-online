@@ -42,12 +42,8 @@ async function extractPosts() {
 
 function buildUrlEntry({ loc, changefreq, priority, lastmod }) {
   const date = lastmod || today;
-  return `  <url>
-    <loc>${ROOT_URL}${loc}</loc>
-    <lastmod>${date}</lastmod>
-    <changefreq>${changefreq}</changefreq>
-    <priority>${priority}</priority>
-  </url>`;
+  // Compact format: all on one line
+  return `  <url><loc>${ROOT_URL}${loc}</loc><priority>${priority}</priority></url>`;
 }
 
 async function generate() {
