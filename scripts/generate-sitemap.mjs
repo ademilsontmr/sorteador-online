@@ -7,25 +7,24 @@ const BLOG_PAGE_SIZE = 10;
 
 const __dirname = fileURLToPath(new URL(".", import.meta.url));
 const BLOG_DATA_PATH = join(__dirname, "../src/data/blog-posts.ts");
-const OUTPUT_DIR = join(__dirname, "../public");
+const OUTPUT_PATH = join(__dirname, "../public/sitemap.xml");
 
+// Static pages with priority order
 const STATIC_URLS = [
   { loc: "/", changefreq: "weekly", priority: "1.0" },
   { loc: "/roleta", changefreq: "monthly", priority: "0.9" },
   { loc: "/gerador-de-numeros", changefreq: "monthly", priority: "0.9" },
   { loc: "/selecionador-de-nomes", changefreq: "monthly", priority: "0.9" },
   { loc: "/ferramentas", changefreq: "monthly", priority: "0.8" },
+  { loc: "/blog", changefreq: "daily", priority: "0.8" },
   { loc: "/privacidade", changefreq: "yearly", priority: "0.3" },
   { loc: "/termos", changefreq: "yearly", priority: "0.3" },
 ];
-
-const BLOG_INDEX_URL = { loc: "/blog", changefreq: "daily", priority: "0.8" };
 
 const today = new Date().toISOString().split('T')[0];
 
 async function extractPosts() {
   const file = await readFile(BLOG_DATA_PATH, "utf8");
-  // Regex to capture slug and date. Assumes slug comes before date in the object.
   const postRegex = /slug:\s*"([^"]+)"[\s\S]*?date:\s*"([^"]+)"/g;
   const posts = [];
   let match;
@@ -48,46 +47,18 @@ function buildUrlEntry({ loc, changefreq, priority, lastmod }) {
   </url>`;
 }
 
-function buildSitemap(entries) {
-  return `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${entries.join("\n")}
-</urlset>
-`;
-}
-
-function buildSitemapIndex(sitemaps) {
-  const entries = sitemaps.map(({ loc, lastmod }) => 
-    `  <sitemap>
-    <loc>${ROOT_URL}${loc}</loc>
-    <lastmod>${lastmod}</lastmod>
-  </sitemap>`
-  ).join("\n");
-
-  return `<?xml version="1.0" encoding="UTF-8"?>
-<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${entries}
-</sitemapindex>
-`;
-}
-
 async function generate() {
   const posts = await extractPosts();
   const blogPages = Math.ceil(posts.length / BLOG_PAGE_SIZE);
 
-  // 1. Generate sitemap-pages.xml (static pages)
-  const pagesEntries = [
-    ...STATIC_URLS.map(url => buildUrlEntry({ ...url })),
-    buildUrlEntry({ ...BLOG_INDEX_URL }),
-  ];
-  const pagesSitemap = buildSitemap(pagesEntries);
-  await writeFile(join(OUTPUT_DIR, "sitemap-pages.xml"), pagesSitemap);
-  console.log(`[sitemap] Generated sitemap-pages.xml with ${pagesEntries.length} entries.`);
+  const entries = [];
 
-  // 2. Generate sitemap-blog-pages.xml (blog pagination)
-  const blogPagesEntries = [];
+  // 1. Add static pages first (Google best practice: most important pages first)
+  entries.push(...STATIC_URLS.map(url => buildUrlEntry({ ...url })));
+
+  // 2. Add blog pagination pages
   for (let page = 1; page <= blogPages; page += 1) {
-    blogPagesEntries.push(
+    entries.push(
       buildUrlEntry({
         loc: `/blog/pagina/${page}`,
         changefreq: "daily",
@@ -95,44 +66,45 @@ async function generate() {
       })
     );
   }
-  const blogPagesSitemap = buildSitemap(blogPagesEntries);
-  await writeFile(join(OUTPUT_DIR, "sitemap-blog-pages.xml"), blogPagesSitemap);
-  console.log(`[sitemap] Generated sitemap-blog-pages.xml with ${blogPagesEntries.length} entries.`);
 
-  // 3. Generate sitemap-blog-posts.xml (blog posts)
-  const blogPostsEntries = posts.map((post) => {
-    let postDate = post.date;
-    // Check if date is in the future
-    if (new Date(postDate) > new Date(today)) {
-      postDate = today;
-    }
-
-    return buildUrlEntry({
-      loc: `/blog/${post.slug}`,
-      changefreq: "monthly",
-      priority: "0.7",
-      lastmod: postDate
-    });
+  // 3. Add blog posts (sorted by date, newest first - Google best practice)
+  const sortedPosts = posts.sort((a, b) => {
+    return new Date(b.date) - new Date(a.date);
   });
-  const blogPostsSitemap = buildSitemap(blogPostsEntries);
-  await writeFile(join(OUTPUT_DIR, "sitemap-blog-posts.xml"), blogPostsSitemap);
-  console.log(`[sitemap] Generated sitemap-blog-posts.xml with ${blogPostsEntries.length} entries.`);
 
-  // 4. Generate sitemap.xml (sitemap index)
-  const sitemapIndex = buildSitemapIndex([
-    { loc: "/sitemap-pages.xml", lastmod: today },
-    { loc: "/sitemap-blog-pages.xml", lastmod: today },
-    { loc: "/sitemap-blog-posts.xml", lastmod: today },
-  ]);
-  await writeFile(join(OUTPUT_DIR, "sitemap.xml"), sitemapIndex);
-  console.log(`[sitemap] Generated sitemap.xml (index) with 3 sitemaps.`);
+  entries.push(
+    ...sortedPosts.map((post) => {
+      let postDate = post.date;
+      // Ensure date is not in the future
+      if (new Date(postDate) > new Date(today)) {
+        postDate = today;
+      }
 
-  const totalEntries = pagesEntries.length + blogPagesEntries.length + blogPostsEntries.length;
-  console.log(`[sitemap] Total: ${totalEntries} URL entries across 3 sitemaps.`);
+      return buildUrlEntry({
+        loc: `/blog/${post.slug}`,
+        changefreq: "monthly",
+        priority: "0.7",
+        lastmod: postDate
+      });
+    })
+  );
+
+  // Build XML with proper formatting (Google best practice)
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${entries.join("\n")}
+</urlset>
+`;
+
+  await writeFile(OUTPUT_PATH, xml, "utf8");
+  console.log(`✓ Generated sitemap.xml with ${entries.length} URLs`);
+  console.log(`  - Static pages: ${STATIC_URLS.length}`);
+  console.log(`  - Blog pagination: ${blogPages}`);
+  console.log(`  - Blog posts: ${posts.length}`);
 }
 
 generate().catch((error) => {
-  console.error("[sitemap] Generation failed:", error);
+  console.error("✗ Sitemap generation failed:", error);
   process.exit(1);
 });
 
