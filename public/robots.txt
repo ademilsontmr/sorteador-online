@@ -80,4 +80,3 @@ User-agent: AppleBot
 Disallow: /
 
 Sitemap: https://sorteador.click/sitemap.xml
-
