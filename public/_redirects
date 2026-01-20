@@ -1,11 +1,9 @@
-# Redirecionar www para não-www (301 permanente)
-https://www.sorteador.click/* https://sorteador.click/:splat 301!
-
 # Redirect www to non-www (canonical)
 https://www.sorteador.click/* https://sorteador.click/:splat 301!
 
-/sitemap.xml 200
-/robots.txt 200
+# Static files
+/sitemap.xml /sitemap.xml 200
+/robots.txt /robots.txt 200
+
+# SPA fallback
 /* /index.html 200
-
-
