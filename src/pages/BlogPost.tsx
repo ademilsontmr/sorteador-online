@@ -1,4 +1,5 @@
 import { useParams, Link, Navigate } from "react-router-dom";
+import { useEffect, useRef } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
@@ -6,9 +7,15 @@ import { AdSense } from "@/components/AdSense";
 import { getPostBySlug, blogPosts } from "@/data/blog-posts";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Calendar, Clock, ArrowLeft } from "lucide-react";
+import { Calendar, Clock, ArrowLeft, HelpCircle } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import { getCategoryLabel } from "@/lib/category-translations";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const CTA_VARIANTS = {
   wheel: {
@@ -60,6 +67,15 @@ const getCtaForPost = (post: { slug: string; category: string; tags: string[] })
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
   const post = slug ? getPostBySlug(slug) : undefined;
+  const prevSlugRef = useRef<string | undefined>(undefined);
+
+  // Scroll to top only when navigating to a different article
+  useEffect(() => {
+    if (slug !== prevSlugRef.current) {
+      window.scrollTo(0, 0);
+      prevSlugRef.current = slug;
+    }
+  }, [slug]);
 
   if (!post) {
     return <Navigate to="/blog" replace />;
@@ -83,6 +99,20 @@ const BlogPost = () => {
       "url": "https://sorteador.click"
     }
   };
+
+  // FAQ Schema for SEO
+  const faqStructuredData = post.faq && post.faq.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": post.faq.map(item => ({
+      "@type": "Question",
+      "name": item.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.answer
+      }
+    }))
+  } : null;
 
   const relatedPosts = blogPosts
     .filter((p) => p.slug !== post.slug && (p.category === post.category || p.tags.some((tag) => post.tags.includes(tag))))
@@ -210,6 +240,36 @@ const BlogPost = () => {
               {post.content}
             </ReactMarkdown>
           </div>
+
+          {/* FAQ Section */}
+          {post.faq && post.faq.length > 0 && (
+            <section className="mt-10 pt-8 border-t">
+              <div className="flex items-center gap-2 mb-6">
+                <HelpCircle className="h-6 w-6 text-primary" />
+                <h2 className="text-2xl font-bold">Perguntas Frequentes</h2>
+              </div>
+              <Accordion type="single" collapsible className="w-full">
+                {post.faq.map((item, index) => (
+                  <AccordionItem key={index} value={`faq-${index}`}>
+                    <AccordionTrigger className="text-left font-semibold">
+                      {item.question}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground">
+                      {item.answer}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </section>
+          )}
+
+          {/* FAQ Schema for SEO */}
+          {faqStructuredData && (
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }}
+            />
+          )}
 
           <section className="mt-10 rounded-3xl border border-border/70 bg-card shadow-card p-6 md:p-8">
             <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">

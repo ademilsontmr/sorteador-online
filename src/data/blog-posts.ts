@@ -1,3 +1,8 @@
+export interface FAQItem {
+  question: string;
+  answer: string;
+}
+
 export interface BlogPost {
   slug: string;
   title: string;
@@ -9,6 +14,7 @@ export interface BlogPost {
   tags: string[];
   image: string;
   readingTime: number;
+  faq?: FAQItem[];
 }
 
 export const blogPosts: BlogPost[] = [
@@ -72,6 +78,24 @@ Prepare-se para um ano de inovações incríveis e, claro, muita boa sorte!
 ---
 
 *Quer sair na frente? Comece hoje mesmo a utilizar ferramentas modernas e seguras como o **[Sorteador](/gerador-de-numeros)** para seus eventos e decisões.*`,
+    faq: [
+      {
+        question: "Quais são as principais tendências de sorteios online para 2026?",
+        answer: "As principais tendências incluem: uso de Inteligência Artificial para personalização e detecção de fraudes, blockchain para transparência total, experiências imersivas com realidade aumentada e metaverso, micro-sorteios com gratificação instantânea, e sorteios com impacto social e sustentabilidade."
+      },
+      {
+        question: "Como o blockchain vai melhorar os sorteios online?",
+        answer: "O blockchain permitirá registros imutáveis de cada sorteio, criando um histórico público e inalterável que qualquer pessoa pode verificar. Além disso, contratos inteligentes automatizarão pagamentos de prêmios, eliminando burocracias e aumentando a confiança dos participantes."
+      },
+      {
+        question: "O que são micro-sorteios e por que estão em alta?",
+        answer: "Micro-sorteios são sorteios rápidos com prêmios menores mas mais frequentes. Eles estão em alta porque mantêm o engajamento contínuo da audiência, especialmente durante lives e eventos, oferecendo gratificação instantânea aos participantes."
+      },
+      {
+        question: "Como a realidade aumentada será usada em sorteios?",
+        answer: "A realidade aumentada permitirá experiências como 'caçar' números da sorte ou prêmios virtuais usando a câmera do celular, tornando os sorteios mais interativos e divertidos. Eventos no metaverso também permitirão que avatares participem e celebrem juntos."
+      }
+    ]
   },
   {
     slug: "criar-jogo-online-mega-virada-2026",
@@ -190,6 +214,24 @@ Implemente sistema de alertas:
 Criar um jogo online da Mega da Virada requer atenção a detalhes de segurança, usabilidade e transparência. Use ferramentas confiáveis como o Sorteador para garantir sorteios justos e verificáveis.
 
 Pronto para criar? **[Use o Gerador de Números do Sorteador](/gerador-de-numeros)** como base para seu jogo da Mega da Virada!`,
+    faq: [
+      {
+        question: "Como criar um jogo online da Mega da Virada?",
+        answer: "Para criar um jogo online da Mega da Virada, você precisa de três componentes essenciais: um gerador de números aleatórios criptograficamente seguro (6 números de 1 a 60), uma interface intuitiva para seleção de números, e um sistema de sorteio transparente com resultados verificáveis."
+      },
+      {
+        question: "Qual API usar para gerar números aleatórios seguros?",
+        answer: "Recomendamos usar a Web Crypto API do navegador, que fornece aleatoriedade criptograficamente segura. Isso garante que os números gerados sejam verdadeiramente aleatórios e não possam ser previstos ou manipulados."
+      },
+      {
+        question: "Como garantir que o sorteio seja justo e verificável?",
+        answer: "Use hash criptográfico para registrar os resultados, mantenha logs de auditoria completos, mostre o processo de sorteio de forma transparente e considere usar blockchain para criar registros imutáveis que qualquer pessoa possa verificar."
+      },
+      {
+        question: "Posso criar um sistema de bolões online?",
+        answer: "Sim! Um sistema de bolões permite compartilhamento de jogos, divisão automática de prêmios, gestão de participantes e histórico de bolões. É uma funcionalidade que aumenta muito o engajamento dos usuários."
+      }
+    ]
   },
   {
     slug: "criar-jogo-online-mega-sena-2026",
@@ -317,6 +359,24 @@ Forneça insights:
 Criar um jogo online da Mega-Sena requer planejamento cuidadoso de segurança, usabilidade e transparência. Use ferramentas confiáveis e siga as melhores práticas.
 
 Pronto para começar? **[Use o Gerador de Números do Sorteador](/gerador-de-numeros)** como base!`,
+    faq: [
+      {
+        question: "Como funciona a Mega-Sena?",
+        answer: "A Mega-Sena é a loteria mais popular do Brasil, com sorteios duas vezes por semana. Os jogadores escolhem 6 números de 1 a 60, e o prêmio pode chegar a centenas de milhões de reais."
+      },
+      {
+        question: "Como criar um gerador de números para Mega-Sena?",
+        answer: "Use a Web Crypto API para gerar 6 números únicos entre 1 e 60. Implemente validação para garantir que não haja duplicados e ordene os números automaticamente para melhor visualização."
+      },
+      {
+        question: "O que é a função 'surpresinha' em jogos de loteria?",
+        answer: "A surpresinha é uma função que gera automaticamente números aleatórios para o jogador, sem que ele precise escolher manualmente. É útil para quem quer jogar rapidamente ou não tem números preferidos."
+      },
+      {
+        question: "Como implementar um sistema de múltiplas apostas?",
+        answer: "Permita que usuários criem várias combinações de números, visualizem em lista, editem individualmente e exportem seus jogos. Inclua também cálculo automático de custos baseado na quantidade de apostas."
+      }
+    ]
   },
   {
     slug: "criar-jogo-online-lotofacil-2026",
@@ -454,6 +514,24 @@ Crie competições:
 Criar um jogo online da Lotofácil é uma excelente oportunidade de oferecer entretenimento acessível. Foque em simplicidade e usabilidade.
 
 Pronto para criar? **[Use o Gerador de Números do Sorteador](/gerador-de-numeros)** como base!`,
+    faq: [
+      {
+        question: "Quantos números preciso escolher na Lotofácil?",
+        answer: "Na Lotofácil você escolhe 15 números de 1 a 25. É uma das loterias com maior probabilidade de acertos, o que a torna muito popular entre os jogadores."
+      },
+      {
+        question: "Por que a Lotofácil é considerada mais fácil?",
+        answer: "A Lotofácil tem maior probabilidade de acertos porque você escolhe 15 números de apenas 25 disponíveis, enquanto outras loterias como a Mega-Sena exigem 6 números de 60. Isso aumenta significativamente as chances de ganhar."
+      },
+      {
+        question: "Como implementar a seleção de 15 números?",
+        answer: "Crie um grid de 25 números com seleção visual clara, adicione um contador de números selecionados, implemente validação em tempo real para garantir exatamente 15 números, e ofereça opção de surpresinha para geração automática."
+      },
+      {
+        question: "Quais recursos avançados posso adicionar?",
+        answer: "Você pode adicionar análise de padrões com frequência de números, modo competição com ranking de acertos e desafios semanais, sistema de múltiplos jogos, e estatísticas históricas para ajudar os usuários."
+      }
+    ]
   },
   {
     slug: "criar-jogo-online-quina-2026",
@@ -580,6 +658,24 @@ Inclua informações:
 Criar um jogo online da Quina oferece uma experiência educativa e entretenimento. Foque em usabilidade e transparência.
 
 Pronto para desenvolver? **[Use o Gerador de Números do Sorteador](/gerador-de-numeros)** como base!`,
+    faq: [
+      {
+        question: "Como funciona a Quina?",
+        answer: "A Quina é uma loteria brasileira onde você escolhe 5 números de 1 a 80. Os sorteios acontecem diariamente e os prêmios são acumulativos, oferecendo uma probabilidade balanceada de ganhos."
+      },
+      {
+        question: "Quantos números preciso acertar na Quina para ganhar?",
+        answer: "Na Quina você pode ganhar acertando 2, 3, 4 ou 5 números. Quanto mais números acertar, maior o prêmio. O prêmio principal é para quem acerta os 5 números."
+      },
+      {
+        question: "Como criar um gerador de números para Quina?",
+        answer: "Implemente um gerador que selecione 5 números únicos entre 1 e 80, com validação de unicidade, ordenação automática e interface visual clara com grid de 80 números."
+      },
+      {
+        question: "Posso adicionar estatísticas ao meu jogo da Quina?",
+        answer: "Sim! Você pode incluir números mais sorteados, frequência histórica, padrões de distribuição e gráficos interativos para ajudar os usuários a analisar tendências."
+      }
+    ]
   },
   {
     slug: "criar-jogo-online-mais-milionaria-2026",
@@ -713,6 +809,24 @@ function gerarMaisMilionaria() {
 Criar um jogo online da +Milionária requer atenção especial ao sistema dual de números. Foque em clareza e usabilidade.
 
 Pronto para criar? **[Use o Gerador de Números do Sorteador](/gerador-de-numeros)** como base!`,
+    faq: [
+      {
+        question: "Como funciona a +Milionária?",
+        answer: "A +Milionária é uma loteria brasileira onde você escolhe 6 números principais de 1 a 50 e mais 2 números da sorte de 1 a 6. É um sistema dual único que oferece prêmios milionários."
+      },
+      {
+        question: "Qual a diferença entre números principais e números da sorte?",
+        answer: "Os números principais (6 de 1 a 50) são o foco do sorteio, enquanto os números da sorte (2 de 1 a 6) são um pool separado que aumenta suas chances de ganhar prêmios adicionais."
+      },
+      {
+        question: "Como implementar o sistema dual de números?",
+        answer: "Crie dois pools separados na interface: um grid para os 6 números principais e outro para os 2 números da sorte. Implemente validação independente para cada pool e geração simultânea."
+      },
+      {
+        question: "Posso usar a mesma interface para ambos os pools?",
+        answer: "Recomendamos interfaces separadas com identificação visual clara, cores distintas e contadores independentes para evitar confusão. O preview pode ser unificado mostrando ambos os conjuntos."
+      }
+    ]
   },
   {
     slug: "criar-jogo-online-lotomania-2026",
@@ -844,6 +958,24 @@ Inclua recursos estratégicos:
 Criar um jogo online da Lotomania requer atenção especial à interface devido ao grande número de opções. Foque em eficiência e usabilidade.
 
 Pronto para desenvolver? **[Use o Gerador de Números do Sorteador](/gerador-de-numeros)** como base!`,
+    faq: [
+      {
+        question: "Quantos números preciso escolher na Lotomania?",
+        answer: "Na Lotomania você escolhe 50 números de 0 a 99. É a loteria com mais números para selecionar, o que a torna única e desafiadora."
+      },
+      {
+        question: "Como organizar um grid de 100 números?",
+        answer: "Organize em um grid 10x10 com números de 0 a 99. Use cores alternadas para facilitar a visualização, adicione contador de selecionados e implemente seleção múltipla para agilizar."
+      },
+      {
+        question: "Quais otimizações são necessárias para a Lotomania?",
+        answer: "Devido ao grande número de opções, implemente renderização eficiente, virtualização de grid, lazy loading e cache inteligente. Também considere atalhos de teclado e seleção por faixa."
+      },
+      {
+        question: "Posso ganhar acertando 0 números na Lotomania?",
+        answer: "Sim! Na Lotomania você também ganha se não acertar nenhum número (0 acertos). É uma característica única desta loteria que aumenta as chances de premiação."
+      }
+    ]
   },
   {
     slug: "criar-jogo-online-timenania-2026",
@@ -970,6 +1102,24 @@ Crie experiência integrada:
 Criar um jogo online da Timemania combina sorte e paixão esportiva. Foque em experiência única e engajamento.
 
 Pronto para criar? **[Use o Gerador de Números do Sorteador](/gerador-de-numeros)** como base!`,
+    faq: [
+      {
+        question: "Como funciona a Timemania?",
+        answer: "A Timemania combina números e futebol: você escolhe 10 números de 1 a 80 e também seleciona um time de futebol. Se seu time for sorteado, você ganha um prêmio adicional mesmo sem acertar todos os números."
+      },
+      {
+        question: "Quantos times participam da Timemania?",
+        answer: "A Timemania conta com 80 times de futebol brasileiros participantes. Você pode buscar por nome, filtrar por estado ou liga, e visualizar os escudos para facilitar a escolha."
+      },
+      {
+        question: "Como implementar a seleção de times?",
+        answer: "Crie uma lista completa de times com busca e filtros, visualização de escudos, informações do time e integração com a seleção de números em uma interface unificada."
+      },
+      {
+        question: "Posso ganhar apenas com o time do coração?",
+        answer: "Sim! Na Timemania, se seu time for sorteado, você ganha um prêmio mesmo sem acertar nenhum número. É uma forma de premiar a paixão pelo futebol."
+      }
+    ]
   },
   {
     slug: "criar-jogo-online-dupla-sena-2026",
@@ -1100,6 +1250,24 @@ Crie visualização clara:
 Criar um jogo online da Dupla Sena oferece experiência única com dupla chance. Foque em clareza e comparação visual.
 
 Pronto para criar? **[Use o Gerador de Números do Sorteador](/gerador-de-numeros)** como base!`,
+    faq: [
+      {
+        question: "O que é a Dupla Sena?",
+        answer: "A Dupla Sena é uma loteria única que oferece dois sorteios no mesmo dia com os mesmos números. Você escolhe 6 números de 1 a 50 e concorre duas vezes, dobrando suas chances de ganhar."
+      },
+      {
+        question: "Como funcionam os dois sorteios da Dupla Sena?",
+        answer: "Você faz uma única aposta com 6 números e esses mesmos números concorrem em dois sorteios independentes realizados no mesmo dia. Você pode ganhar em um, nos dois ou em nenhum dos sorteios."
+      },
+      {
+        question: "Como implementar a visualização de dois sorteios?",
+        answer: "Crie uma interface com área de seleção única para os números e duas áreas de resultados lado a lado para comparação visual. Inclua estatísticas combinadas e destaque os acertos em cada sorteio."
+      },
+      {
+        question: "Os prêmios são acumulativos entre os dois sorteios?",
+        answer: "Sim! Se você acertar em ambos os sorteios, ganha os dois prêmios. Cada sorteio tem sua própria premiação independente, o que torna a Dupla Sena muito atrativa."
+      }
+    ]
   },
   {
     slug: "criar-jogo-online-loteca-2026",
@@ -1231,6 +1399,24 @@ Crie design temático:
 Criar um jogo online da Loteca combina sorte e conhecimento esportivo. Foque em integração com dados reais e experiência envolvente.
 
 Pronto para criar? **[Use o Gerador de Números do Sorteador](/gerador-de-numeros)** como inspiração!`,
+    faq: [
+      {
+        question: "Como funciona a Loteca?",
+        answer: "A Loteca é uma loteria baseada em 14 jogos de futebol onde você escolhe o resultado de cada partida: 1 (time da casa vence), X (empate) ou 2 (time visitante vence). Os sorteios são semanais e baseados em jogos reais."
+      },
+      {
+        question: "Qual a diferença da Loteca para outras loterias?",
+        answer: "A Loteca é única por combinar conhecimento esportivo com sorte. Diferente de outras loterias que usam apenas números aleatórios, na Loteca você pode usar seu conhecimento sobre futebol para fazer apostas mais informadas."
+      },
+      {
+        question: "Como implementar um sistema de apostas 1-X-2?",
+        answer: "Crie uma interface com 14 linhas de jogos, cada uma com três botões (1, X, 2). Implemente validação para garantir que todas as 14 partidas tenham uma seleção, e adicione opção de surpresinha para geração automática."
+      },
+      {
+        question: "Posso integrar dados de jogos reais?",
+        answer: "Sim! Você pode usar APIs de dados esportivos para obter informações sobre times, estatísticas de confrontos, resultados em tempo real e histórico de partidas para enriquecer a experiência do usuário."
+      }
+    ]
   },
   {
     slug: "criar-jogo-online-dia-sorte-2026",
@@ -1353,6 +1539,24 @@ Crie design relacionado a datas:
 Criar um jogo online do Dia de Sorte oferece experiência única e temática. Foque em usabilidade e design atraente.
 
 Pronto para criar? **[Use o Gerador de Números do Sorteador](/gerador-de-numeros)** como base!`,
+    faq: [
+      {
+        question: "Como funciona o Dia de Sorte?",
+        answer: "O Dia de Sorte é uma loteria brasileira onde você escolhe 7 números de 1 a 31 (representando dias do mês) e um mês da sorte de 1 a 12. É uma loteria temática que combina números e meses para uma experiência única."
+      },
+      {
+        question: "Por que os números vão só até 31?",
+        answer: "Os números de 1 a 31 representam os dias do mês, criando uma conexão temática com datas especiais. Isso torna a loteria mais pessoal, permitindo que jogadores escolham datas significativas como aniversários."
+      },
+      {
+        question: "Como implementar a seleção do mês da sorte?",
+        answer: "Crie uma interface separada com os 12 meses do ano, usando nomes ou números. Implemente validação para garantir que um mês seja selecionado junto com os 7 números, e ofereça opção de surpresinha para ambos."
+      },
+      {
+        question: "Posso usar datas especiais como números?",
+        answer: "Sim! Muitos jogadores escolhem números baseados em datas significativas como aniversários, casamentos ou outras datas especiais. Você pode até criar uma funcionalidade que converte datas em números automaticamente."
+      }
+    ]
   },
   {
     slug: "criar-jogo-online-super-sete-2026",
@@ -1478,6 +1682,24 @@ function gerarSuperSete() {
 Criar um jogo online do Super Sete oferece experiência simples e acessível. Foque em simplicidade e usabilidade.
 
 Pronto para criar? **[Use o Gerador de Números do Sorteador](/gerador-de-numeros)** como base!`,
+    faq: [
+      {
+        question: "Como funciona o Super Sete?",
+        answer: "O Super Sete é uma loteria brasileira onde você escolhe 7 números de 0 a 9, um para cada posição. Diferente de outras loterias, os números podem se repetir, tornando o jogo mais simples e acessível."
+      },
+      {
+        question: "Os números podem se repetir no Super Sete?",
+        answer: "Sim! No Super Sete, cada posição é independente e aceita números de 0 a 9. Isso significa que você pode ter combinações como 1-1-1-1-1-1-1 ou qualquer outra repetição."
+      },
+      {
+        question: "Como criar a interface de 7 posições?",
+        answer: "Crie 7 campos de seleção independentes, cada um com opções de 0 a 9. Use um design minimalista com visualização clara de cada posição e feedback imediato quando o usuário seleciona um número."
+      },
+      {
+        question: "Qual a vantagem do Super Sete sobre outras loterias?",
+        answer: "O Super Sete é mais simples por usar apenas números de 0 a 9 e permitir repetições. Isso torna o jogo mais acessível para iniciantes e oferece sorteios diários, aumentando as oportunidades de ganhar."
+      }
+    ]
   },
   {
     slug: "enterprise-randomizer-governance-2026",
@@ -1549,6 +1771,24 @@ Use o console administrativo para acionar “freeze draws”; a interface orient
 2. Mapeie cada cenário para a ferramenta apropriada do Sorteador.
 3. Publique um microsite interno com tutoriais em vídeo e contatos de escalonamento.
 `,
+    faq: [
+      {
+        question: "Por que empresas precisam de governança em randomizadores?",
+        answer: "Grandes organizações enfrentam pressão regulatória de SOX, GDPR e LGPD. Governança garante repetibilidade, provas auditáveis e conformidade em sorteios corporativos para RH, finanças e operações."
+      },
+      {
+        question: "Como provar a aleatoriedade em auditorias?",
+        answer: "Apresente os metadados da semente Web Crypto junto ao CSV de participantes. O Sorteador gera trilhas de auditoria imutáveis com timestamps, parâmetros e fonte de aleatoriedade que auditores podem verificar."
+      },
+      {
+        question: "Quais KPIs acompanhar em sorteios corporativos?",
+        answer: "Monitore: sorteios registrados e prontos para auditoria (meta: 100%), tempo médio de configuração (menos de 3 minutos) e satisfação dos participantes (NPS > +40)."
+      },
+      {
+        question: "Como lidar com prestadores de serviço em sorteios?",
+        answer: "Emita links de curta duração com permissões específicas e expiração automática. Isso garante que prestadores participem sem acesso permanente aos sistemas internos."
+      }
+    ]
   },
   {
     slug: "live-event-wheel-engagement-guide-2026",
@@ -1612,6 +1852,24 @@ Sim, espelhe a fonte do navegador no OBS e faça restream.
 ### Como evitar caçadores de prêmios?
 Ative autenticação, limite a uma entrada por e-mail e audite o histórico.
 `,
+    faq: [
+      {
+        question: "Quantas entradas a roleta suporta em eventos ao vivo?",
+        answer: "A roleta do Sorteador suporta até 500 nomes sem travamentos. Para eventos maiores, faça lotes prévios e processe em grupos para manter a performance."
+      },
+      {
+        question: "Como transmitir a roleta para múltiplas plataformas?",
+        answer: "Espelhe a fonte do navegador no OBS e use ferramentas de restream para transmitir simultaneamente para YouTube, TikTok e outras plataformas."
+      },
+      {
+        question: "Qual stack tecnológica usar para eventos?",
+        answer: "Use a Roleta Sorteador em modo client-side, saída NDI para OBS conectado ao painel/LED wall, e gerador de QR codes para inscrições do público em tempo real."
+      },
+      {
+        question: "Como evitar fraudes em sorteios de eventos?",
+        answer: "Ative autenticação por e-mail, limite a uma entrada por participante, audite o histórico de inscrições e use verificação de identidade para prêmios de alto valor."
+      }
+    ]
   },
   {
     slug: "ai-assisted-wheel-prompts-2026",
@@ -1670,6 +1928,24 @@ Qualquer modelo que retorne listas (GPT-4.1, Claude 3.5, Gemini 2.0) serve; foqu
 ### Dá para automatizar tudo?
 Sim — use a futura API do Sorteador para alimentar os prompts diretamente. Até lá, o workflow via clipboard é rápido o suficiente para workshops.
 `,
+    faq: [
+      {
+        question: "Como combinar IA com roletas para brainstorming?",
+        answer: "Peça ao modelo de IA 30 ideias de prompts dentro de um tema, cole a lista na Roleta ou Selecionador de Nomes, e gire para decidir o próximo rumo do brainstorm ou desafio do sprint."
+      },
+      {
+        question: "Quais categorias de prompts funcionam melhor?",
+        answer: "Ganchos de marketing ('Escreva uma landing page para...'), refactors de engenharia ('Melhore o fluxo de onboarding para...') e aquecimentos em sala ('Defenda o lado oposto de...') são categorias que brilham."
+      },
+      {
+        question: "Qual modelo de IA usar para gerar prompts?",
+        answer: "Qualquer modelo que retorne listas funciona bem: GPT-4, Claude, Gemini. O importante é clareza nos prompts, não o tamanho do modelo."
+      },
+      {
+        question: "Como manter a segurança ao usar IA com roletas?",
+        answer: "Gere os prompts via IA separadamente e cole apenas conteúdo sanitizado na roleta. Desative o histórico se houver dados confidenciais e revise as sugestões antes de publicar."
+      }
+    ]
   },
   {
     slug: "secure-classroom-number-draw-checklist-2026",
@@ -1724,6 +2000,24 @@ Use a visualização em gráfico para mostrar distribuição uniforme e pratique
 ### Os alunos podem girar em seus próprios dispositivos?
 Sim, mas forneça uma rubrica comum para garantir intervalos e regras consistentes.
 `,
+    faq: [
+      {
+        question: "Como usar sorteios numéricos na sala de aula?",
+        answer: "Use um notebook ou tablet dedicado, desative duplicados para distribuir assentos únicos, e mostre os intervalos mínimo/máximo na tela para que os alunos entendam a justiça do processo."
+      },
+      {
+        question: "O sorteio funciona sem internet?",
+        answer: "Sim! O Sorteador continua funcionando offline após carregado. Mantenha a aba aberta antes de começar a aula para garantir que funcione mesmo se o Wi-Fi cair."
+      },
+      {
+        question: "Como garantir acessibilidade nos sorteios?",
+        answer: "Ative o modo de fonte grande no navegador, narre cada sorteio para alunos com deficiência visual, e tenha um cesto de fichas táteis como backup em caso de queda de energia."
+      },
+      {
+        question: "Como explicar aleatoriedade para os alunos?",
+        answer: "Use a visualização em gráfico para mostrar distribuição uniforme e pratique exercícios rápidos de probabilidade. Isso transforma o sorteio em uma oportunidade de aprendizado sobre estatística."
+      }
+    ]
   },
   {
     slug: "cryptographically-secure-random-number-generator-2026",
@@ -1881,6 +2175,24 @@ Entregue o CSV exportado com timestamps, parâmetros de intervalo e uma declara�
 2. **Documente o processo**: crie procedimentos operacionais padrão para o time.
 3. **Treine stakeholders**: garanta que todos entendam a importância do RNG seguro.
 `,
+    faq: [
+      {
+        question: "O que é um gerador de números criptograficamente seguro?",
+        answer: "É um gerador que usa algoritmos criptográficos para produzir números imprevisíveis, mesmo conhecendo saídas anteriores. A Web Crypto API do navegador é um exemplo, usando crypto.getRandomValues() para aleatoriedade segura."
+      },
+      {
+        question: "Por que Math.random() não é seguro para loterias?",
+        answer: "Math.random() é pseudorrandômico e previsível se você conhecer a semente. Para loterias, auditorias e sorteios regulados, você precisa de aleatoriedade criptograficamente segura que auditores possam verificar."
+      },
+      {
+        question: "O que é viés de módulo e como evitar?",
+        answer: "Viés de módulo ocorre quando você usa 'random % range', criando distribuição desigual. A solução é usar rejection sampling: gerar valores em intervalos potência de 2 e rejeitar valores fora do intervalo alvo."
+      },
+      {
+        question: "Como provar a justiça de um sorteio para auditores?",
+        answer: "Entregue o CSV exportado com timestamps, parâmetros de intervalo (min, max, quantidade) e uma declaração confirmando o uso da Web Crypto API. A maioria dos auditores aceita essa evidência."
+      }
+    ]
   },
   {
     slug: "random-number-generator-practical-use-cases-2026",
@@ -2078,6 +2390,24 @@ O Sorteador usa Web Crypto API para aleatoriedade criptograficamente segura. Nã
 3. **Documente os resultados** e compartilhe com o time.
 4. **Itere e expanda** para outros fluxos conforme perceber valor.
 `,
+    faq: [
+      {
+        question: "Quais são os principais usos de geradores de números aleatórios em empresas?",
+        answer: "Em empresas, os principais usos incluem: amostragem de faturas para auditoria, distribuição justa de salas de reunião e turnos, sorteio de brindes em campanhas, segmentação de e-mail para testes A/B, e triagem de bugs em times de desenvolvimento."
+      },
+      {
+        question: "Como usar geradores de números na educação?",
+        answer: "Na educação, use para: selecionar alunos para apresentações, formar grupos de projeto, criar layouts de assentos aleatórios, randomizar questões de provas, e parear estudantes para revisão por pares."
+      },
+      {
+        question: "Quantos números posso gerar de uma vez no Sorteador?",
+        answer: "O Sorteador suporta até 10.000 números por sorteio. Para lotes maiores, faça múltiplos draws e combine os resultados em uma planilha ou sistema."
+      },
+      {
+        question: "Como garantir que os resultados são realmente aleatórios?",
+        answer: "O Sorteador usa Web Crypto API para aleatoriedade criptograficamente segura. Não há intervenção manual — o algoritmo cuida de tudo. Você pode exportar o histórico para verificar a distribuição uniforme dos resultados."
+      }
+    ]
   },
   {
     slug: "random-number-generator-comparison-best-practices-2026",
@@ -2347,6 +2677,24 @@ O RNG ideal depende do caso de uso, requisitos de segurança e desempenho. Para 
 3. Registre e exporte históricos.
 4. Valide a implementação com testes estatísticos.
 `,
+    faq: [
+      {
+        question: "Qual a diferença entre PRNG, CSPRNG e TRNG?",
+        answer: "PRNG (pseudorrandômico) usa algoritmos matemáticos e é rápido mas previsível. CSPRNG (criptograficamente seguro) é imprevisível e adequado para segurança. TRNG (verdadeiramente aleatório) extrai aleatoriedade de fenômenos físicos e oferece máxima segurança."
+      },
+      {
+        question: "Quando usar cada tipo de gerador?",
+        answer: "Use PRNG para jogos e simulações onde reprodutibilidade importa. Use CSPRNG para loterias, rifas e aplicações de segurança. Use TRNG para sistemas críticos como carteiras cripto e aplicações militares."
+      },
+      {
+        question: "O que é viés de módulo e por que é problemático?",
+        answer: "Viés de módulo ocorre quando você usa 'random % range', criando distribuição desigual. Por exemplo, mapear 0-255 para 0-99 dá mais chances aos números 0-55. A solução é rejection sampling."
+      },
+      {
+        question: "Como validar se meu RNG é realmente aleatório?",
+        answer: "Rode testes estatísticos como qui-quadrado e Kolmogorov-Smirnov em grandes amostras. Ferramentas como Diehard e NIST SP 800-22 oferecem suítes completas de validação."
+      }
+    ]
   },
   {
     slug: "multilingual-name-picker-strategy-2026",
@@ -2401,6 +2749,24 @@ Agende sessões espelhadas e use o log para garantir tempo igual para cada regi�
 ### E se alguém atualizar o nome preferido?
 Sincronize diariamente com o HRIS ou peça para os admins atualizarem o CSV antes de cada sessão.
 `,
+    faq: [
+      {
+        question: "Como lidar com nomes difíceis de pronunciar em sorteios?",
+        answer: "Use o campo de anotação para adicionar IPA ou fonética simplificada (ex.: Nguyễn / 'nWin'). Incentive facilitadores a ensaiar os nomes antes de girar e rotacione a responsabilidade de pronúncia entre o time."
+      },
+      {
+        question: "O Sorteador suporta caracteres de outros idiomas?",
+        answer: "Sim! O Sorteador aceita UTF-8 completo, permitindo colar escrituras nativas como chinês (汉字), árabe (عربى) e hindi (हिंदी) diretamente na lista de nomes."
+      },
+      {
+        question: "Como manter sorteios justos entre diferentes fusos horários?",
+        answer: "Agende sessões espelhadas para cada região e use o log de histórico para garantir tempo igual de participação. Isso assegura que nenhuma região seja favorecida ou prejudicada."
+      },
+      {
+        question: "Posso ocultar sobrenomes nos sorteios?",
+        answer: "Sim! Use iniciais ou apelidos na lista visível e mantenha a lista completa com nomes reais offline para referência. Isso protege a privacidade enquanto mantém a funcionalidade."
+      }
+    ]
   },
   {
     slug: "how-to-use-spin-the-wheel-for-decision-making",
@@ -2490,7 +2856,25 @@ Roletas brilham em escolhas cotidianas, não em decisões de vida. Funcionam mel
 A roleta é mais do que entretenimento — é uma solução prática para decisões rápidas, justas e engajantes. No pessoal ou profissional, dominar o spinner economiza tempo e adiciona emoção às escolhas diárias.
 
 Pronto para girar? Experimente o nosso **[Spinner de Roleta](/)** e sinta a leveza de decidir sem desgaste!
-    `
+    `,
+    faq: [
+      {
+        question: "Como usar a roleta para tomar decisões?",
+        answer: "Liste suas opções claramente, configure a roleta no Sorteador, defina as regras (uma rodada ou várias, resultado final ou consultivo), e gire! A roleta elimina a fadiga decisória e garante resultados imparciais."
+      },
+      {
+        question: "A roleta é justa para sorteios?",
+        answer: "Sim! A roleta do Sorteador usa algoritmos de aleatoriedade que garantem chances iguais para todas as opções. Cada entrada tem a mesma probabilidade de ser selecionada."
+      },
+      {
+        question: "Quando devo usar uma roleta aleatória?",
+        answer: "Roletas são ideais para decisões cotidianas como escolher restaurantes, distribuir tarefas, selecionar vencedores de sorteios, dinâmicas de equipe e icebreakers. Evite usar para decisões críticas de vida."
+      },
+      {
+        question: "Posso salvar e reutilizar minhas roletas?",
+        answer: "Sim! O Sorteador permite salvar suas roletas favoritas e reutilizá-las. Você também pode usar templates prontos para tarefas, sorteios e desafios."
+      }
+    ]
   },
   {
     slug: "random-decision-trends-2026",
@@ -2558,7 +2942,25 @@ O universo das seleções aleatórias está em alta. De requisitos de justiça e
 ## Conclusão
 
 Para liderar em 2026, adote ferramentas que combinem segurança criptográfica, templates com IA, dashboards de privacidade e bibliotecas comunitárias — exatamente o roadmap que o Sorteador segue. Salve este relatório e revisite trimestralmente para manter sua estratégia de decisões aleatórias preparada para o futuro.
-    `
+    `,
+    faq: [
+      {
+        question: "Quais são as principais tendências de sorteios para 2026?",
+        answer: "As cinco macro tendências são: aleatoriedade pronta para compliance com logs verificáveis, construção de roletas assistida por IA, APIs headless de aleatoriedade, dashboards privacy-by-design, e templates movidos pela comunidade."
+      },
+      {
+        question: "Como a IA vai impactar os sorteios em 2026?",
+        answer: "A IA permitirá criar roletas automaticamente a partir de prompts, destacar duplicidades ou termos sensíveis, e gerar templates personalizados. Professores poderão descrever o plano de aula e ter o randomizador configurado automaticamente."
+      },
+      {
+        question: "O que são APIs headless de aleatoriedade?",
+        answer: "São endpoints seguros que permitem empresas embutirem sorteios em suas próprias interfaces. Apps de fidelidade, por exemplo, podem disparar spins quando clientes atingem metas, tudo via API com autenticação e logs de auditoria."
+      },
+      {
+        question: "Como garantir compliance em sorteios em 2026?",
+        answer: "Use ferramentas com trilhas de auditoria imutáveis, exportação em JSON assinado, declarações com hashes e timestamps, e consentimento granular para armazenamento de dados conforme LGPD, GDPR e CPPA."
+      }
+    ]
   },
   {
     slug: "hybrid-team-randomizer-playbook-2026",
@@ -2617,7 +3019,25 @@ Empresas remote-first dependem de seleções imparciais para manter a colaboraç
 ## Conclusão
 
 Justiça alimenta retenção. Equipe times híbridos com templates do Sorteador para que ninguém discuta de quem é a vez em 2026. Combine transparência, automação e rituais leves para manter equipes distribuídas alinhadas e empolgadas para o próximo giro.
-    `
+    `,
+    faq: [
+      {
+        question: "Como usar randomizadores em standups de times híbridos?",
+        answer: "Carregue todos os membros do time na roleta, ative Auto-Requeue para que quem já falou volte ao pool, e marque colegas por função para spins segmentados. Compartilhe a tela para transparência total."
+      },
+      {
+        question: "Como distribuir tarefas operacionais de forma justa?",
+        answer: "Use slices com pesos diferentes para responsabilidades como plantões e auditorias. Engenheiros seniores podem receber peso extra em tarefas especializadas. Exporte designações para Jira ou Linear via webhook."
+      },
+      {
+        question: "Como usar roletas para melhorar a cultura do time?",
+        answer: "Abra retros com um giro de reconhecimento onde quem sair agradece alguém do time. Use mini roletas para escolher formatos de retrospectiva e randomize pares de pair programming semanalmente."
+      },
+      {
+        question: "Como garantir participação equitativa em times distribuídos?",
+        answer: "Salve o histórico semanal e identifique lacunas de participação. Permita um 'Passe' por semana para emergências e use o log para garantir que todos tenham oportunidades iguais ao longo do tempo."
+      }
+    ]
   },
   {
     slug: "giveaway-compliance-checklist-2026",
@@ -2688,7 +3108,25 @@ Justiça alimenta retenção. Equipe times híbridos com templates do Sorteador 
 ## Conclusão
 
 Creators que demonstram sorteios transparentes ganham mais engajamento e proteção legal. O toolkit 2026 do Sorteador coloca cada item da checklist a um clique de distância e garante que todo giro resista a tribunais — ou à opinião pública.
-    `
+    `,
+    faq: [
+      {
+        question: "Quais documentos preciso para um sorteio em compliance?",
+        answer: "Publique regras oficiais com elegibilidade, probabilidades e valores dos prêmios. Salve inscrições com hashes e timestamps, capture prints dos requisitos de participação, e faça revisão jurídica por jurisdição (FTC nos EUA, ASA na UK/UE, SECAP no Brasil)."
+      },
+      {
+        question: "Devo fazer o sorteio ao vivo ou gravado?",
+        answer: "Transmita ao vivo para máxima transparência. Se gravar, registre tudo com overlay de data/hora e publique em até 24 horas. Ambos os métodos são válidos, mas ao vivo gera mais confiança."
+      },
+      {
+        question: "Por quanto tempo devo guardar dados dos ganhadores?",
+        answer: "Guarde dados dos ganhadores por pelo menos 12 meses. Armazene formulários ou DMs comprovando elegibilidade e compartilhe logs sanitizados com parceiros ou reguladores em até dois dias úteis se solicitado."
+      },
+      {
+        question: "Como prevenir fraudes em sorteios online?",
+        answer: "Deduplique entradas por e-mail e IP, exija confirmação de identidade em até 48 horas, use o Modo de Sorteio Verificável para gravar o giro em vídeo, e exporte provas JSON com timestamps."
+      }
+    ]
   },
   {
     slug: "classroom-randomizer-roadmap-2026",
@@ -2744,7 +3182,25 @@ Professores vistos em screenshots da concorrência amam roletas; agora é hora d
 ## Conclusão
 
 Em 2026, randomizadores vão além de icebreakers — são pedagogia. Os pacotes de templates do Sorteador garantem que todos os anos escolares atinjam padrões acadêmicos, metas SEL e expectativas híbridas com um único giro.
-    `
+    `,
+    faq: [
+      {
+        question: "Como usar randomizadores em aulas de STEM?",
+        answer: "Crie experimentos onde cada fatia representa variáveis do laboratório. Alunos comparam distribuições teóricas vs. experimentais com dados exportados em CSV. Use também para desafios de design thinking com materiais e restrições aleatórias."
+      },
+      {
+        question: "Como aplicar roletas em discussões de humanas?",
+        answer: "Sorteie posições ou discursos famosos para debates. Use o Reflection Mode para registrar quem falou e por quanto tempo. Crie roletas de prompts de escrita com teses, tons e públicos para briefings únicos."
+      },
+      {
+        question: "Como usar randomizadores para aprendizagem socioemocional (SEL)?",
+        answer: "Crie roletas de atos de gentileza para momentos de aconselhamento, adicione exercícios de mindfulness como giros rápidos, e integre roletas de recompensa com dashboards PBIS para acompanhamento comportamental."
+      },
+      {
+        question: "Como usar roletas em ensino híbrido e remoto?",
+        answer: "Compartilhe o link do Sorteador no LMS para que alunos girem e recebam prompts de reflexão. Use códigos de acesso para limitar a turma inscrita e permita que vários professores co-gerenciem a mesma roleta."
+      }
+    ]
   },
   {
     slug: "interactive-stream-monetization-2026",
@@ -2801,7 +3257,25 @@ Audiências amam ter influência. Veja como transformar giros do Sorteador em no
 ## Conclusão
 
 Seja no Twitch, YouTube ou TikTok Live, os overlays compatíveis com OBS do Sorteador, analytics para patrocinadores e ferramentas de moderação fazem de 2026 o ano em que os giros pagam as contas. Abra o [Girar a Roleta](/roleta), incorpore como fonte no OBS e deixe sua audiência financiar a diversão.
-    `
+    `,
+    faq: [
+      {
+        question: "Como monetizar streams com roletas?",
+        answer: "Permita que espectadores gastem pontos do canal para adicionar opções ou disparar giros extras. Crie roletas exclusivas para assinantes, ofereça patrocínios de marca com slices destacados, e integre com merch para gerar cupons automáticos."
+      },
+      {
+        question: "Como usar pontos do canal com roletas no Twitch?",
+        answer: "Configure resgates de pontos que adicionam opções à roleta ou disparam giros extras. Use Anti-Spam Cooldowns para agrupar resgates a cada 60 segundos e destaque os maiores apoiadores quando a opção deles vencer."
+      },
+      {
+        question: "Como fazer roletas patrocinadas em compliance com a FTC?",
+        answer: "Rotule claramente com 'Apresentado por...', inclua link do patrocinador na descrição e QR code no overlay. Exporte relatórios com impressões, número de giros e CTR para os patrocinadores."
+      },
+      {
+        question: "Como integrar roletas com vendas de merch?",
+        answer: "Configure hooks de checkout onde o giro define desconto do bundle ou item bônus. Gere cupons automaticamente via Shopify/Zapier e adicione produtos afiliados às fatias para destaque durante a live."
+      }
+    ]
   },
   {
     slug: "10-creative-ways-to-use-random-wheel-spinner",
@@ -3101,7 +3575,25 @@ Experimente o **[Sorteador](/)** para uma experiência de roleta moderna, rápid
 
 ### Posso incorporar a roleta no meu site?
 - Sim—copie o snippet iframe ou use os componentes React/Vue futuros para integração nativa.
-    `
+    `,
+    faq: [
+      {
+        question: "Qual a melhor ferramenta de roleta online?",
+        answer: "A melhor ferramenta depende das suas necessidades. Para uso casual, ferramentas simples e gratuitas funcionam bem. Para professores, busque recursos de salvar/carregar. Para empresas, priorize aparência profissional e resultados verificáveis. O Sorteador oferece todos esses recursos gratuitamente."
+      },
+      {
+        question: "Como saber se uma roleta é realmente aleatória?",
+        answer: "Verifique se a ferramenta usa Web Crypto API (crypto.getRandomValues) para aleatoriedade criptograficamente segura. Evite ferramentas que usam Math.random() simples, que não é verdadeiramente aleatório."
+      },
+      {
+        question: "Posso usar a roleta no celular?",
+        answer: "Sim! As melhores ferramentas de roleta são otimizadas para mobile com interface amigável ao toque, design responsivo, tempos de carregamento rápidos e funcionamento offline (suporte PWA)."
+      },
+      {
+        question: "A roleta pode ser manipulada?",
+        answer: "Ferramentas confiáveis como o Sorteador usam algoritmos transparentes e Web Crypto API para garantir resultados justos e verificáveis. Logs públicos permitem auditar cada sorteio."
+      }
+    ]
   },
   {
     slug: "guia-completo-gerador-numeros-aleatorios",
@@ -3357,7 +3849,25 @@ Pronto para melhorar a experiência da sua audiência? Faça o próximo giro dir
 1. Exporte as roletas antigas em CSV.
 2. Importe no Sorteador, organize por etiquetas e ajuste as cores brasileiras.
 3. Compartilhe o novo link destacando o ambiente sem anúncios e as provas criptográficas.
-    `
+    `,
+    faq: [
+      {
+        question: "Quantas entradas cabem na roleta do Sorteador?",
+        answer: "O Sorteador aceita milhares de entradas graças à renderização virtualizada, enquanto outras ferramentas limitam a ~500. Detectamos duplicidades automaticamente quando você cola listas grandes."
+      },
+      {
+        question: "A roleta do Sorteador é realmente aleatória?",
+        answer: "Sim! Usamos crypto.getRandomValues() da Web Crypto API para aleatoriedade criptograficamente segura. Os metadados são exibidos no próprio painel para total transparência."
+      },
+      {
+        question: "Posso remover vencedores da roleta?",
+        answer: "Sim, com histórico exportável e botão de desfazer. Perfeito para professores que precisam reinserir estudantes ausentes ou para sorteios com múltiplos prêmios."
+      },
+      {
+        question: "A roleta funciona no OBS para streaming?",
+        answer: "Sim! Oferecemos presets de Browser Source em 1080p, fundo transparente e 60 FPS. Também temos webhooks para publicar vencedores no Discord ou no chat da live."
+      }
+    ]
   },
   {
     slug: "casos-criativos-roleta-2025",
@@ -3610,7 +4120,25 @@ A roleta virou ferramenta essencial para educadores porque elimina vieses, mant�
 ## Conclusão
 
 Com poucos cliques, o Sorteador traz justiça, engajamento e organização para a sala de aula. Salve seus modelos, compartilhe-os com outros educadores e torne os momentos de participação um evento aguardado em vez de algo tenso. Experimente agora mesmo carregando a lista da sua turma e girando a [roleta](/roleta) em público — seus alunos vão adorar.
-    `
+    `,
+    faq: [
+      {
+        question: "Como usar a roleta na sala de aula?",
+        answer: "Adicione os nomes dos alunos na roleta do Sorteador, gire para escolher quem participa, e use o modo 'remover vencedor' para garantir que todos participem. Salve uma roleta por turma para reutilizar."
+      },
+      {
+        question: "A roleta é justa para sorteios em sala de aula?",
+        answer: "Sim! O Sorteador usa Web Crypto API para aleatoriedade criptograficamente segura. Mostre o giro ao vivo e ofereça a lista para conferência antes da aula para total transparência."
+      },
+      {
+        question: "E se a internet cair durante a aula?",
+        answer: "O Sorteador funciona offline depois de carregado. Tenha também a lista offline ou use palitos com nomes como plano B para quedas de energia."
+      },
+      {
+        question: "Como evitar que o mesmo aluno seja sorteado duas vezes?",
+        answer: "Use o modo 'sem reposição' que remove automaticamente os vencedores. Para perguntas rápidas, você pode usar 'com reposição' onde todos continuam na roleta."
+      }
+    ]
   },
   {
     slug: "sorteios-online-justos-roleta",
@@ -3682,7 +4210,25 @@ Cada etapa extra pode reduzir a participação em ~30%, então seja intencional.
 - [ ] Métricas analisadas e arquivadas.
 
 Pronto para rodar? Abra a [roleta do Sorteador](/roleta), cole sua lista e gere um sorteio comprovadamente justo em poucos segundos. Sua audiência percebe quando o processo é profissional.
-    `
+    `,
+    faq: [
+      {
+        question: "Como fazer um sorteio justo no Instagram?",
+        answer: "Cole todos os nomes válidos na roleta do Sorteador, remova duplicados, faça uma live ou grave a tela durante o sorteio, e salve o log com timestamp e hash como prova pública. Publique as regras antes e notifique o vencedor em até 48h."
+      },
+      {
+        question: "Quais regras devo incluir no sorteio?",
+        answer: "Inclua período do sorteio, elegibilidade, quantidade de prêmios, método de sorteio, prazo de resposta do vencedor e o aviso 'Não patrocinado por Instagram/TikTok'. Mantenha simples: seguir, curtir e comentar."
+      },
+      {
+        question: "Como provar que o sorteio foi justo?",
+        answer: "Use a roleta do Sorteador que gera logs com timestamp, hash criptográfico e nome do vencedor. Grave a tela ou faça live durante o sorteio. Mostre a lista de participantes antes de girar."
+      },
+      {
+        question: "O que fazer se o vencedor não responder?",
+        answer: "Defina um prazo de 24-48h nas regras e tenha suplentes prontos. Se o vencedor não responder no prazo, passe para o próximo da lista sem precisar reiniciar o processo."
+      }
+    ]
   },
 
   {
@@ -3837,7 +4383,25 @@ Quando todo mundo tem opinião forte (ou ninguém quer decidir), terceirize para
 - Salve templates diferentes para trabalho, casa e eventos.
 
 Com a roda de decisões você economiza tempo, evita discussões e ainda deixa o processo divertido. Teste agora mesmo em <https://sorteador.click>.
-    `
+    `,
+    faq: [
+      {
+        question: "Quando usar a roda de decisões?",
+        answer: "Use quando todo mundo tem opinião forte ou ninguém quer decidir. Ideal para times de produto (ordem de apresentação, próximo bug), família (qual série assistir, quem lava a louça) e comunidades (sorteio de brindes, ordem de fala)."
+      },
+      {
+        question: "O resultado da roda é final?",
+        answer: "Recomendamos combinar previamente que o resultado é final para evitar discussões. Para decisões sensíveis, use duas etapas: roleta escolhe shortlist, votação escolhe o final."
+      },
+      {
+        question: "Posso salvar diferentes rodas de decisão?",
+        answer: "Sim! Salve templates diferentes para trabalho, casa e eventos. Assim você reutiliza rapidamente sem precisar recriar as opções toda vez."
+      },
+      {
+        question: "A roda remove opções após escolher?",
+        answer: "Você pode ativar ou desativar a remoção de vencedor conforme precisar. Com remoção, cada opção só aparece uma vez. Sem remoção, todas as opções continuam disponíveis."
+      }
+    ]
   },
 
   {
@@ -3917,7 +4481,25 @@ Professores, RH e líderes ágeis precisam formar grupos rapidamente. O gerador 
 - Dinâmicas de onboarding.
 
 O Sorteador roda tudo localmente: dados não saem do navegador. Monte seus times agora mesmo e compartilhe o log como prova de justiça.
-    `
+    `,
+    faq: [
+      {
+        question: "Como formar times aleatórios rapidamente?",
+        answer: "Cole todos os nomes no Selecionador de Nomes, escolha quantas pessoas por time, ative 'remover selecionados' para evitar repetições e exporte o resultado ou compartilhe o link."
+      },
+      {
+        question: "Como garantir times equilibrados?",
+        answer: "Marque participantes com tags (sênior, júnior, facilitador) e distribua manualmente após o sorteio. Para turmas grandes, sorteie capitães primeiro e use outra roleta para completar."
+      },
+      {
+        question: "Os dados ficam salvos em algum servidor?",
+        answer: "Não! O Sorteador roda tudo localmente no seu navegador. Seus dados não saem do dispositivo, garantindo total privacidade."
+      },
+      {
+        question: "Posso usar para hackathons e dinâmicas?",
+        answer: "Sim! Perfeito para salas de aula híbridas, hackathons internos, rodízio de plantões e dinâmicas de onboarding. Salve presets por turma, sprint ou squad."
+      }
+    ]
   },
 
   {
@@ -3982,7 +4564,25 @@ Não consegue decidir entre praia, serra ou intercâmbio gastronômico? Monte um
 - [ ] Lista de experiências obrigatórias para cada lugar.
 
 Gire em \`/roleta\`, anote o resultado e monte o roteiro no Notion/Sheets. Você pode até transmitir o giro para envolver amigos e seguidores.
-    `
+    `,
+    faq: [
+      {
+        question: "Como usar a roleta para escolher destino de viagem?",
+        answer: "Monte uma roleta com destinos (cidades, países, opções surpresa), adicione filtros como 'low cost' ou 'natureza', e gire para decidir. Você pode criar uma segunda roleta para escolher época ou companhia."
+      },
+      {
+        question: "Posso incluir diferentes tipos de viagem?",
+        answer: "Sim! Adicione fatias com categorias como praia, serra, intercâmbio gastronômico, trabalho remoto, aventura. A roleta escolhe aleatoriamente entre todas as opções."
+      },
+      {
+        question: "Como envolver amigos na decisão?",
+        answer: "Transmita o giro da roleta em videochamada ou stories para envolver amigos e seguidores. Todos acompanham o resultado em tempo real."
+      },
+      {
+        question: "Devo verificar algo antes de viajar para o destino sorteado?",
+        answer: "Sim! Verifique orçamento aproximado, validade de passaporte e vistos, vacinas necessárias e documentos. Monte um checklist para cada destino possível."
+      }
+    ]
   },
 
   {
@@ -4016,7 +4616,25 @@ Pegue o clássico “Would you rather” e deixe o Sorteador conduzir. As pergun
 - Salve o template para datas comemorativas (Halloween, festas juninas, etc.).
 
 Abra \`/roleta\`, cole sua lista e comece o jogo em segundos.
-    `
+    `,
+    faq: [
+      {
+        question: "Como jogar 'Você prefere' online?",
+        answer: "Liste dilemas divertidos na roleta do Sorteador, use duas cores fortes para destacar cada opção, ative o modo apresentador e gire. Todo mundo responde em voz alta ou via chat."
+      },
+      {
+        question: "Posso usar em sala de aula?",
+        answer: "Sim! Crie perguntas sobre ética, história ou ciências para tornar o aprendizado mais interativo. Os alunos adoram participar de jogos assim."
+      },
+      {
+        question: "Funciona para team building?",
+        answer: "Perfeito! Crie dilemas que revelam preferências de trabalho, como 'preferia trabalhar sozinho ou em equipe?' para conhecer melhor os colegas."
+      },
+      {
+        question: "Posso usar em lives?",
+        answer: "Sim! Deixe o chat enviar novas opções entre um giro e outro. Grave a tela e poste os melhores momentos. Combine com enquetes no Instagram para continuar a conversa."
+      }
+    ]
   },
 
   {
@@ -4057,7 +4675,25 @@ Os sorteios que mais engajam no Instagram são aqueles com prova pública. Veja 
 - Publique card com o @ vencedor e agradecimentos.
 
 Siga estes passos e use \`/roleta\` para transformar cada live em um evento profissional.
-    `
+    `,
+    faq: [
+      {
+        question: "Como fazer sorteio no Instagram de forma justa?",
+        answer: "Cole todos os participantes válidos na roleta do Sorteador, faça uma live mostrando a tela inteira (lista + roleta) antes de girar, salve a gravação e poste no feed após o término."
+      },
+      {
+        question: "O que fazer se o vencedor não responder?",
+        answer: "Envie DM com prazo de resposta (24-48h). Se o vencedor não aparecer, use o log salvo para provar que a nova rodada foi necessária e sorteie novamente."
+      },
+      {
+        question: "Como provar que o sorteio foi justo?",
+        answer: "Mostre a lista completa de participantes antes de girar, grave toda a live, salve o log com timestamp e hash, e publique card com o @ vencedor e agradecimentos."
+      },
+      {
+        question: "Posso usar para reels e stories?",
+        answer: "Sim! Grave a tela durante o sorteio e poste como reel ou story. O formato visual da roleta é perfeito para engajar seguidores."
+      }
+    ]
   },
 
   {
@@ -4092,7 +4728,25 @@ Precisa garantir que cada pessoa seja sorteada apenas uma vez? Ative a eliminaç
 - Jogos em sala de aula onde cada aluno participa uma vez.
 
 Acesse \`/selecionador-de-nomes\`, ative a remoção automática e tenha uma prova clara de que ninguém foi repetido.
-    `
+    `,
+    faq: [
+      {
+        question: "Como funciona a eliminação automática no selecionador de nomes?",
+        answer: "Ao ativar 'Remover após seleção', cada nome sorteado é automaticamente removido da lista. Isso garante que ninguém seja sorteado duas vezes e cria um histórico auditável de todas as seleções."
+      },
+      {
+        question: "Posso ver o histórico de quem já foi sorteado?",
+        answer: "Sim! O Sorteador mantém um histórico completo de todas as seleções com timestamps. Você pode exportar esse histórico para comprovar a lisura do sorteio."
+      },
+      {
+        question: "Para que serve a eliminação automática?",
+        answer: "É ideal para rifas com múltiplos prêmios, rodízio de tarefas em equipes, jogos em sala de aula onde cada aluno participa uma vez, e qualquer situação onde você precisa garantir que ninguém se repita."
+      },
+      {
+        question: "Posso desfazer uma seleção se errar?",
+        answer: "Sim, você pode restaurar nomes removidos através do histórico. Isso é útil caso precise refazer um sorteio ou corrigir algum erro."
+      }
+    ]
   },
 
   {
@@ -4177,7 +4831,25 @@ Democracia gastronômica existe: todo mundo sugere restaurantes, o Sorteador dec
 - Atualize a roleta com descobertas novas ou locais fechados.
 
 Deixe o jantar mais divertido acessando \`/roleta\` e girando antes de sair de casa.
-    `
+    `,
+    faq: [
+      {
+        question: "Como criar uma roleta de restaurantes?",
+        answer: "Adicione o nome do restaurante + bairro + preço médio em cada fatia. Use cores diferentes para delivery, presencial e viagem rápida. Inclua 'cozinhar em casa' para equilibrar o orçamento."
+      },
+      {
+        question: "Como evitar brigas sobre o resultado?",
+        answer: "Combine que o resultado vale por pelo menos 24h e que cada pessoa pode usar um 'veto' por mês. Assim todos aceitam o resultado da roleta."
+      },
+      {
+        question: "Posso incluir restrições alimentares?",
+        answer: "Sim! Crie roletas separadas por tipo de culinária ou adicione tags como 'vegetariano', 'sem glúten' para filtrar opções que atendam a todos."
+      },
+      {
+        question: "Devo atualizar a roleta regularmente?",
+        answer: "Sim! Atualize com descobertas novas, remova locais fechados e ajuste preços. Uma roleta atualizada garante decisões melhores."
+      }
+    ]
   },
 
   {
@@ -4212,7 +4884,25 @@ Lives de sorteio pedem transparência extra. Veja como o Sorteador ajuda a mostr
 - Log salvo (timestamp + hash) para responder questionamentos.
 
 Quer começar? Abra \`/roleta\`, configure suas cores e teste antes de iniciar a live.
-    `
+    `,
+    faq: [
+      {
+        question: "Como fazer sorteio no YouTube de forma profissional?",
+        answer: "Adicione o Sorteador como Browser Source no OBS (1920×1080), cole os inscritos validados, ative remover vencedor para múltiplos prêmios, e prepare overlays com nome do prêmio."
+      },
+      {
+        question: "Como provar que o sorteio foi justo?",
+        answer: "Mostre a lista completa (scroll) antes de girar para provar que todos estão lá. Salve o log com timestamp e hash para responder questionamentos. Poste o VOD ou trecho do giro."
+      },
+      {
+        question: "Como evitar golpes após o sorteio?",
+        answer: "Entre em contato via e-mail ou formulário oficial, nunca por DM de contas suspeitas. Peça confirmação de dados antes de enviar prêmios."
+      },
+      {
+        question: "Posso usar em lives com muitos participantes?",
+        answer: "Sim! O Sorteador aceita milhares de entradas. Cole todos os inscritos validados e o sistema processa rapidamente."
+      }
+    ]
   },
 
   {
@@ -4246,7 +4936,25 @@ Transforme o Sorteador em um jogo estilo “Roda da Fortuna” combinando roleta
 - Ofereça desafios bônus em outra roleta.
 
 Assim você tem um game show completo com ferramentas 100% gratuitas.
-    `
+    `,
+    faq: [
+      {
+        question: "Como criar um jogo estilo Roda da Fortuna?",
+        answer: "Combine roletas de valores/prêmios com o gerador de letras do Sorteador. Divida participantes em equipes, gire primeiro o valor, depois revele letras. Use o histórico para mostrar quais letras já saíram."
+      },
+      {
+        question: "Posso usar em festas e eventos?",
+        answer: "Sim! Perfeito para festas, aulas e lives interativas. Adicione sons customizados no OBS e distribua moedas virtuais em planilha compartilhada."
+      },
+      {
+        question: "Preciso pagar algo para usar?",
+        answer: "Não! O Sorteador é 100% gratuito. Você tem um game show completo sem custos, sem anúncios e sem cadastro."
+      },
+      {
+        question: "Como adicionar desafios bônus?",
+        answer: "Crie uma segunda roleta com desafios especiais e gire quando alguém acertar a palavra ou atingir determinada pontuação."
+      }
+    ]
   },
 
   {
@@ -4324,7 +5032,25 @@ Buscando um selecionador sem login? O Sorteador roda totalmente local, perfeito 
 - Gere um print/gravador de tela caso precise publicar a prova.
 
 Tudo isso sem cadastro, anúncios ou solicitações de e-mail.
-    `
+    `,
+    faq: [
+      {
+        question: "O selecionador de nomes é realmente gratuito?",
+        answer: "Sim! 100% gratuito, sem anúncios, sem cadastro e sem solicitações de e-mail. Roda totalmente no seu navegador."
+      },
+      {
+        question: "Meus dados ficam salvos em algum servidor?",
+        answer: "Não! O Sorteador roda totalmente local no seu navegador. Seus dados nunca saem do seu dispositivo, garantindo total privacidade."
+      },
+      {
+        question: "Quantos nomes posso adicionar?",
+        answer: "O limite é apenas a memória do seu navegador. Milhares de nomes funcionam bem sem problemas de performance."
+      },
+      {
+        question: "Como compartilhar os resultados?",
+        answer: "Copie o log em texto e envie para o grupo, use o botão de copiar vencedor para postar em redes, ou faça print/gravação de tela para publicar a prova."
+      }
+    ]
   },
 
   {
@@ -4362,7 +5088,25 @@ Precisa de uma roleta instantânea e 100% gratuita? O Sorteador funciona direto 
 - Decisões do dia a dia (quem lava a louça, qual jogo jogar etc.).
 
 Teste agora e salve seus templates favoritos para reutilizar no futuro.
-    `
+    `,
+    faq: [
+      {
+        question: "Como usar a roleta online do Sorteador?",
+        answer: "Acesse /roleta, cole seus itens (um por linha) ou importe via CSV, personalize cores e sons, e clique em Girar! O resultado é instantâneo e você pode compartilhar ou exportar o log."
+      },
+      {
+        question: "Quantos itens posso adicionar na roleta?",
+        answer: "Não há limite fixo de itens. A roleta aceita quantos itens você precisar, limitado apenas pela memória do seu dispositivo. Ideal para sorteios com centenas de participantes."
+      },
+      {
+        question: "Posso remover vencedores automaticamente?",
+        answer: "Sim! A roleta tem opção de remoção automática de vencedores, perfeita para sorteios com múltiplos prêmios ou para garantir que todos participem em dinâmicas de grupo."
+      },
+      {
+        question: "A roleta funciona em telas grandes?",
+        answer: "Sim! O modo apresentador é otimizado para projetores e telas grandes, perfeito para salas de aula, eventos corporativos e lives."
+      }
+    ]
   },
 
   {
@@ -4392,7 +5136,25 @@ Substitua planilhas e scripts por um gerador que roda direto no navegador, usand
 - Modo escuro para ambientes com pouca luz.
 
 Ideal para rifas, filas inteligentes, exercícios de matemática e testes de QA.
-    `
+    `,
+    faq: [
+      {
+        question: "O gerador de números do Sorteador é realmente aleatório?",
+        answer: "Sim! Usamos a Web Crypto API do navegador, que fornece aleatoriedade criptograficamente segura. Os números gerados são verdadeiramente aleatórios e não podem ser previstos ou manipulados."
+      },
+      {
+        question: "Posso gerar números com ou sem repetição?",
+        answer: "Sim! Você pode escolher se permite repetição ou não. Sem repetição é ideal para sorteios onde cada número deve ser único, como rifas. Com repetição é útil para simulações e jogos."
+      },
+      {
+        question: "Qual o limite de números que posso gerar?",
+        answer: "Não há limite fixo. Você pode gerar quantos números precisar, limitado apenas pela memória do seu dispositivo. O histórico armazena os últimos 10 sorteios localmente."
+      },
+      {
+        question: "Posso usar para sorteios de loteria?",
+        answer: "Sim! Configure o intervalo (ex: 1-60 para Mega-Sena) e a quantidade de números. O gerador é perfeito para simular jogos de loteria ou criar seus próprios sorteios."
+      }
+    ]
   },
 
   {
@@ -4443,7 +5205,25 @@ Esqueça planilhas complicadas. Com o Sorteador você cola a lista, define regra
 - Gere um novo giro apenas se alguém desistir (e registre o motivo).
 
 Assim você mantém o clima divertido e evita vazamento de quem tirou quem.
-    `
+    `,
+    faq: [
+      {
+        question: "Como fazer sorteio de amigo secreto online?",
+        answer: "Cole todos os nomes no Selecionador de Nomes, ative a remoção de vencedores, sorteie os pares e compartilhe cada resultado individualmente por WhatsApp, e-mail ou Slack para manter o sigilo."
+      },
+      {
+        question: "Preciso criar conta para usar o sorteador de amigo secreto?",
+        answer: "Não! O Sorteador funciona 100% no navegador, sem login, sem e-mail e sem cadastro. Seus dados ficam apenas no seu dispositivo."
+      },
+      {
+        question: "Como evitar que alguém tire a si mesmo?",
+        answer: "O sistema de remoção automática garante que cada pessoa só pode ser sorteada uma vez. Para evitar auto-sorteio, faça o sorteio manualmente ou use a função de grupos com regras específicas."
+      },
+      {
+        question: "Posso definir restrições (quem não pode tirar quem)?",
+        answer: "Para restrições complexas, recomendamos fazer o sorteio em etapas ou usar a função de grupos. Você pode refazer sorteios específicos se necessário."
+      }
+    ]
   },
 
   {
@@ -4471,7 +5251,25 @@ Leve o clássico “verdade ou desafio” para qualquer plataforma usando o Sort
 - Defina limites (sem desafios perigosos) e palavra de segurança.
 
 Resultado: um jogo dinâmico, seguro e sempre renovado.
-    `
+    `,
+    faq: [
+      {
+        question: "Como jogar verdade ou desafio online?",
+        answer: "Crie duas listas (verdades e desafios) e cole na roleta do Sorteador. Gire para escolher aleatoriamente e compartilhe a tela em videochamadas para jogar com amigos à distância."
+      },
+      {
+        question: "Posso criar versões diferentes do jogo?",
+        answer: "Sim! Crie versões para crianças (perguntas leves), adultos (mais ousadas) e times corporativos (icebreakers profissionais). Salve cada template para reutilizar."
+      },
+      {
+        question: "Como garantir que o jogo seja seguro?",
+        answer: "Defina limites claros antes de começar, evite desafios perigosos e estabeleça uma palavra de segurança para pular perguntas desconfortáveis."
+      },
+      {
+        question: "Funciona em videochamadas?",
+        answer: "Sim! Compartilhe a tela durante a videochamada para que todos vejam a roleta girando. Perfeito para festas virtuais e happy hours remotos."
+      }
+    ]
   },
 
   {
@@ -4500,7 +5298,25 @@ Cole os nomes, escolha o tamanho do time e pronto. O Sorteador se encarrega de d
 - Exporte o resultado para CSV/colagem em chats.
 
 Pronto para usar? Cole sua lista agora e veja grupos surgindo em segundos.
-    `
+    `,
+    faq: [
+      {
+        question: "Como criar times aleatórios rapidamente?",
+        answer: "Abra o Selecionador de Nomes, cole todos os participantes, informe quantos nomes deseja por grupo e clique em Selecionar Aleatório. Os times são formados instantaneamente."
+      },
+      {
+        question: "Posso garantir times equilibrados?",
+        answer: "Sim! Para manter diversidade, você pode marcar manualmente líderes ou pessoas-chave e distribuí-las após o sorteio inicial. Também pode salvar presets por turma ou squad."
+      },
+      {
+        question: "Funciona para quantas pessoas?",
+        answer: "Não há limite! Funciona para turmas pequenas de 10 pessoas até eventos com centenas de participantes. O sistema divide automaticamente em grupos do tamanho que você definir."
+      },
+      {
+        question: "Posso exportar os times formados?",
+        answer: "Sim! Você pode exportar o resultado para CSV ou copiar diretamente para colar em chats, e-mails ou documentos."
+      }
+    ]
   },
 
   {
@@ -4529,7 +5345,25 @@ Use o Sorteador como palco do seu sorteio: compartilhe a tela, mostre a lista e 
 - Possibilita auditoria posterior.
 
 Abra \`/roleta\`, personalize e comece a usar em suas próximas rifas.
-    `
+    `,
+    faq: [
+      {
+        question: "Como fazer uma rifa transparente?",
+        answer: "Use o Sorteador para mostrar a lista de participantes, faça o sorteio ao vivo ou grave a tela, e salve o log com timestamp como prova. Compartilhe o resultado junto com os metadados."
+      },
+      {
+        question: "Como evitar suspeitas de manipulação?",
+        answer: "Mostre a lista validada antes do sorteio, use a roleta do Sorteador que gera logs criptográficos, transmita ao vivo e salve o VOD para auditoria posterior."
+      },
+      {
+        question: "Posso usar para rifas beneficentes?",
+        answer: "Sim! O Sorteador é perfeito para rifas beneficentes, campanhas de e-commerce e sorteios corporativos. A transparência aumenta a confiança dos participantes."
+      },
+      {
+        question: "Como documentar o sorteio?",
+        answer: "Salve o log com timestamp após cada giro, grave a tela durante o sorteio e publique o resultado junto com os metadados para comprovação."
+      }
+    ]
   },
 
   {
@@ -4550,7 +5384,25 @@ Monte um game show com poucos cliques:
 4. Planilha compartilhada para registrar pontos.
 
 Perfeito para festas corporativas, aulas temáticas ou lives.
-    `
+    `,
+    faq: [
+      {
+        question: "Como criar um game show com a roleta?",
+        answer: "Monte uma roleta principal com valores/prêmios, uma secundária com bônus e penalidades, prepare pistas em slides e use uma planilha para registrar pontos. Perfeito para festas e lives."
+      },
+      {
+        question: "Posso usar para eventos corporativos?",
+        answer: "Sim! A Roda da Sorte é perfeita para festas corporativas, team buildings e eventos de fim de ano. Personalize com as cores da empresa e prêmios relevantes."
+      },
+      {
+        question: "Funciona para aulas temáticas?",
+        answer: "Sim! Professores podem usar para revisar conteúdo de forma divertida, com perguntas valendo pontos e prêmios simbólicos para os vencedores."
+      },
+      {
+        question: "Preciso de equipamento especial?",
+        answer: "Não! Basta um computador ou tablet com acesso ao Sorteador. Para eventos maiores, conecte a um projetor ou TV para que todos vejam."
+      }
+    ]
   },
 
   {
@@ -4571,7 +5423,25 @@ Fim de ano exige prêmios à altura e provas públicas. Siga este roteiro:
 4. Tenha suplentes definidos para evitar repetir o processo.
 
 Isso vale para rifas beneficentes, campanhas de e-commerce e integrações com parceiros.
-    `
+    `,
+    faq: [
+      {
+        question: "Como fazer sorteio de Natal justo?",
+        answer: "Cole a lista de participantes validados, faça live ou grave a tela mostrando a roleta, salve o log com timestamp e tenha suplentes definidos para evitar repetir o processo."
+      },
+      {
+        question: "Preciso transmitir ao vivo?",
+        answer: "Não é obrigatório, mas recomendado. Se não puder fazer live, grave a tela durante o sorteio e publique o vídeo junto com o resultado e os logs."
+      },
+      {
+        question: "O que fazer se o vencedor não responder?",
+        answer: "Tenha suplentes definidos nas regras. Se o vencedor não responder no prazo (24-48h), passe para o próximo da lista sem precisar refazer o sorteio."
+      },
+      {
+        question: "Funciona para campanhas de e-commerce?",
+        answer: "Sim! Perfeito para sorteios de fim de ano, Black Friday e campanhas promocionais. A transparência aumenta a confiança dos clientes."
+      }
+    ]
   },
 
   {
@@ -4590,7 +5460,25 @@ Isso vale para rifas beneficentes, campanhas de e-commerce e integrações com p
 - Caso alguém saia, remova e refaça apenas os pares afetados.
 
 Inclua as regras de presente, valores e datas no mesmo documento para evitar ruído.
-    `
+    `,
+    faq: [
+      {
+        question: "Como organizar amigo secreto online?",
+        answer: "Liste todos os participantes no Selecionador de Nomes, ative remoção de vencedores, sorteie os pares e envie cada resultado por DM ou Slack para manter o sigilo."
+      },
+      {
+        question: "O que fazer se alguém desistir?",
+        answer: "Remova a pessoa da lista e refaça apenas os pares afetados. Não é necessário refazer todo o sorteio, apenas ajustar quem tirou e foi tirado pela pessoa que saiu."
+      },
+      {
+        question: "Como definir regras claras?",
+        answer: "Inclua no mesmo documento: valor mínimo e máximo do presente, data da troca, local do evento e se vale presente usado ou só novo. Compartilhe com todos antes do sorteio."
+      },
+      {
+        question: "Posso fazer amigo secreto com restrições?",
+        answer: "Sim! Para evitar que cônjuges se tirem, por exemplo, faça o sorteio em etapas ou refaça sorteios específicos quando necessário."
+      }
+    ]
   },
 
   {
@@ -4609,7 +5497,25 @@ Inclua as regras de presente, valores e datas no mesmo documento para evitar ru�
 - Compartilhe o vencedor + backup nas redes.
 
 Simples, rápido e auditável.
-    `
+    `,
+    faq: [
+      {
+        question: "Como fazer sorteio de brinquedos transparente?",
+        answer: "Valide a lista de participantes, monte a roleta no Sorteador, transmita ou grave o giro, salve o log com timestamp e compartilhe o vencedor junto com os metadados."
+      },
+      {
+        question: "Preciso de autorização dos pais?",
+        answer: "Para sorteios envolvendo menores, é recomendado ter autorização dos responsáveis. Inclua isso nas regras e mantenha documentação."
+      },
+      {
+        question: "Como comunicar o resultado?",
+        answer: "Publique o vencedor nas redes sociais junto com o vídeo/print do sorteio e os logs. Tenha também um backup (segundo lugar) caso o vencedor não responda."
+      },
+      {
+        question: "Funciona para giveaways de marcas?",
+        answer: "Sim! Perfeito para parcerias com marcas de brinquedos. A transparência do Sorteador aumenta a credibilidade da campanha."
+      }
+    ]
   },
 
   {
@@ -4623,7 +5529,25 @@ Simples, rápido e auditável.
     readingTime: 4,
     content: `
 Acesse \`/gerador-de-numeros\`, defina mínimo=1, máximo=100, quantidade=100 e clique em **Sortear**. Copie o resultado e cole onde precisar.
-    `
+    `,
+    faq: [
+      {
+        question: "Como gerar lista de 1 a 100?",
+        answer: "Acesse o Gerador de Números, defina mínimo=1, máximo=100, quantidade=100 e clique em Sortear. Copie o resultado e cole em planilhas, provas ou scripts."
+      },
+      {
+        question: "Posso gerar listas maiores?",
+        answer: "Sim! Não há limite. Você pode gerar listas de 1 a 1000, 1 a 10000 ou qualquer intervalo que precisar."
+      },
+      {
+        question: "Os números vêm ordenados ou aleatórios?",
+        answer: "Você pode escolher! Por padrão vêm em ordem aleatória, mas você pode ordenar depois de copiar ou usar a opção de ordenação."
+      },
+      {
+        question: "Para que serve essa lista?",
+        answer: "Útil para provas, planilhas, scripts de programação, numeração de rifas, exercícios de matemática e qualquer situação que precise de sequências numéricas."
+      }
+    ]
   },
 
   {
@@ -4639,7 +5563,25 @@ Acesse \`/gerador-de-numeros\`, defina mínimo=1, máximo=100, quantidade=100 e 
 - Crie fatias para cada cidade.
 - Adicione notas (preço médio, tempo de voo, moeda).
 - Gire e use o resultado como tema de viagem, vlog ou estudo.
-    `
+    `,
+    faq: [
+      {
+        question: "Como escolher uma cidade aleatória para viajar?",
+        answer: "Crie uma roleta com as cidades que você considera, adicione notas como preço médio e tempo de voo, e gire para decidir seu próximo destino."
+      },
+      {
+        question: "Posso usar para desafios de conteúdo?",
+        answer: "Sim! Criadores de conteúdo usam para desafios gastronômicos, vlogs de viagem e séries onde visitam cidades sorteadas aleatoriamente."
+      },
+      {
+        question: "Como adicionar informações extras?",
+        answer: "Adicione notas em cada cidade como preço médio de hospedagem, tempo de voo, moeda local e principais atrações para facilitar a decisão."
+      },
+      {
+        question: "Funciona para aulas de geografia?",
+        answer: "Sim! Professores podem usar para sortear cidades que os alunos devem pesquisar, tornando o aprendizado mais dinâmico."
+      }
+    ]
   },
 
   {
@@ -4655,7 +5597,25 @@ Acesse \`/gerador-de-numeros\`, defina mínimo=1, máximo=100, quantidade=100 e 
 - Separe países por continente em múltiplas roletas.
 - Use filtros (orçamento, idioma, fuso horário).
 - Combine com planilhas para montar rotas reais.
-    `
+    `,
+    faq: [
+      {
+        question: "Como escolher um país aleatório para viajar?",
+        answer: "Separe países por continente em múltiplas roletas, aplique filtros como orçamento e idioma, e gire para descobrir seu próximo destino internacional."
+      },
+      {
+        question: "Posso usar para aulas de geografia?",
+        answer: "Sim! Perfeito para sortear países que os alunos devem pesquisar, apresentar ou fazer trabalhos sobre cultura, economia e história."
+      },
+      {
+        question: "Como filtrar por orçamento?",
+        answer: "Crie roletas separadas por faixa de preço: países baratos, médios e caros. Ou adicione notas com custo estimado em cada país."
+      },
+      {
+        question: "Funciona para planejamento de mochilão?",
+        answer: "Sim! Combine com planilhas para montar rotas reais, considerando proximidade geográfica, vistos necessários e tempo de viagem."
+      }
+    ]
   },
 
   {
@@ -4688,7 +5648,25 @@ Crie uma roleta com duas fatias (Sim / Não) ou use o modo rápido do gerador de
 4. Clique em **Sortear números** e exporte o log.
 
 Pronto: vários ganhadores em um único giro.
-    `
+    `,
+    faq: [
+      {
+        question: "Como sortear múltiplos vencedores de uma vez?",
+        answer: "Abra o Gerador de Números, defina o intervalo (ex: 1-500), informe quantos vencedores deseja, marque 'sem repetição' e clique em Sortear. Todos os ganhadores saem em um único giro."
+      },
+      {
+        question: "Posso garantir que não haja repetição?",
+        answer: "Sim! Marque a opção 'sem repetição' para garantir que cada número/vencedor seja único. Perfeito para rifas com múltiplos prêmios."
+      },
+      {
+        question: "Como documentar o sorteio?",
+        answer: "Exporte o log com todos os números sorteados, timestamps e hash criptográfico. Isso serve como prova auditável do sorteio."
+      },
+      {
+        question: "Funciona para rifas grandes?",
+        answer: "Sim! Você pode sortear centenas de vencedores de uma lista de milhares de participantes em segundos."
+      }
+    ]
   },
 
   {
@@ -4704,7 +5682,25 @@ Pronto: vários ganhadores em um único giro.
 - Adicione opções “Porta 1”, “Porta 2”... com descrições.
 - Gire ao vivo para revelar qual porta abrir.
 - Use em jogos de tabuleiro, festas ou quadros de conteúdo.
-    `
+    `,
+    faq: [
+      {
+        question: "Como usar a roleta para escolher portas?",
+        answer: "Adicione opções como 'Porta 1', 'Porta 2', etc. com descrições do que há atrás de cada uma. Gire ao vivo para revelar qual porta abrir."
+      },
+      {
+        question: "Funciona para jogos de tabuleiro?",
+        answer: "Sim! Perfeito para jogos que envolvem escolhas aleatórias, como decidir qual caminho seguir ou qual carta revelar."
+      },
+      {
+        question: "Posso usar em festas?",
+        answer: "Sim! Crie dinâmicas surpresa onde cada porta/caixa/envelope tem um prêmio ou desafio diferente. Gire para decidir qual abrir."
+      },
+      {
+        question: "Como criar suspense?",
+        answer: "Use o modo apresentador com sons ativados. A animação da roleta desacelerando cria suspense natural antes de revelar o resultado."
+      }
+    ]
   },
 
   {
@@ -4721,7 +5717,25 @@ Pronto: vários ganhadores em um único giro.
 - Adicione emojis/ícones para diferenciar fatias.
 - Salve o link como favorito para reutilizar.
 - Combine com OBS para sobrepor sua marca.
-    `
+    `,
+    faq: [
+      {
+        question: "Como personalizar a roleta com minha marca?",
+        answer: "Edite cores e gradientes diretamente na roleta, adicione emojis/ícones para diferenciar fatias e salve o link como favorito para reutilizar em campanhas."
+      },
+      {
+        question: "Posso usar cores da minha empresa?",
+        answer: "Sim! Personalize cada fatia com as cores da sua identidade visual. Combine com OBS para sobrepor seu logo durante transmissões."
+      },
+      {
+        question: "Como salvar meus templates?",
+        answer: "Salve o link da roleta configurada como favorito no navegador. Todas as configurações ficam preservadas para reutilização."
+      },
+      {
+        question: "Funciona para aulas e apresentações?",
+        answer: "Sim! Professores e apresentadores podem criar roletas temáticas com cores e ícones que combinem com o conteúdo da aula."
+      }
+    ]
   },
 
   {
@@ -4738,7 +5752,25 @@ Pronto: vários ganhadores em um único giro.
 - Ajuste cores, sons, modo apresentador.
 - Use histórico local + log exportado para auditoria.
 - Compartilhe o giro via live/gravador de tela.
-    `
+    `,
+    faq: [
+      {
+        question: "Como importar dados para a roleta?",
+        answer: "Cole os itens diretamente (um por linha) ou importe via CSV. O Sorteador aceita listas grandes sem travar."
+      },
+      {
+        question: "Como funciona a remoção de vencedores?",
+        answer: "Ative a opção 'remover vencedor' para que cada pessoa sorteada seja automaticamente removida da lista. Perfeito para sorteios com múltiplos prêmios."
+      },
+      {
+        question: "Posso ver o histórico de sorteios?",
+        answer: "Sim! O histórico local armazena os últimos giros. Você também pode exportar logs com timestamps para auditoria."
+      },
+      {
+        question: "Como fazer provas públicas?",
+        answer: "Transmita ao vivo ou grave a tela durante o sorteio. Exporte o log com hash criptográfico e publique junto com o resultado."
+      }
+    ]
   },
 
   {
@@ -4754,7 +5786,25 @@ Pronto: vários ganhadores em um único giro.
 - Preencha a roleta com hex codes ou nomes de cores.
 - Gire para escolher combinações de UI, pinturas ou atividades infantis.
 - Combine com ferramentas como Figma/Procreate para aplicar imediatamente.
-    `
+    `,
+    faq: [
+      {
+        question: "Como usar a roleta para escolher cores?",
+        answer: "Preencha a roleta com hex codes ou nomes de cores e gire para escolher aleatoriamente. Perfeito para desafios de design e atividades artísticas."
+      },
+      {
+        question: "Funciona para criar paletas de cores?",
+        answer: "Sim! Gire várias vezes para montar uma paleta completa. Combine com Figma, Procreate ou outras ferramentas de design."
+      },
+      {
+        question: "Posso usar em atividades infantis?",
+        answer: "Sim! Crianças adoram girar a roleta para escolher cores de pinturas, desenhos e artesanato. Torna a atividade mais divertida."
+      },
+      {
+        question: "Como adicionar cores específicas?",
+        answer: "Digite o nome da cor ou o código hex (ex: #FF5733) em cada fatia da roleta. Você pode personalizar quantas cores quiser."
+      }
+    ]
   },
 
   {
@@ -4771,7 +5821,25 @@ Pronto: vários ganhadores em um único giro.
 - Limpe duplicados e espaços com um clique.
 - Escolha quantos nomes sortear e se remove automaticamente.
 - Use histórico local + exportação em texto como prova.
-    `
+    `,
+    faq: [
+      {
+        question: "Como usar o selecionador de nomes?",
+        answer: "Cole ou importe sua lista de nomes, limpe duplicados com um clique, escolha quantos nomes sortear e se deseja remover automaticamente os selecionados."
+      },
+      {
+        question: "Posso importar listas grandes?",
+        answer: "Sim! O Sorteador aceita listas enormes sem travar. Perfeito para turmas, eventos corporativos e sorteios com centenas de participantes."
+      },
+      {
+        question: "Como funciona a remoção automática?",
+        answer: "Ative a opção para que cada nome sorteado seja removido da lista automaticamente. Ideal para garantir que todos participem ou para sorteios com múltiplos prêmios."
+      },
+      {
+        question: "Como documentar os sorteios?",
+        answer: "Use o histórico local para ver sorteios anteriores e exporte em texto como prova auditável com timestamps."
+      }
+    ]
   },
 
   {
@@ -4790,7 +5858,21 @@ Pronto: vários ganhadores em um único giro.
 4. OBS/Streamyard para transmitir.
 
 Pronto: seu próprio game show.
-    `
+    `,
+    faq: [
+      {
+        question: "Como criar uma Roda da Fortuna online?",
+        answer: "Combine a roleta do Sorteador com planilhas para pontuação, slides com pistas e software de streaming como OBS ou Streamyard para transmitir ao vivo."
+      },
+      {
+        question: "Preciso de software especial para transmitir?",
+        answer: "Você pode usar OBS Studio (gratuito), Streamyard ou até Google Meet para compartilhar a tela com a roleta e os slides do game show."
+      },
+      {
+        question: "Como controlar a pontuação dos participantes?",
+        answer: "Use uma planilha do Google Sheets ou Excel aberta em outra aba. Atualize os pontos manualmente após cada rodada e compartilhe a tela quando necessário."
+      }
+    ]
   },
 
   {
@@ -4808,7 +5890,21 @@ Pronto: seu próprio game show.
 - Histórico local.
 - Exportação de log.
 - Teclas de atalho para lives.
-    `
+    `,
+    faq: [
+      {
+        question: "A roleta do Sorteador é realmente gratuita?",
+        answer: "Sim, 100% gratuita e sem limites. Você pode adicionar quantos itens quiser, usar quantas vezes precisar, sem cadastro ou pagamento."
+      },
+      {
+        question: "Posso usar a roleta em lives e transmissões?",
+        answer: "Sim! A roleta tem teclas de atalho para facilitar o uso durante lives. Basta compartilhar a tela e girar ao vivo para sua audiência."
+      },
+      {
+        question: "Como funciona a remoção de vencedores?",
+        answer: "Ative a opção de remover vencedores para que cada item sorteado seja automaticamente excluído da lista, evitando repetições em sorteios múltiplos."
+      }
+    ]
   },
 
   {
@@ -4825,7 +5921,21 @@ Pronto: seu próprio game show.
 - Quantidade flexível.
 - Copiar resultado em 1 clique.
 - Compartilhar log via texto ou print.
-    `
+    `,
+    faq: [
+      {
+        question: "O gerador de números usa criptografia?",
+        answer: "Sim, o Sorteador usa a Web Crypto API do navegador para gerar números verdadeiramente aleatórios e criptograficamente seguros."
+      },
+      {
+        question: "Posso gerar números com ou sem repetição?",
+        answer: "Sim! Você pode escolher se permite números repetidos ou se cada número deve ser único no resultado."
+      },
+      {
+        question: "Como compartilhar o resultado do sorteio?",
+        answer: "Copie o resultado com um clique ou tire um print da tela. O histórico também pode ser exportado como texto para auditoria."
+      }
+    ]
   },
 
   {
@@ -4842,7 +5952,21 @@ Pronto: seu próprio game show.
 - Sem anúncios invasivos.
 - Ideal para listas sensíveis (alunos, colaboradores).
 - Exportação manual para quem precisa registrar.
-    `
+    `,
+    faq: [
+      {
+        question: "Preciso criar conta para usar o selecionador?",
+        answer: "Não! O Sorteador funciona 100% no navegador, sem cadastro, sem login e sem coletar dados pessoais."
+      },
+      {
+        question: "Meus dados ficam seguros?",
+        answer: "Sim, todos os dados ficam apenas no seu navegador. Nada é enviado para servidores externos, garantindo total privacidade."
+      },
+      {
+        question: "Posso usar com listas de alunos ou colaboradores?",
+        answer: "Sim! Como os dados não saem do seu dispositivo, é ideal para listas sensíveis de escolas, empresas e comunidades."
+      }
+    ]
   },
 
   {
@@ -4859,7 +5983,21 @@ Pronto: seu próprio game show.
 - Planilha acompanha a pontuação.
 - Slides exibem as pistas.
 - OBS/Meet compartilha tudo com o público.
-    `
+    `,
+    faq: [
+      {
+        question: "Como jogar Roda da Fortuna online?",
+        answer: "Use a roleta do Sorteador para definir pontos ou prêmios, uma planilha para acompanhar a pontuação e slides com as pistas do jogo."
+      },
+      {
+        question: "Posso jogar com amigos remotamente?",
+        answer: "Sim! Use OBS, Google Meet ou Zoom para compartilhar a tela e jogar com amigos ou família à distância."
+      },
+      {
+        question: "Preciso pagar para criar o game show?",
+        answer: "Não! A roleta do Sorteador é gratuita, e você pode usar Google Slides e Google Sheets também de graça."
+      }
+    ]
   },
 
   {
@@ -4876,7 +6014,21 @@ Pronto: seu próprio game show.
 - Use Web Crypto para aleatoriedade.
 - Salve o histórico após cada sorteio.
 - Compartilhe o log para auditoria.
-    `
+    `,
+    faq: [
+      {
+        question: "Como garantir que o sorteio é justo?",
+        answer: "O Sorteador usa Web Crypto API para aleatoriedade criptográfica. Salve o histórico e compartilhe o log como prova de auditoria."
+      },
+      {
+        question: "Posso provar que não manipulei o resultado?",
+        answer: "Sim! Exporte o log com timestamp e parâmetros do sorteio. Isso serve como prova verificável de que o processo foi justo."
+      },
+      {
+        question: "O que é Web Crypto API?",
+        answer: "É uma API nativa dos navegadores que gera números verdadeiramente aleatórios usando fontes de entropia do sistema operacional."
+      }
+    ]
   },
 
   {
@@ -4890,7 +6042,21 @@ Pronto: seu próprio game show.
     readingTime: 4,
     content: `
 Ideal para sorteios rápidos, códigos de validação e testes AB. Basta acessar \`/gerador-de-numeros\` e configurar.
-    `
+    `,
+    faq: [
+      {
+        question: "Para que serve um randomizador numérico?",
+        answer: "Serve para gerar números aleatórios para sorteios, códigos de validação, testes A/B, senhas temporárias e qualquer situação que precise de aleatoriedade."
+      },
+      {
+        question: "Preciso instalar algum programa?",
+        answer: "Não! O randomizador funciona direto no navegador, sem downloads ou instalações."
+      },
+      {
+        question: "Posso usar para testes A/B?",
+        answer: "Sim! Gere números aleatórios para distribuir usuários entre grupos de teste de forma imparcial."
+      }
+    ]
   },
 
   {
@@ -4906,7 +6072,21 @@ Ideal para sorteios rápidos, códigos de validação e testes AB. Basta acessar
 - Ajuste gradientes e tipografia.
 - Salve o template como favorito.
 - Combine com overlays de streaming.
-    `
+    `,
+    faq: [
+      {
+        question: "Posso personalizar as cores da roleta?",
+        answer: "Sim! Você pode ajustar gradientes, cores dos segmentos e tipografia para combinar com sua marca ou evento."
+      },
+      {
+        question: "Como salvar minha roleta personalizada?",
+        answer: "Salve o template como favorito no navegador ou copie o link com os parâmetros para reutilizar depois."
+      },
+      {
+        question: "Funciona com overlays de streaming?",
+        answer: "Sim! A roleta pode ser capturada pelo OBS ou Streamlabs e usada como overlay em suas transmissões ao vivo."
+      }
+    ]
   },
 
   {
@@ -4922,7 +6102,21 @@ Ideal para sorteios rápidos, códigos de validação e testes AB. Basta acessar
 - Adicione emojis ou identificadores.
 - Use modo apresentador para esconder a lista.
 - Salve versões diferentes para cada evento.
-    `
+    `,
+    faq: [
+      {
+        question: "Posso adicionar emojis aos nomes na roleta?",
+        answer: "Sim! Adicione emojis, identificadores ou notas junto aos nomes para personalizar cada entrada da roleta."
+      },
+      {
+        question: "O que é o modo apresentador?",
+        answer: "O modo apresentador esconde a lista de nomes da tela, mostrando apenas a roleta girando. Ideal para sorteios surpresa."
+      },
+      {
+        question: "Posso criar várias roletas diferentes?",
+        answer: "Sim! Salve versões diferentes para cada evento, turma ou ocasião e alterne entre elas facilmente."
+      }
+    ]
   },
 
   {
@@ -4938,7 +6132,21 @@ Ideal para sorteios rápidos, códigos de validação e testes AB. Basta acessar
 - Cole itens ou importe CSV.
 - Ajuste fontes, gradientes e sons.
 - Salve o link como modelo para reutilizar.
-    `
+    `,
+    faq: [
+      {
+        question: "Posso importar uma lista de itens?",
+        answer: "Sim! Cole itens diretamente ou importe de um arquivo CSV para criar sua roleta rapidamente."
+      },
+      {
+        question: "Como personalizar a aparência da roleta?",
+        answer: "Ajuste fontes, gradientes de cores e sons para criar uma roleta única que combine com seu evento ou marca."
+      },
+      {
+        question: "Como salvar minha roleta para usar depois?",
+        answer: "Salve o link da roleta como modelo. Ao acessar novamente, todos os itens e configurações estarão preservados."
+      }
+    ]
   },
 
   {
@@ -4952,7 +6160,21 @@ Ideal para sorteios rápidos, códigos de validação e testes AB. Basta acessar
     readingTime: 5,
     content: `
 Monte roletas para nome, classe, poderes e falhas. Gire cada uma e combine os resultados para criar personagens únicos.
-    `
+    `,
+    faq: [
+      {
+        question: "Como criar personagens aleatórios com a roleta?",
+        answer: "Monte roletas separadas para nome, classe, poderes e falhas. Gire cada uma e combine os resultados para criar personagens únicos."
+      },
+      {
+        question: "Posso usar para RPG de mesa?",
+        answer: "Sim! Perfeito para criar NPCs, gerar encontros aleatórios ou definir características de personagens em campanhas de RPG."
+      },
+      {
+        question: "Funciona para criar personagens de quadrinhos?",
+        answer: "Sim! Use as roletas para gerar ideias de design, personalidade e poderes para seus personagens de quadrinhos ou animações."
+      }
+    ]
   },
 
   {
@@ -4966,7 +6188,21 @@ Monte roletas para nome, classe, poderes e falhas. Gire cada uma e combine os re
     readingTime: 4,
     content: `
 Use a roleta para definir qual personagem desenhar, dublar ou transformar em meme no próximo conteúdo.
-    `
+    `,
+    faq: [
+      {
+        question: "Como usar a roleta para escolher personagens?",
+        answer: "Adicione os nomes dos personagens na roleta e gire para escolher aleatoriamente qual desenhar, dublar ou usar no próximo conteúdo."
+      },
+      {
+        question: "Posso usar para desafios de fanart?",
+        answer: "Sim! Perfeito para desafios de desenho onde você precisa escolher um personagem aleatório para ilustrar."
+      },
+      {
+        question: "Funciona para fanfics?",
+        answer: "Sim! Use a roleta para escolher personagens principais, pares românticos ou situações para suas histórias."
+      }
+    ]
   },
 
   {
@@ -4980,7 +6216,21 @@ Use a roleta para definir qual personagem desenhar, dublar ou transformar em mem
     readingTime: 4,
     content: `
 Adicione ideias de fantasia, materiais e orçamentos. Gire a roleta para definir o look da próxima festa.
-    `
+    `,
+    faq: [
+      {
+        question: "Como usar a roleta para escolher fantasia?",
+        answer: "Adicione suas ideias de fantasia na roleta e gire para escolher aleatoriamente o look da próxima festa."
+      },
+      {
+        question: "Posso incluir orçamento nas opções?",
+        answer: "Sim! Adicione categorias como 'fantasia até R$50', 'fantasia DIY' ou 'fantasia elaborada' para considerar o orçamento."
+      },
+      {
+        question: "Funciona para grupos?",
+        answer: "Sim! Cada pessoa do grupo pode girar a roleta para definir sua fantasia, criando combinações divertidas e inesperadas."
+      }
+    ]
   },
 
   {
@@ -4994,7 +6244,21 @@ Adicione ideias de fantasia, materiais e orçamentos. Gire a roleta para definir
     readingTime: 4,
     content: `
 Gire para determinar paletas de pintura, temas de UI ou cores de squad em eventos corporativos.
-    `
+    `,
+    faq: [
+      {
+        question: "Como usar a roleta para escolher cores?",
+        answer: "Adicione nomes de cores ou códigos hex na roleta e gire para escolher aleatoriamente a cor do seu projeto."
+      },
+      {
+        question: "Posso usar para desafios de arte?",
+        answer: "Sim! Perfeito para desafios de paleta limitada, onde você precisa criar usando apenas as cores sorteadas."
+      },
+      {
+        question: "Funciona para definir cores de equipes?",
+        answer: "Sim! Use em eventos corporativos ou escolares para definir cores de squads de forma justa e divertida."
+      }
+    ]
   },
 
   {
@@ -5008,7 +6272,21 @@ Gire para determinar paletas de pintura, temas de UI ou cores de squad em evento
     readingTime: 4,
     content: `
 Adicione hex codes ou nomes de cores, gire a roleta e defina paletas ou combinações aleatórias para o próximo projeto.
-    `
+    `,
+    faq: [
+      {
+        question: "Posso adicionar códigos hex na roleta?",
+        answer: "Sim! Adicione códigos hex como #FF5733 ou nomes de cores como 'vermelho' para criar sua roleta de cores."
+      },
+      {
+        question: "Funciona para atividades infantis?",
+        answer: "Sim! Perfeito para aulas de artes onde as crianças giram a roleta para descobrir qual cor usar no desenho."
+      },
+      {
+        question: "Posso usar para design e artesanato?",
+        answer: "Sim! Use para escolher paletas de cores para projetos de design, artesanato, decoração e muito mais."
+      }
+    ]
   },
 
   {
@@ -5022,7 +6300,21 @@ Adicione hex codes ou nomes de cores, gire a roleta e defina paletas ou combina�
     readingTime: 4,
     content: `
 Gire para definir cor de equipe, tema de apresentação ou próximo experimento artístico.
-    `
+    `,
+    faq: [
+      {
+        question: "Como usar a roleta para escolher cores?",
+        answer: "Adicione as opções de cores na roleta e gire para decidir. Perfeito para evitar discussões e tornar a escolha divertida."
+      },
+      {
+        question: "Funciona em sala de aula?",
+        answer: "Sim! Professores podem usar para definir cores de equipes, temas de trabalhos ou materiais para atividades artísticas."
+      },
+      {
+        question: "Posso usar em brainstorms?",
+        answer: "Sim! Use a roleta para escolher cores de marca, paletas de design ou temas visuais durante sessões criativas."
+      }
+    ]
   },
 
   {
@@ -5036,7 +6328,21 @@ Gire para definir cor de equipe, tema de apresentação ou próximo experimento 
     readingTime: 4,
     content: `
 Sem login, sem anúncios invasivos e com logs exportáveis: ideal para quem precisa de privacidade.
-    `
+    `,
+    faq: [
+      {
+        question: "A roleta do Sorteador é realmente gratuita?",
+        answer: "Sim, 100% gratuita. Não há planos pagos, limites de uso ou funcionalidades bloqueadas."
+      },
+      {
+        question: "Meus dados são vendidos ou compartilhados?",
+        answer: "Não! A roleta roda 100% no seu navegador. Seus dados nunca saem do seu dispositivo e não são coletados."
+      },
+      {
+        question: "Preciso criar conta para usar?",
+        answer: "Não! Basta acessar o site e começar a usar. Sem cadastro, sem login, sem complicação."
+      }
+    ]
   },
 
   {
@@ -5050,7 +6356,21 @@ Sem login, sem anúncios invasivos e com logs exportáveis: ideal para quem prec
     readingTime: 4,
     content: `
 Liste perguntas ou desafios, gire a roleta e deixe o Sorteador comandar a diversão.
-    `
+    `,
+    faq: [
+      {
+        question: "Como criar um jogo com a roleta?",
+        answer: "Adicione perguntas, desafios ou atividades na roleta. Gire para escolher aleatoriamente e deixe a diversão começar!"
+      },
+      {
+        question: "Funciona para todas as idades?",
+        answer: "Sim! Você controla o conteúdo da roleta, então pode criar jogos apropriados para crianças, adolescentes ou adultos."
+      },
+      {
+        question: "Posso usar em festas?",
+        answer: "Sim! Perfeito para festas de aniversário, confraternizações e encontros de amigos. Projete na TV para todos verem."
+      }
+    ]
   },
 
   {
@@ -5064,7 +6384,21 @@ Liste perguntas ou desafios, gire a roleta e deixe o Sorteador comandar a divers
     readingTime: 5,
     content: `
 Combine roletas diferentes (prêmios, penalidades, perguntas) e transmita tudo por OBS ou projetor.
-    `
+    `,
+    faq: [
+      {
+        question: "Como criar um game show com a roleta?",
+        answer: "Combine várias roletas: uma para prêmios, outra para penalidades e outra para perguntas. Transmita por OBS ou projete em uma TV."
+      },
+      {
+        question: "Posso usar em eventos presenciais?",
+        answer: "Sim! Conecte seu notebook a um projetor ou TV grande e use a roleta como atração principal do evento."
+      },
+      {
+        question: "Funciona para lives no YouTube ou Twitch?",
+        answer: "Sim! Capture a janela da roleta no OBS e use como overlay ou cena principal durante suas transmissões ao vivo."
+      }
+    ]
   },
 
   {
@@ -5078,7 +6412,21 @@ Combine roletas diferentes (prêmios, penalidades, perguntas) e transmita tudo p
     readingTime: 5,
     content: `
 Adicione cartas, raridades ou temas na roleta e gire para decidir o deck do próximo duelo.
-    `
+    `,
+    faq: [
+      {
+        question: "Como criar desafios de Clash Royale com a roleta?",
+        answer: "Adicione cartas, raridades ou restrições na roleta e gire para definir as regras do próximo duelo ou deck."
+      },
+      {
+        question: "Posso usar para streams de Clash Royale?",
+        answer: "Sim! Perfeito para criar conteúdo interativo onde o chat decide as cartas do seu deck através da roleta."
+      },
+      {
+        question: "Como montar um deck aleatório completo?",
+        answer: "Gire a roleta 8 vezes para selecionar cada carta do deck, criando combinações únicas e desafiadoras."
+      }
+    ]
   },
 
   {
@@ -5092,7 +6440,21 @@ Adicione cartas, raridades ou temas na roleta e gire para decidir o deck do pró
     readingTime: 4,
     content: `
 Cada giro seleciona uma carta; repita até fechar oito slots e desafie amigos ou chat.
-    `
+    `,
+    faq: [
+      {
+        question: "Como montar um deck aleatório de Clash Royale?",
+        answer: "Adicione todas as cartas na roleta e gire 8 vezes. Cada giro seleciona uma carta para seu deck."
+      },
+      {
+        question: "Posso usar em streams?",
+        answer: "Sim! Perfeito para criar conteúdo interativo onde você joga com decks completamente aleatórios."
+      },
+      {
+        question: "Funciona para campeonatos entre amigos?",
+        answer: "Sim! Todos os participantes podem montar decks aleatórios com a roleta para competições mais equilibradas e divertidas."
+      }
+    ]
   },
 
   {
@@ -5106,7 +6468,21 @@ Cada giro seleciona uma carta; repita até fechar oito slots e desafie amigos ou
     readingTime: 4,
     content: `
 Gire para definir qual time comentar, qual jogo assistir ou quem representa cada participante no bolão.
-    `
+    `,
+    faq: [
+      {
+        question: "Como usar a roleta para bolões de NCAA?",
+        answer: "Adicione os times na roleta e gire para definir qual time cada participante vai representar no bolão."
+      },
+      {
+        question: "Posso usar para criar conteúdo sobre NCAA?",
+        answer: "Sim! Gire a roleta para decidir qual time analisar, qual jogo comentar ou qual história contar no próximo vídeo."
+      },
+      {
+        question: "Funciona para debates esportivos?",
+        answer: "Sim! Use a roleta para definir qual time cada pessoa vai defender em debates sobre futebol americano universitário."
+      }
+    ]
   },
 
   {
@@ -5120,7 +6496,21 @@ Gire para definir qual time comentar, qual jogo assistir ou quem representa cada
     readingTime: 4,
     content: `
 Use a roleta para decidir qual música tocar, cantar ou analisar no próximo conteúdo.
-    `
+    `,
+    faq: [
+      {
+        question: "Como criar playlists com a roleta?",
+        answer: "Adicione músicas ou estilos musicais na roleta e gire várias vezes para montar uma playlist surpresa."
+      },
+      {
+        question: "Posso usar para karaokê?",
+        answer: "Sim! Adicione músicas que todos conhecem e gire para decidir qual será a próxima a ser cantada."
+      },
+      {
+        question: "Funciona para DJs e setlists?",
+        answer: "Sim! Use a roleta para criar setlists aleatórias ou decidir qual música tocar em seguida durante um set."
+      }
+    ]
   },
 
   {
@@ -5134,7 +6524,21 @@ Use a roleta para decidir qual música tocar, cantar ou analisar no próximo con
     readingTime: 4,
     content: `
 Liste acordes (C, G, Am...) ou graus (I, IV, V) e gire para criar progressões inesperadas.
-    `
+    `,
+    faq: [
+      {
+        question: "Como usar a roleta para escolher acordes?",
+        answer: "Adicione acordes como C, G, Am, F ou graus como I, IV, V na roleta e gire para criar progressões aleatórias."
+      },
+      {
+        question: "Funciona para estudar música?",
+        answer: "Sim! Use para praticar transições entre acordes aleatórios ou criar exercícios de improvisação."
+      },
+      {
+        question: "Posso usar para compor músicas?",
+        answer: "Sim! A roleta pode ajudar a quebrar bloqueios criativos gerando progressões de acordes inesperadas para suas composições."
+      }
+    ]
   },
 
   {
@@ -5148,7 +6552,21 @@ Liste acordes (C, G, Am...) ou graus (I, IV, V) e gire para criar progressões i
     readingTime: 4,
     content: `
 Cole os nomes, clique em **Girar** e compartilhe o resultado com um print/log — simples assim.
-    `
+    `,
+    faq: [
+      {
+        question: "Como sortear nomes com a roleta?",
+        answer: "Cole os nomes na roleta, clique em Girar e o nome sorteado aparecerá na tela. Simples e rápido!"
+      },
+      {
+        question: "Preciso criar conta?",
+        answer: "Não! A roleta funciona instantaneamente, sem cadastro, sem login e sem complicação."
+      },
+      {
+        question: "Como provar o resultado do sorteio?",
+        answer: "Tire um print da tela ou exporte o log com histórico. Perfeito para comprovar sorteios em grupos."
+      }
+    ]
   },
 
   {
