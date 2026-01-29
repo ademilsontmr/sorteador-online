@@ -61,7 +61,7 @@ const Blog = () => {
       <SEO
         title="Blog Sorteador | Dicas, Tutoriais e Ideias de Sorteio"
         description="Confira artigos sobre como fazer sorteios justos, ideias para roletas, dicas de engajamento e tutoriais para usar nossas ferramentas."
-        canonical="https://sorteador.click/blog"
+        canonical="https://sorteador.click/blog/"
         keywords="blog sorteador, dicas de sorteio, artigos sorteio, tutoriais roleta"
         structuredData={structuredData}
       />

@@ -12,7 +12,7 @@ interface SEOProps {
 export const SEO = ({
   title = "Sorteador — roleta, números e nomes online",
   description = "Sorteador Online 100% Grátis! Faça sorteios de números, nomes e gire a roleta. Ferramenta rápida, segura e sem cadastro. Ideal para Instagram e rifas.",
-  canonical = "https://sorteador.click/",
+  canonical = "",
   ogImage = "https://sorteador.click/og-image.png",
   keywords,
   structuredData,
@@ -25,14 +25,14 @@ export const SEO = ({
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
       {keywordsContent && <meta name="keywords" content={keywordsContent} />}
-      <link rel="canonical" href={canonical} />
+      {canonical && <link rel="canonical" href={canonical} />}
 
       {/* Open Graph */}
       <meta property="og:type" content="website" />
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={ogImage} />
-      <meta property="og:url" content={canonical} />
+      <meta property="og:url" content={canonical || "https://sorteador.click/"} />
 
       {/* Twitter Card */}
       <meta name="twitter:card" content="summary_large_image" />

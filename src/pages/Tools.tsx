@@ -142,7 +142,7 @@ const Tools = () => {
       <SEO
         title="Ferramentas de Sorteio e Utilitários Online | Sorteador"
         description="Explore nossa coleção de ferramentas gratuitas: dados, cara ou coroa, sorteadores e muito mais. Tudo o que você precisa para decisões aleatórias."
-        canonical="https://sorteador.click/ferramentas"
+        canonical="https://sorteador.click/ferramentas/"
         keywords="ferramentas de sorteio, utilitários, sorteio, randomizadores, dados, cara ou coroa"
       />
       <div className="min-h-screen flex flex-col bg-background">

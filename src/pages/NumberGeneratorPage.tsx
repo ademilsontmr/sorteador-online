@@ -52,7 +52,7 @@ const NumberGeneratorPage = () => {
       <SEO
         title="Sorteador de Números Aleatórios | Gerador Online Grátis"
         description="Gere números aleatórios instantaneamente. Defina intervalos, quantidade e sorteie sem repetições. Ideal para rifas, jogos e sorteios rápidos."
-        canonical="https://sorteador.click/gerador-de-numeros"
+        canonical="https://sorteador.click/gerador-de-numeros/"
         keywords="gerador de números, números aleatórios, sortear números, random number generator, sorteio de números, sorteador de números"
       />
       <div className="min-h-screen flex flex-col">

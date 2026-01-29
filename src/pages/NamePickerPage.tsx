@@ -52,7 +52,7 @@ const NamePickerPage = () => {
       <SEO
         title="Sorteador de Nomes e Lista | Sorteio Aleatório Online"
         description="Sorteie nomes de uma lista facilmente. Cole seus nomes, gire e descubra o vencedor. Perfeito para sorteios de Instagram, amigos secretos e grupos."
-        canonical="https://sorteador.click/selecionador-de-nomes"
+        canonical="https://sorteador.click/selecionador-de-nomes/"
         keywords="sorteador de nomes, lista de nomes, sortear nomes, random name picker, sorteio de nomes, sorteador lista"
       />
       <div className="min-h-screen flex flex-col">

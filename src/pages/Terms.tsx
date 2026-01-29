@@ -8,7 +8,7 @@ const Terms = () => {
       <SEO
         title="Termos de Uso - Sorteador"
         description="Conheça as regras de utilização das ferramentas de seleção aleatória do Sorteador."
-        canonical="https://sorteador.click/termos"
+        canonical="https://sorteador.click/termos/"
       />
       <Header />
       <main className="flex-1 container mx-auto px-4 py-12 max-w-4xl">

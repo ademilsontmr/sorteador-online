@@ -8,7 +8,7 @@ const Privacy = () => {
       <SEO
         title="Política de Privacidade - Sorteador"
         description="Entenda como o Sorteador trata dados, registros de sorteios e práticas de segurança."
-        canonical="https://sorteador.click/privacidade"
+        canonical="https://sorteador.click/privacidade/"
       />
       <Header />
       <main className="flex-1 container mx-auto px-4 py-12 max-w-4xl">
