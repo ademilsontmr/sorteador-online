@@ -12,7 +12,7 @@ interface SEOProps {
 export const SEO = ({
   title = "Sorteador — roleta, números e nomes online",
   description = "Sorteador Online 100% Grátis! Faça sorteios de números, nomes e gire a roleta. Ferramenta rápida, segura e sem cadastro. Ideal para Instagram e rifas.",
-  canonical,
+  canonical = "https://sorteador.click/",
   ogImage = "https://sorteador.click/og-image.png",
   keywords,
   structuredData,
